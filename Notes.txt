@@ -1,0 +1,748 @@
+#-（一）有很多lib文件在C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib等目录内。
+#-（二）:cal SetSyn("cpp")
+#-（三）gvim撤销u,重复ctrl+r
+#-（四）查看本机IP地址 ipconfig /all
+#-（五）mkdir 文件名 ，创建“文件名”文件夹；touch  test/a.txt 在test文件夹内添加一个文件：a.txt；rm a.txt 删除文件a.txt、rm -rf test 删除文件夹test。
+#-（六）pwd      显示当前路径。
+#-（七）echo “hello Git” > readme.txt 建立一个写有 hello Git 的txt文件
+#-（八）vim中的默认：
+vim provides more improvements comparing with vi. But these improvements are disabled by default. Therefore, you should enable them first. You can append the following content at the end of /etc/vim/vimrc. To enable this settings, exit and run vi(m) again. Note that contents after a double quotation mark (") are comments, and you do not need to include them in /etc/vim/vimrc.
+setlocal noswapfile " 不要生成swap文件
+set bufhidden=hide " 当buffer被丢弃的时候隐藏它
+set nocompatible " 关闭 vi 兼容模式
+syntax on " 自动语法高亮
+colorscheme evening " 设定配色方案
+set number " 显示行号
+set cursorline " 突出显示当前行
+set ruler " 打开状态栏标尺
+set shiftwidth=4 " 设定 << 和 >> 命令移动时的宽度为 4
+set softtabstop=4 " 使得按退格键时可以一次删掉 4 个空格
+set tabstop=4 " 设定 tab 长度为 4
+set nobackup " 覆盖文件时不备份
+set autochdir " 自动切换当前目录为当前文件所在的目录
+filetype plugin indent on " 开启插件
+set backupcopy=yes " 设置备份时的行为为覆盖
+set ignorecase smartcase " 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感
+set incsearch " 输入搜索内容时就显示搜索结果
+set hlsearch " 搜索时高亮显示被找到的文本
+set noerrorbells " 关闭错误信息响铃
+set novisualbell " 关闭使用可视响铃代替呼叫
+set t_vb= " 置空错误铃声的终端代码
+set showmatch " 插入括号时，短暂地跳转到匹配的对应括号
+set matchtime=2 " 短暂跳转到匹配括号的时间
+set magic " 设置魔术
+set hidden " 允许在有未保存的修改时切换缓冲区，此时的修改由 vim 负责保存
+set smartindent " 开启新行时使用智能自动缩进
+set backspace=indent,eol,start " 不设定在插入状态无法用退格键和 Delete 键删除回车符
+set cmdheight=1 " 设定命令行的行数为 1
+set laststatus=2 " 显示状态栏 (默认值为 1, 无法显示状态栏)
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ Ln\ %l,\ Col\ %c/%L%) " 设置在状态行显示的信息
+set foldenable " 开始折叠
+set foldmethod=syntax " 设置语法折叠
+set foldcolumn=0 " 设置折叠区域的宽度
+setlocal foldlevel=1 " 设置折叠层数为 1
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR> " 用空格键来开关折叠
+#-（九）char *strtok(char s[], const char *delim);函数返回delim前面的字符串，若delim==s[0]，则返回delim后面的字符串。
+#-（十）代码段寄存器CS：存放当前正在运行的程序代码所在段的段基值，表示当前使用的指令代码可以从该段寄存器指定的存储器段中取得，相应的偏移值则由IP提供；数据段寄存器DS：指出当前程序使用的数据所存放段的最低地址，即存放数据段的段基值；堆栈段寄存器SS：指出当前堆栈的底部地址，即存放堆栈段的段基值。cs是值cpu执行的当前指令的段地址，ds是数据开始的段地址。
+通俗来讲，CS是告诉CPU，去哪个位置找内容当成指令去执行，
+DS是告诉CPU，去哪个位置找内容当成数据被使用，用它们的扩展名便可以知晓区别：
+datasegment=ds
+codesegment=cs
+CPU要执行CS中的指令 指令用到的数据可能就存放在DS中。
+你可以把数据放到CS中 但是CPU并不把它当成数据来使用，你也可以把指令放到DS中，但是CPU根本不去DS里读指令。
+#-（十一）linux区分主键盘和小键盘的enter，即enter（/n）和return（/r）的区别
+#-（十二）mov 1 %eax = lea *1 %eax
+#-（十三）vim中直接（不用按冒号）zi可展开、收起折叠
+#-（十四）apt-cache search     查找app
+#-（十五）:w newfile        #将编辑的内容写入 newfile 文件，保持原有文件的内容不变    
+        :f newfile         #将当前文件重命名为 newfile
+#-（十六）gvim下:! (cmd command) 可暂时打开控制台并执行该command;或:! cmd 打开当前路径控制台，原编辑文本必须等控制台关闭后才能正常编辑。
+#-（十七）gvim代码重排（类似VS的alt+F8），用可视模式（按v）选定需要重排代码（不能ctrl+A），然后按=。
+#-（十八）linux下各种头文件可在目录：/usr/include/ 下找到。
+#-（十九）对printf来说%f和%lf无区别，可互换，一般无论是double型变量还是float变量都用%f；而对scanf来说%f对应float型，%lf对应double型，万不可改。因为按照float来读double的话，要是double较小，会读成0。
+#-（二十）win+x 可选择命题提示符管理员权限；进入非管理员模式的cmd，然后输入：runas /user:administrator cmd 但是这里你得知道administrator的密码。而这里不用administrator这个用户也可以，可以用同在一个管理组中的其他用户来启动cmd也是可以的，权限同样是管理员，比如administrators中还有一个用户叫：abc 那么可以用命令：runas /user:abc cmd。这个时候只要输入abc用户的登录密码即可。
+#-（二十一）文本中既有unix的换行符，又有dos的换行符，那么vim会认为你打开的是unix的，所以，那些dos的换行符就会出现恼人的^M。不过这种情况不常见。办法是：若你的vim版本大于7.1，并想用dos显示和保存，如下语句：:e ++ff=dos
+#-（二十二）p是可以被解决的问题，np是可以被验证的问题
+#-（二十三）用到链表时一定要检查链表头是否为NULL，即使你有十足把握也要检查，因为他妈的运行程序时会不给你任何原因地终止！！！
+#-（二十四）win8下按win+x后按c调出命令提示符，按a以管理员身份运行命令提示符
+#-（二十五）java数组定义的变量储存的是地址，传参时是值传递（传的是地址），所以如果方法改变了数组内容，原数组的内容也会改变
+#-（二十六）gvim中显示当前编码":echo &encoding"
+#-（二十七）BOM（byte-order mark），即字节顺序标记，它是插入到以UTF-8、UTF16或UTF-32编码Unicode文件开头的特殊标记，用来识别Unicode文件的编码类型。具体编码如下表：
+BOM                  Encoding  
+EF BB BF         UTF-8 
+FE FF                UTF-16 (big-endian) 
+FF FE                UTF-16 (little-endian) 
+00 00 FE FF     UTF-32 (big-endian) 
+FF FE 00 00     UTF-32 (little-endian)
+#-（二十八）域名解析：登陆域名管理平台，里面有一个域名解析的模块，点进去以后只要操作A记录或者别名里面的一项就可以了，如果是用A记录解析那么后面应该输入虚拟主机的IP，如果是用别名则输入完整的3级域名！虚拟主机的ip可通过ping它的域名获得。
+#-（二十九）原理hover，二级先设置样式是display:none;，当一级的元素处于:hover鼠标移上的时候，二级的元素就display:block;，二级就会显示出来了。
+<li>一级
+<ul>
+<li>二级1</li>
+<li>二级2</li>
+<li>二级3</li>
+</ul>
+</li>
+css
+li{padding:0;margin:0;list-style:none;}
+li ul{display:none;}
+li:hover ul{display:block;}
+#-（三十）使修改后的环境变量马上生效可用命令source .profile或用“.”代替source
+#-（三十一）C语言中'\1'表示什么意思：这是个转义字符，1代表的是ASCII值，“\1”的意思就是ASCII码值为1的那个字符
+#-（三十二）doGet和doPost的差异：当服务器创建servlet对象后，该对象会调用init方法初始化自己，以后每当服务器再接收到一个servlet请求时，就会产生一个新线程，在这个线程中让servlet对象调用service对象检查HTTP请求类型（get，post），并在service方法中根据请求类型对应的调用doGet ,doPost方法。如果不论用户请求类型是get还是post，服务器处理过程完全相同，那么可只在doPost中编写处理过程，在doGet中调用doPost就行了，反之也可以doGet中处理，doPost中调用doGet。如果根据请求类型不同而需要不同的处理，就需要在两个方法中编写不同的处理过程。get请求的东西（你页面输入的信息）会在地址栏显示所以不安全，post不显示，会好一点。
+#-（三十三）如何让c++程序跳出多重循环呢？1. java中有break [flag]的用法，可以解决这个问题，试了一下，但发现C++里不行，会报错，可能C++里没有这个用法；2. C/C++有个强制跳转的语法goto；3. 加判断标志，不满足条件时逐层终止
+#-（三十四）指针使用CONST:如果const位于*的左侧，则const就是用来修饰指针所指向的变量，即指针指向为常量；如果const位于*的右侧，const就是修饰指针本身，即指针本身是常量。
+#-（三十五）垃圾回收器要回收对象的时候，首先要调用这个类的finalize方法，一般的纯Java编写的Class不需要重新覆盖这个方法，因为Object已经实现了一个默认的，除非我们要实现特殊的功能(这 里面涉及到很多东西，比如对象空间树等内容)。  不过用Java以外的代码编写的Class(比如JNI，C++的new方法分配的内存)，垃圾回收器并不能对这些部分进行正确的回收，这时就需要我们覆盖默认的方法来实现对这部分内存的正确释放和回收(比如C++需要delete)。  总之，finalize相当于析构函数，他是垃圾回收器回收一个对象的时候第一个要调用的方法。不过由于Java的垃圾回收机制能自动为我们做这些事情，所以我们在一般情况下是不需要自己来手工释放的。
+#-（三十六）cmd进入mysql：mysql -u -root -p 回车后输入密码
+#-（三十七）安装完mysql 之后，登陆以后，不管运行任何命令，总是提示这个You must reset your password using ALTER USER statement before executing this statement.
+step 1: SET PASSWORD = PASSWORD('your new password');
+step 2: ALTER USER 'root'@'localhost' PASSWORD EXPIRE NEVER;
+step 3: flush privileges;
+#-（三十八）MSC微软管理控制台(Microsoft Management Control)文件。可以点击开始/运行，然后输入列文件名就可以打开相应的控制窗口。如
+　　certmgr.msc 
+　　作用：系统认证证书编辑。 
+　　ciadv.msc 
+　　作用：索引服务，链接文件*:\System Volume Information 
+　　comexp.msc 
+　　所在文件夹：C:\WINDOWS\system32\Com 
+　　作用：组件服务，可以打开本地服务。 
+　　compmgmt.msc 
+　　作用：本地计算机硬件和服务管理，功能很强大。 
+　　devmgmt.msc 
+　　作用：设备管理器 
+　　dfrg.msc 
+　　作用：磁盘碎片整理程序 
+　　diskmgmt.msc 
+　　作用：磁盘管理器，可以修改盘符，格式化和分区等。 
+　　eventvwr.msc 
+　　作用：事件查看器 
+　　fsmgmt.msc 
+　　作用：共享文件夹管理 
+　　gpedit.msc 
+　　作用：组策略管理器，功能强大。 
+　　lusrmgr.msc 
+　　作用：本地用户和组管理器 
+　　ntmsmgr.msc 
+　　作用：可移动存储管理器 
+　　ntmsoprq.msc 
+　　作用：可移动存储管理员操作请求 
+　　perfmon.msc 
+　　作用：性能察看管理器 
+　　rsop.msc 
+　　作用：各种策略的结果集 
+　　secpol.msc 
+　　作用：本地安全策略设置 
+　　services.msc 
+　　作用：各项本地服务管理器 
+　　wmimgmt.msc 
+　　作用：Windows管理体系结构（WMI）
+#-（三十九）用schtasks命令创建简单的定时任务：schtasks /create /tn 任务名 /tr 任务命令 /sc 频率 /st 开始时间(格式是00:00的本计算机时间) 删除任务：schtasks /delete /tn 任务名
+创建及删除都必须用管理者运行
+#-（四十）在命令提示符里输入两条命令，中间要带个什么符号隔开：可以用这三种分开  &  &&  ||
+用&隔开，用法是前后命令不管是可否运行都会运行下去，1命令&2命令，就是运行1命令，运行2命令。 
+用&&隔开，用法是前面的命令运行成功才运行后面的命令，1命令&&2命令，就是运行1命令没出错、运行成功才运行2命令。 
+用||隔开，用法是前面的命令运行不成功才运行后面的命令，1命令||2命令，就是运行1命令出错、运行不成功才运行2命令。
+#-（四十一）在命令后加 | clip，比如ipconfig /all |clip，回车后，画面不会显示结果，此时已经复制到粘贴板上了；或者使用clip < somefile 就会将该文件里面的内容复制到粘贴板上
+#-（四十二）forfiles命令可用于查找文件：forfiles /s /m *.java /c "cmd /c del @file" 这就是删除查找到的当前目录的全部java文件，若不带/c则默认为"cmd /c echo @file"，详情键入forfiles /?查询
+findstr使用正则表达式搜索文件中的文本模式：findstr /i /s /n /c:"String" *.*
+使用空格分隔多个搜索字符串，除非参数以 /c 为前缀。要在文件 x.y 中搜索“hello”或“there”，请键入：
+findstr "hello there" x.y
+要在文件 x.y 中搜索“hello there”，请键入：
+findstr /c:"hello there" x.y
+若要查找文件 Proposal.txt 中出现的所有单词“Windows”（首字母 W 大写），请键入：
+findstr Windows proposal.txt
+#-（四十三）String与new String的区别（"hello"和new String("hello")的区别）：
+如果是"hello"，JVM会先去共享的字符串池中查找，有没有"hello"这个词，如果有直接返回它的引用；如果没有，就会创建这个对象，再返回。因此，"a"+"b"相当于存在3个对象，分别是"a"、"b"、"ab"。
+而new String("hello")，则省去了查找的过程，直接就创建一个hello的对象，并且返回引用。
+#-（四十四）为什么要有Runnable接口的出现？
+1：通过继承Thread类的方式，可以完成多线程的建立。但是这种方式有一个局限性，如果一个类已经有了自己的父类，就不可以继承Thread类，因为java单继承的局限性。
+可是该类中的还有部分代码需要被多个线程同时执行。这时怎么办呢？
+只有对该类进行额外的功能扩展，java就提供了一个接口Runnable。这个接口中定义了run方法，其实run方法的定义就是为了存储多线程要运行的代码。
+所以，通常创建线程都用第二种方式。
+因为实现Runnable接口可以避免单继承的局限性。
+
+2：其实是将不同类中需要被多线程执行的代码进行抽取。将多线程要运行的代码的位置单独定义到接口中。为其他类进行功能扩展提供了前提。
+所以Thread类在描述线程时，内部定义的run方法，也来自于Runnable接口。
+
+实现Runnable接口可以避免单继承的局限性。而且，继承Thread，是可以对Thread类中的方法，进行子类复写的。但是不需要做这个复写动作的话，只为定义线程代码存放位置，实现Runnable接口更方便一些。所以Runnable接口将线程要执行的任务封装成了对象。
+#-（四十五）Random类使用说明
+　　带种子与不带种子的区别Random类使用的根本是策略分带种子和不带种子的Random的实例。
+　　通俗说，两者的区别是：带种子的，每次运行生成的结果都是一样的。（产生相同随机值序列的能力在软件测试以及其他许多应用中是很有用的。可以在使用不同随机数序列之前，使用固定的随即序列以测试程序是否正确）
+　　不带种子的，每次运行生成的都是随机的，没有规律可言。
+#-（四十六）访问限制修饰符
+    访问权限   类   包  子类  其他包
+
+    public     ∨   ∨   ∨     ∨
+
+    protect    ∨   ∨   ∨     ×
+
+    default    ∨   ∨   ×     ×
+
+    private    ∨   ×   ×     ×
+	Java中类的访问限制限修饰符只有三个：public/private/protected。
+	当一个类的成员前面没有任何访问权限修饰符修饰时，我们就说他是“friendly权限”，或者“default权限”，java不存在friendly关键字，但是存在default，用于switch语句中
+#-（四十七）往HashMap中put元素的时候，先根据key的hashCode重新计算hash值，根据hash值得到这个元素在数组中的位置（即下标），如果key是null则会被存到数组的第一个位置，因为null的hash值总是0，如果数组该位置上已经存放有其他元素了，那么在这个位置上的元素将以链表的形式存放，新加入的放在链头。如果数组该位置上没有元素，就直接将该元素放到此数组中的该位置上。如果放入了相同的key，若equals()方法返回ture的话则会替换老的value。
+#-（四十八）HashSet实现Set接口，由哈希表（实际上是一个HashMap实例）支持。它不保证set的迭代顺序；特别是它不保证该顺序恒久不变。此类允许使用null元素。HashSet中不允许有重复元素，这是因为HashSet是基于HashMap实现的，HashSet中的元素都存放在HashMap的key上面，而value中的值都是统一的一个private static final Object PRESENT = new Object();。HashSet跟HashMap一样，都是一个存放链表的数组。相关HashSet的操作，基本上都是直接调用底层HashMap的相关方法来完成。
+#-（四十九）gvim C++代码（其他的也一样，只是插件和生成的标签不同）自动补全需要两个工具：omniCppComplete用于编辑时提供补全支持，ctags用于提供补全标签索引
+#-（五十）This seem to be a bug. From Vim E303: Unable to open swap file for "[No Name]", recovery impossible, I should add this to _gvimrc: set directory=.,$TEMP
+#-（五十一）gvim自动补全
+Ctrl+P       向前切换成员
+Ctrl+N      向后切换成员
+Ctrl+E       表示退出下拉窗口, 并退回到原来录入的文字
+Ctrl+Y       表示退出下拉窗口, 并接受当前选项
+vim中的其他补全方式还有:
+Ctrl+X Ctrl+L
+整行补全
+Ctrl+X Ctrl+N   根据当前文件里关键字补全
+Ctrl+X Ctrl+K    根据字典补全
+Ctrl+X Ctrl+T    根据同义词字典补全
+Ctrl+X Ctrl+I     根据头文件内关键字补全
+Ctrl+X Ctrl+]     根据标签补全
+Ctrl+X Ctrl+F    补全文件名
+Ctrl+X Ctrl+D   补全宏定义
+Ctrl+X Ctrl+V   补全vim命令
+Ctrl+X Ctrl+U   用户自定义补全方式
+Ctrl+X Ctrl+S    拼写建议
+#-（五十二）线程同步的一个误区：
+之前一直以为，线程如果被唤醒后再次执行时，会从头开始运行这个线程，也就是重新运行Runnable中的run()方法；
+而实际情况是，被唤醒并且被执行的线程是从上次阻塞的位置从下开始运行，也就是从wait()方法后开始执行。
+所以判断是否进入某一线程的条件 是用while判断，而不是用If判断判断。
+#-（五十三）要想掌握finally，只需要知道在一个方法中，哪些地方是结束点（无需捕捉的异常Error和RuntimeException、return和块的结尾），即：哪些地方会结束该方法的执行，JVM在这个结束点执行之前，会先去执行finally。
+#-（五十四）stackoverflow上关于为什么java连接数据库要用Class.forName这个方法加载驱动：When you load a driver literally with Class.forName("oracle.jdbc.driver.OracleDriver") it might feel like overkill, but if you keep in mind that it could also be a string pulled from a config file (or from user input) you might start to understand why it is so powerful.
+#-（五十五）DOM、SAX与PULL解析XML文件的区别
+#-（五十六）如果在<servlet>元素中配置了一个<load-on-startup>元素，那么WEB应用程序在启动时，就会装载并创建Servlet的实例对象、以及调用Servlet实例对象的init()方法。
+    举例：
+    <servlet>
+        <servlet-name>invoker</servlet-name>
+        <servlet-class>
+            org.apache.catalina.servlets.InvokerServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+　　用途：为web应用写一个InitServlet，这个servlet配置为启动时装载，为整个web应用创建必要的数据库表和数据。
+#-（五十七）cookie和session机制之间的区别与联系。笔者曾经常去的一家咖啡店有喝5杯咖啡免费赠一杯咖啡的优惠，然而一次性消费5杯咖啡的机会微乎其微，这时就需要某种方式来纪录某位顾客的消费数量。想象一下其实也无外乎下面的几种方案： 
+
+    1、该店的店员很厉害，能记住每位顾客的消费数量，只要顾客一走进咖啡店，店员就知道该怎么对待了。这种做法就是协议本身支持状态。 
+
+    2、发给顾客一张卡片，上面记录着消费的数量，一般还有个有效期限。每次消费时，如果顾客出示这张卡片，则此次消费就会与以前或以后的消费相联系起来。这种做法就是在客户端保持状态。 
+
+    3、发给顾客一张会员卡，除了卡号之外什么信息也不纪录，每次消费时，如果顾客出示该卡片，则店员在店里的纪录本上找到这个卡号对应的纪录添加一些消费信息。这种做法就是在服务器端保持状态。 
+
+    由于HTTP协议是无状态的，而出于种种考虑也不希望使之成为有状态的，因此，后面两种方案就成为现实的选择。具体来说cookie机制采用的是在客户端保持状态的方案，而session机制采用的是在服务器端保持状态的方案。同时我们也看到，由于采用服务器端保持状态的方案在客户端也需要保存一个标识，所以session机制可能需要借助于cookie机制来达到保存标识的目的，但实际上它还有其他选择。 
+
+	一般情况下，session都是存储在内存里，当服务器进程被停止或者重启的时候，内存里的session也会被清空，如果设置了session的持久化特性，服务器就会把session保存到硬盘上，当服务器进程重新启动或这些信息将能够被再次使用，Weblogic Server支持的持久性方式包括文件、数据库、客户端cookie保存和复制。 
+
+	对session来说是只认id不认人，因此不同的浏览器，不同的窗口打开方式以及不同的cookie存储方式都会对“开两个浏览器窗口访问应用程序会使用同一个session还是不同的session”这个问题的答案有影响。 
+#-（五十八）正则表达式的开始:^ 结束:$
+#-（五十九）http请求：
+	请求行：
+　　请求行中的GET称之为请求方式，请求方式有：POST、GET、HEAD、OPTIONS、DELETE、TRACE、PUT，常用的有： GET、 POST
+　　用户如果没有设置，默认情况下浏览器向服务器发送的都是get请求，例如在浏览器直接输地址访问，点超链接访问等都是get，用户如想把请求方式改为post，可通过更改表单的提交方式实现。
+　　不管POST或GET，都用于向服务器请求某个WEB资源，这两种方式的区别主要表现在数据传递上：如果请求方式为GET方式，则可以在请求的URL地址后以?的形式带上交给服务器的数据，多个数据之间以&进行分隔，例如：GET /mail/1.html?name=abc&password=xyz HTTP/1.1
+　　GET方式的特点：在URL地址后附带的参数是有限制的，其数据容量通常不能超过1K。
+　　如果请求方式为POST方式，则可以在请求的实体内容中向服务器发送数据，Post方式的特点：传送的数据量无限制。
+
+	消息头：
+	HTTP请求中的常用消息头：
+　　accept:浏览器通过这个头告诉服务器，它所支持的数据类型
+　　Accept-Charset: 浏览器通过这个头告诉服务器，它支持哪种字符集
+　　Accept-Encoding：浏览器通过这个头告诉服务器，支持的压缩格式
+　　Accept-Language：浏览器通过这个头告诉服务器，它的语言环境
+　　Host：浏览器通过这个头告诉服务器，想访问哪台主机
+　　If-Modified-Since: 浏览器通过这个头告诉服务器，缓存数据的时间
+　　Referer：浏览器通过这个头告诉服务器，客户机是哪个页面来的  防盗链
+　　Connection：浏览器通过这个头告诉服务器，请求完后是断开链接还是何持链接
+
+	http响应：
+	状态行：
+	状态行格式： HTTP版本号　状态码　原因叙述<CRLF>
+      举例：HTTP/1.1 200 OK
+　　状态码用于表示服务器对请求的处理结果，它是一个三位的十进制数。响应状态码分为5类，如下所示：
+	状态码		含义
+	100~199		表示成功接收请求，要求客户端继续提交下一次请求才能完成整个处理过程
+	200~299		表示成功接收请求并已完成整个处理过程，常用200
+	300~399
+	为完成请求，客户需进一步细化请求。例如，请求的资源已经移动一个新地址，常用302、307和304
+	400~499		客户端的请求有错误，常用404
+	500~599		服务器端出现错误，常用500
+
+	响应头：
+　　HTTP响应中的常用响应头(消息头)：
+　　Location: 服务器通过这个头，来告诉浏览器跳到哪里
+　　Server：服务器通过这个头，告诉浏览器服务器的型号
+　　Content-Encoding：服务器通过这个头，告诉浏览器，数据的压缩格式
+　　Content-Length: 服务器通过这个头，告诉浏览器回送数据的长度
+　　Content-Language: 服务器通过这个头，告诉浏览器语言环境
+　　Content-Type：服务器通过这个头，告诉浏览器回送数据的类型
+　　Refresh：服务器通过这个头，告诉浏览器定时刷新
+　　Content-Disposition: 服务器通过这个头，告诉浏览器以下载方式打数据
+　　Transfer-Encoding：服务器通过这个头，告诉浏览器数据是以分块方式回送的
+　　Expires: -1  控制浏览器不要缓存
+　　Cache-Control: no-cache  
+　　Pragma: no-cache　
+#-（六十）application对象javax.servlet.ServletContext
+application 对象可将信息保存在服务器中，直到服务器关闭，否则application对象中保存的信息会在整个应用中都有效。与session对象相比，application对象生命周期更长，类似于系统的“全局变量”。
+服务器启动后就产生了这个Application对象，当客户再所访问的网站的各个页面之间浏览时，这个Application对象都是同一个，直到服务器关闭。但是与Session对象不同的时，所有客户的Application对象都时同一个，即所有客户共享这个内置的Application对象。
+setAttribute(String key,Object obj)：将参数Object指定的对象obj添加到Application对象中，并为添加的对象指定一个索引关键字。
+getAttribute(String key)：获取Application对象中含有关键字的对象。
+#-（六十一）cookie 对象
+Cookie是Web服务器保存在用户硬盘上的一段文本。Cookie允许一个Web站点在用户电脑上保存信息并且随后再取回它。举例来说，一个Web站点可能会为每一个访问者产生一个唯一的ID，然后以Cookie文件的形式保存在每个用户的机器上。
+创建一个Cookie对象 调用Cookie对象的构造函数就可以创建Cookie对象。Cookie对象的构造函数有两个字符串参数：Cookie名字和Cookie值。 
+例如：Cookie c = new Cookie("username","john"); 将Cookie对象传送到客户端。
+JSP中，如果要将封装好的Cookie对象传送到客户端，可使用Response对象的addCookie()方法。 
+例如：response.addCookie(c)，读取保存到客户端的Cookie。
+ 使用Request对象的getCookie()方法，执行时将所有客户端传来的Cookie对象以数组的形式排列，如果要取出符合需要的Cookie对象，就需要循环比较数组内每个对象的关键字。设置Cookie对象的有效时间，用Cookie对象的setMaxAge()方法便可以设置Cookie对象的有效时间，设为0则命令浏览器删除该cookie，
+例如：Cookie c = new Cookie("username","john");c.setMaxAge(3600);
+Cookie对象的典型应用时用来统计网站的访问人数。由于代理服务器、缓存等的使用，唯一能帮助网站精确统计来访人数的方法就是为每个访问者建立一个唯一ID。使用Cookie，网站可以完成以下工作:
+ 测定多少人访问过。测定访问者有多少是新用户（即第一次来访），多少是老用户。
+测定一个用户多久访问一次网站。当一个用户第一次访问时，网站在数据库中建立一个新的ID，并把ID通过Cookie传送给用户。用户再次来访时，网站把该用户ID对应的计数器加1，得到用户的来访次数。
+要想在cookie中存储中文，那么必须使用URLEncoder类里面的encode(String s, String enc)方法进行中文转码，例如：
+Cookie cookie = new Cookie("username", URLEncoder.encode("你好", "UTF-8"));
+response.addCookie(cookie);
+在获取cookie中的中文数据时，再使用URLDecoder类里面的decode(String s, String enc)进行解码，例如：
+URLDecoder.decode(cookies[i].getValue(), "UTF-8");
+#-（六十二）用Eclipse新版本新建servlet时候，发现创建Servlet后，Eclipse不会自动在web.xml中生成该Servlet对应的mapping信息，而是在Servlet代码中加入注解@WebServlet
+查找文档发现，这是Servlet3.0新特性(得Tomcat7.0版本及以上)，@WebServlet 用于将一个类声明为 Servlet，该注解将会在部署时被容器处理，容器将根据具体的属性配置将相应的类部署为 Servlet。该注解具有String:name（指定Servlet的name属性，等价于<servlet-name>，如果没有显示指定，则该Servlet的取值即为类的全限定名）、String[]:value（该属性等价于urlPatterns属性，两个属性不能同时使用）、String[]:urlPatterns（指定一组Servlet的URL匹配模式。等价于<url-pattern>标签）、int:loadOnStartup（指定Servlet的加载顺序，等价于<load-on-startup>标签）、WebInitParam[]:initParams（指定一组Servlet初始化参数，等价于<init-param>标签）、boolean:asyncSupported（声明Servlet是否支持异步操作模式，等价于<async-supported>标签）、String:description（该Servlet的描述信息，等价于<description>）、String:displayName（该Servlet的显示名，通常配合工具使用，等价于<display-name>标签）等常用属性（以上有属性均为可选属性，但是 value 或者 urlPatterns 通常是必需的，且二者不能共存，如果同时指定，通常是忽略value 的取值），如：
+@WebServlet(  
+description = "This is Login Action", //描述  
+name = "LoginAction", //servlet名称  
+urlPatterns = { "/servlet/LoginAction" },//url  
+loadOnStartup = 1, //启动项  
+initParams = { @WebInitParam(name = "username", value = "张三") }//初始化参数  
+)  
+#-（六十三）css背景图片（需要注意路径，通常css文件和图片在不同目录）
+body { 
+	background: #32353a url("../img/1.jpg") no-repeat 20px左 20px上 20px右 20px下;
+    background-size:cover; 背景图会按比例缩放填充满整个背景（100% 100%表示宽度和高度自由缩放到覆盖整个页面）
+}
+在IE之下，你会发现上面的CSS控制会很不理想，它并不会因为你有了background-size:100% 100%;而自动缩放，图片原本怎么样就怎么样显示，如果容器比图片小，则只能显示图上的一部分，那么要达到这个效果，则需要使用IE特有的滤镜AlphaImageLoader
+语法：
+filter : progid:DXImageTransform.Microsoft.AlphaImageLoader ( enabled=bEnabled , sizingMethod=sSize , src=sURL )
+属性：
+enabled:　可选项。布尔值(Boolean)。设置或检索滤镜是否激活。true | false
+true:　默认值。滤镜激活。
+false:　滤镜被禁止。
+sizingMethod:　可选项。字符串(String)。设置或检索滤镜作用的对象的图片在对象容器边界内的显示方式。
+crop:　剪切图片以适应对象尺寸。
+image:　默认值。增大或减小对象的尺寸边界以适应图片的尺寸。
+scale:　缩放图片以适应对象的尺寸边界。
+src:　必选项。字符串(String)。使用绝对或相对 url 地址指定背景图像。假如忽略此参数，滤镜将不会作用。
+例：
+hello{
+    width:10%;
+    height:50%;
+    position:absolute;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='1.jpg',sizingMethod='scale');
+}
+#-（六十四）a标签的href与onclick事件的区别详解
+onclick中javascript的区别一般没用到都没注意，但出错时才有些郁闷，看文本章解释如下：
+
+以前一直很随意，后来看.net里的linkbutton似乎是用在<a href="javascript:fun();"...>的形式，今天用这种方式就遇到一些问题，摘网友的文章和我的结论放在下面：
+
+1.链接的 onclick 事件被先执行，其次是 href 属性下的动作（页面跳转，或 javascript 伪链接）； 
+2.假设链接中同时存在 href 与 onclick，如果想让 href 属性下的动作不执行，onclick 必须得到一个 false 的返回值。不信，你可以将 goGoogle 函数中的 return false 注释掉； 
+3.如果页面过长有滚动条，且希望通过链接的 onclick 事件执行操作。应将它的 href 属性设为 javascript:void(0);，而不要是 #，这可以防止不必要的页面跳动；
+4.如果在链接的 href 属性中调用一个有返回值的函数，当前页面的内容将被此函数的返回值代替； 
+5.在按住Shift键的情况下会有所区别。 
+6.今天我遇到的问题，在IE6.0里以href的形式访问不到parentNode。 
+7.尽量不要用javascript:协议做为A的href属性，这样不仅会导致不必要的触发window.onbeforeunload事件，在IE里面更会使gif动画图片停止播放。
+ 就这些，花了不少时间在这上面。
+
+[缘由]
+用CheckBoxList控件时想实现在每个checkbox后再加链接的功能，点链接实现一些功能之外，还要把checkbox选中。
+
+<input type="checkbox" name="chk" id="chk">
+ <label for="chk">选中它<a onclick="this.parentNode.click();" href="#" style="border:solid 1px blue;">[label中的链接]</a></label>
+
+最后用parentNode来实现的。
+
+<a href="javascript:void(0)" onclick="defineField(this);return false">ClickToDefine</a>
+#-（六十五）div居中以及div中的元素居中
+div水平和垂直居中，text-align和vertical-align不起作用，因为标签div没有这两个属性，所以再css中设置这两个值不能居中的效果。
+
+1. div水平居中:设置margin的左右边距为自动。
+
+1 div
+2 {
+3      margin:0 auto;
+4 }
+
+2.   div中的元素居中
+
+2.1 div中的文字居中：将div的行高设置跟其高度一样的值。
+
+1 div
+2 {
+3     height:200px;
+4     line-height:200px;
+5 }
+2.2 div中的图片居中,方法一：将div的行高设置跟其高度一样的值，将其中的图片img外套上标签i,设置i和div同时垂直居中
+
+
+ 1 div
+ 2 {
+ 3     width: 200px;
+ 4     height: 200px;
+ 5     line-height: 200px;
+ 6     vertical-align: middle;
+ 7     background-color: Gray;
+ 8 }
+ 9 div i
+10 {
+11     vertical-align: middle;
+12 }
+
+2.3 div中的图片居中,方法二：将div转换成tablecell,让后设置vertical-align属性居中。
+
+1 div
+2 {
+3     width: 200px;
+4     height: 200px;
+5     display: table-cell;
+6     vertical-align: middle;
+7     background-color: Gray;
+8 }
+#-（六十六）在设置了 width 或 height 的div中，写上overflow:hidden;的话，超出宽度或高度的部分，就隐藏了。
+就是说，这个overflow:hidden;属性可以保证div的高度或宽度不变。
+div里添加的东西再多，高度或宽度也不变。超出的部分隐藏。
+#-（六十七）缓慢回到顶部：
+		<script type="text/javascript">			
+			$(window).scroll(function(){							
+				if($(window).scrollTop()<=100){
+					$("#scrollTop").fadeOut(1000);	
+				}else{
+					$("#scrollTop").fadeIn(1000);
+				}
+			})
+			$("#scrollTop").click(function(){
+				 $('body,html').animate({scrollTop:0},500);
+			})
+		</script>
+		或者锚点：
+		function mScroll(id){$("html,body").stop(true);$("html,body").animate({scrollTop: $("#"+id).offset().top}, 1000);} 
+#-（六十八）matlab cell
+	 cell数组是MATLAB的一种特殊矩阵，或者叫做广义矩阵。矩阵的每个元素可以是任何一种数据类型的常数、常量或者矩阵，所以矩阵的每个的元素叫做cell。和一般的数值矩阵一样，元胞数组的内存空间也是动态分配的。
+　　通过小括号()里面加下标，访问cell数组中的数据，返回的是对应的cell。
+　　通过大括号{}里面加下标，访问cell数组中的数据，返回的是对应cell的内容。
+
+#-（六十九）ajax & angularJs
+You can think of AJAX as a way to communicate (send requests and get responses) with the server without refreshing. i.e. Asynchronously. 
+Angular extends the above with 2-way data binding, therefore the HTML is always in communication with the server so as to update any changes.  It is a full fledged front end MVC framework which does a lot more. 
+#-（七十）JavaScript中的原型继承(prototype-based inheritance)
+原型继承的基础是原型链查找
+原型链查找基本概念：
+1. 每一个函数 F 都有一个原型对象（prototype）F.prototype
+2. 每一个函数都可以通过 new 关键字化身成为一个类构造函数，new F 会产生一个对象 O
+3. 在调用对象的某个属性或者方法，比如 http://O.xxx 的时候，会首先查找对象自身是否有这个方法或者属性，如果没找到就会去对象的构造函数的原型对象中查找（注意有两个定语），也就是查找 O 的构造函数 F 的原型对象 http://F.prototype.xxx
+4. F.prototype 也是一个对象，查找 http://F.prototype.xxx 的时候会重复第 3 步的过程
+#-（七十一）database index
+The primary key constraint on these columns will generate a composite index, which is unique of course. The command the database would use to create the index looks something like the following:
+
+	CREATE UNIQUE CLUSTERED INDEX PK_Order_Details ON [Order Details] (OrderID, ProductID) 
+The order in which columns appear in a CREATE INDEX statement is significant. The primary sort order for this index is OrderID. When the OrderID is the same for two or more records, the database will sort this subset of records on ProductID.
+
+The order of columns determines how useful the index is for a query. Consider the phone book sorted by last name then first name. The phone book makes it easy to find all of the listings with a last name of Smith, or all of the listings with a last name of Jones and a first name of Lisa, but it is difficult to find all listings with a first name of Gary without scanning the book page by page.
+#-（七十二）restrict is for defining the directive type, and it can be A (Attribute), C (Class), E (Element), and M (coMment) , let's assume that the name of the directive is Doc :
+
+Type : Usage
+
+A =  <div Doc></div>
+
+C =  <div class="Doc"></div>
+
+E =  <Doc data="book_data"></Doc>
+
+M =  <!--directive:Doc -->
+#-（七十三）Spring基于注解实现Bean定义支持如下三种注解：
+Spring自带的@Component注解及扩展@Repository、@Service、@Controller 
+#-（七十四）A modal dialog is a window that forces the user to interact with it before they can go back to using the parent application. A great example of this would be a prompt for saving, or the "open file" dialog.
+#-（七十五）Doing a little research, I was reminded that when you use percents to apply the margin of an element, the browsers determine the actual size of the margin by multiply the percent against the width of the parent node (this is true for margin-top, -right, -bottom, and -left). It is not based on either the height or width of the element that the margin is applied to. So if you have the following DOM snippet:
+
+Example 1: Margins
+<div style="width: 20px">
+<div id="temp1" style="margin-top: 50%">Test top</div>
+<div id="temp2" style="margin-right: 25%">Test right</div>
+<div id="temp3" style="margin-bottom: 75%">Test bottom</div>
+<div id="temp4" style="margin-left: 100%">Test left</div>
+</div>
+
+Then you will have the following offsets:
+Example 2: Margins Values
+temp1.marginTop = 20px * 50% = 10px;
+temp2.marginRight = 20px * 25% = 5px;
+temp3.marginBottom = 20px * 75% = 15px;
+temp4.marginLeft = 20px * 100% = 20px;
+
+I then decided to research padding, for which I initially thought percentages would be relative to the element on which the padding is applied. However, I was surprised to relearn that the padding is also relative to the width of the applied elements parent node. So using percentages with padding works exactly as it does with margin.
+
+Lastly, I was curious about the styles: top, right, bottom, and left, which you can apply to any non-statically positioned element. These styles are also applied, based on the parent node, however, they are different in that they are relative to the height instead of the width. For example:
+
+Example 3: Positioned Elements
+<div style="height: 100px; width: 50px">
+<div id="temp1" style="position: relative; top: 50%">Test top</div>
+<div id="temp2" style="position: relative; right: 25%">Test right</div>
+<div id="temp3" style="position: relative; bottom: 75%">Test bottom</div>
+<div id="temp4" style="position: relative; left: 100%">Test left</div>
+</div>
+
+In this case you will have the following offsets:
+
+Example 4: Positioned Values
+temp1.top = 100px * 50% = 50px;
+temp2.right = 100px * 25% = 25px;
+temp3.bottom = 100px * 75% = 75px;
+temp4.left = 100px * 100% = 100px;
+
+In all cases, you can use both positive and negative values. There is a special-case with positioned elements: when the parent element does not have a height, then percentage values are processed as auto instead. All this can be a bit confusing, but one just needs to remember that when using percentages with padding and margin it will be relative to the width of the parent node, while positioning a non-static element percentages will be applied relative to the height of the parent node.
+#-（七十六）关于自定义注解
+ @interface实际上是继承了java.lang.annotation.Annotation,所以定义annotation时不能继承其他annotation或interface. 
+ java.lang.annotation.Inherited（@Inherited）用于指定该Annotation用于父类时是否能够被子类继承. 
+ @Inherited 元注解是一个标记注解，@Inherited阐述了某个被标注的类型是被继承的。如果一个使用了@Inherited修饰的annotation类型被用于一个class，则这个annotation将被用于该class的子类。
+#-（七十七）
+ "foo" && "bar"; // "bar"
+ "bar" && "foo"; // "foo"
+ "foo" && "";    // ""
+ ""    && "foo"; // ""
+
+ "foo" || "bar"; // "foo"
+ "bar" || "foo"; // "bar"
+ "foo" || "";    // "foo"
+ ""    || "foo"; // "foo"
+ Both && and || result in the value of (exactly) one of their operands:
+ A && B returns the value A if A can be coerced into false; otherwise, it returns B.
+ A || B returns the value A if A can be coerced into true; otherwise, it returns B.
+ In JavaScript, all values are considered "truthy", except for the following six "falsy" values:
+ false
+ undefined
+ null
+ NaN
+ 0 (both +0 and -0)
+ ""
+ #-（七十八）$.fn allows you to extend jQuery with your own functions.
+
+ For example,
+ $.fn.something = function{}
+ will allow you to use
+ $("#element").something()
+
+ $.fn is also synonymous with jQuery.fn which might make your Google searches easier.
+#-（七十九）用equals()方法时，为了避免nullPointerExcption，通常将常亮放在前面: Constat.equals(variable)
+#-（八十）mac系统如何显示隐藏文件
+ 在Finder里面直接按 ⌘⇧. （Cmd+Shift+.）即可切换隐藏文件显示与隐藏。
+ 没有必要去用命令来更改默认设置。
+#-（八十一）IllegalArgumentException: argument type mismatch in Hibernate
+Forgot to implement CreatableAndUpdatable in data model class
+#-（八十二）newFixedThreadPool public static ExecutorService newFixedThreadPool(int nThreads)
+Creates a thread pool that reuses a fixed number of threads operating off a shared <! unbounded queue !>. At any point, at most nThreads threads will be active processing tasks. If additional tasks are submitted when all threads are active, they will wait in the queue until a thread is available. If any thread terminates due to a failure during execution prior to shutdown, a new one will take its place if needed to execute subsequent tasks. The threads in the pool will exist until it is explicitly shutdown.
+Parameters:
+nThreads - the number of threads in the pool
+Returns:
+the newly created thread pool
+Throws:
+IllegalArgumentException - if nThreads <= 0
+#-（八十三）~./profile
+export PS1='\033[7;36m[\h@\u \A \W]\$\033[0m '
+\u: 目前用户的账号名称
+\A: 显示时间，为24小时格式的 "HH:MM"
+\W: 利用basename函数取得工作目录名称，所以仅会列出最后一个目录名
+\$: 提示符，如果是root时，提示符为#，否则就是$
+
+You’ve probably seen things like \e[32m or \x1b[1;31m. These are ANSI escape codes used for defining a color. All ANSI escape sequences start with, well, ESC. There’re several ways of encoding an ESC:
+Shell	\e
+ASCII Hex	\0x1B
+ASCII Oct	\033
+So \x1b[31;4m, \e[31;4m and \033[31;4m are different ways to write the same sequence. Let’s look at the structure of this sequence.
+\x1b[ is a Control Sequence Introducer that consists of hexadecimal ASCII ESC character code and a [.
+
+As 256-color lookup tables became common on graphic cards, escape sequences were added to select from a pre-defined set of 256 colors:[citation needed]
+
+   ESC[ … 38;5;<n> … m Select foreground color
+   ESC[ … 48;5;<n> … m Select background color
+   0x00-0x07:  standard colors (as in ESC [ 30–37 m)
+   0x08-0x0F:  high intensity colors (as in ESC [ 90–97 m)
+See more on WIKI: ANSI escape code
+#-（八十四）About @Transactional
+Note: In proxy mode (which is the default), only 'external' method calls coming in through the proxy will be intercepted. This means that 'self-invocation', i.e. a method within the target object calling some other method of the target object, won't lead to an actual transaction at runtime even if the invoked method is marked with @Transactional!
+
+Consider the use of AspectJ mode (see below) if you expect self-invocations to be wrapped with transactions as well. In this case, there won't be a proxy in the first place; instead, the target class will be 'weaved' (i.e. its byte code will be modified) in order to turn @Transactional into runtime behavior on any kind of method.
+#-（八十五）A project has a @RequestMapping mapping for a rest method that looks like: /v{version:[1-9]}
+
+The version is a variable name, as a Path Parameter in the URL. The bracketed portion is a regex expression. In this case a single number from any within the range of 1 to 9.
+So that portion of the URL is valid with something like, /v4 and you have access to the numeric portion in your code as a variable named version.
+
+@RequestMapping(value = "/v1/fcUser/{loginId}", method = RequestMethod.GET)
+	@ResponseBody
+	public ResultVo findEmp(@PathVariable("loginId") String loginId) {}
+#-（八十六）What is reflection, and why is it useful?
+The name reflection is used to describe code which is able to inspect other code in the same system (or itself).
+For example, say you have an object of an unknown type in Java, and you would like to call a 'doSomething' method on it if one exists. Java's static typing system isn't really designed to support this unless the object conforms to a known interface, but using reflection, your code can look at the object and find out if it has a method called 'doSomething' and then call it if you want to.
+So, to give you a code example of this in Java (imagine the object in question is foo) :
+
+Method method = foo.getClass().getMethod("doSomething", null);
+method.invoke(foo, null);
+
+One very common use case in Java is the usage with annotations. JUnit 4, for example, will use reflection to look through your classes for methods tagged with the @Test annotation, and will then call them when running the unit test.
+There are some good reflection examples to get you started at http://docs.oracle.com/javase/tutorial/reflect/index.html
+And finally, yes, the concepts are pretty much similar in other statically types languages which support reflection (like C#). In dynamically typed languages, the use case described above is less necessary (since the compiler will allow any method to be called on any object, failing at runtime if it does not exist), but the second case of looking for methods which are marked or work in a certain way is still common.
+
+Important Update from a comment:
+The ability to inspect the code in the system and see object types is not reflection, but rather Type Introspection. Reflection is then the ability to make modifications at runtime by making use of introspection. The distinction is necessary here as some languages support introspection, but do not support reflection. One such example is C++
+#-（八十七）Is Spring annotation @Controller same as @Service?
+No, they are pretty different from each other.
+
+Both are different specializations of @Component annotation (in practice, they're two different implementations of the same interface) so both can be discovered by the classpath scanning (if you declare it in your XML configuration)
+
+@Service annotation is used in your service layer and annotates classes that perform service tasks, often you don't use it but in many case you use this annotation to represent a best practice. For example, you could directly call a DAO class to persist an object to your database but this is horrible. It is pretty good to call a service class that calls a DAO. This is a good thing to perform the separation of concerns pattern.
+
+@Controller annotation is an annotation used in Spring MVC framework (the component of Spring Framework used to implement Web Application). The @Controller annotation indicates that a particular class serves the role of a controller. The @Controller annotation acts as a stereotype for the annotated class, indicating its role. The dispatcher scans such annotated classes for mapped methods and detects @RequestMapping annotations.
+
+So looking at the Spring MVC architecture you have a DispatcherServlet class (that you declare in your XML configuration) that represent a front controller that dispatch all the HTTP Request towards the appropriate controller classes (annotated by @Controller). This class perform the business logic (and can call the services) by its method. These classes (or its methods) are typically annotated also with @RequestMapping annotation that specify what HTTP Request is handled by the controller and by its method.
+For example:
+
+@Controller
+@RequestMapping("/appointments")
+public class AppointmentsController {
+
+    private final AppointmentBook appointmentBook;
+
+    @Autowired
+    public AppointmentsController(AppointmentBook appointmentBook) {
+        this.appointmentBook = appointmentBook;
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public Map<String, Appointment> get() {
+        return appointmentBook.getAppointmentsForToday();
+    }
+
+This class is a controller.
+This class handles all the HTTP Request toward "/appointments" "folder" and in particular the get method is the method called to handle all the GET HTTP Request toward the folder "/appointments".
+#-（八十八）The DispatcherServlet
+
+Spring's web MVC framework is, like many other web MVC frameworks, request-driven, designed around a central servlet that dispatches requests to controllers and offers other functionality that facilitates the development of web applications. Spring's DispatcherServlet however, does more than just that. It is completely integrated with the Spring IoC container and as such allows you to use every other feature that Spring has.
+
+https://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/mvc.html#mvc-servlet
+#-（八十九）REST
+An architectural style called REST (Representational State Transfer) advocates that web applications should use HTTP as it was originally envisioned. Lookups should use GET requests. PUT, POST, and DELETE requests should be used for mutation, creation, and deletion respectively.
+REST是一种架构风格，“用URL定位资源，用HTTP（的方法）描述动作”
+#-（九十）server returns a JSON to client
+@RequestBody and @ResponseBody annotations in Spring
+If you have Jackson on your classpath (and have an <mvc:annotation-driven> setup), Spring would convert the incoming JSON to a UserStats object from the post body (because you added the @RequestBody annotation) and it would serialize the returned object to JSON (because you added the @ResponseBody annotation). 
+#-（九十一）The parse function parses a JSON text (a JSON-formatted String) and produces an ECMAScript value. The JSON format is a restricted form of ECMAScript literal. JSON objects are realized as ECMAScript objects. JSON arrays are realized as ECMAScript arrays. JSON strings, numbers, booleans, and null are realized as ECMAScript Strings, Numbers, Booleans, and null. JSON uses a more limited set of white space characters than WhiteSpace and allows Unicode code points U+2028 and U+2029 to directly appear in JSONString literals without using an escape sequence. The process of parsing is similar to 11.1.4 and 11.1.5 as constrained by the JSON grammar.
+JSON.parse("string"); // SyntaxError: Unexpected token s
+JSON.parse(43); // 43
+JSON.parse("43"); // 43
+JSON.parse(true); // true
+JSON.parse("true"); // true
+JSON.parse(false);
+JSON.parse("false");
+JSON.parse("trueee"); // SyntaxError: Unexpected token e
+JSON.parse("\"trueee\""); // trueee
+JSON.parse("{}"); // {}
+JSON.parse("[]"); // []
+#-（九十二）intelliJ: Format existing code
+1. Ensure right margin is not exceeded:
+File > Settings > Editor > Code Style > Java > Wrapping and Braces > Ensure right margin is not exceeded
+2. Reformat code
+Code > Reformat code
+#-（九十三）Does height and width not apply to span?
+Try using a div instead of the span or using the CSS display: block; or display: inline-block;—span is by default an inline element which cannot take width and height properties.
+#-（九十四）the request-body is not part of the identification of the resource in a GET request, only the request URI. So don't use @RequestBody to get a GET request's params.
+#-（九十五）When you design user interfaces, it’s a good idea to keep two principles in mind:
+1. Users don’t have the manual, and if they did, they wouldn’t read it.
+2. In fact, users can’t read anything, and if they could, they wouldn’t want to.
+#-（九十六）What's difference between plugin and library in JS?
+jQuery is a JS library / framework. jQuery functionality can be extended by jQuery plugins. These plugins wouldn't work without jQuery as they use its functionality.
+I think this is a good example to understand the difference.
+#-（九十七）Fun Fact of the Day: In JavaScript you can use commas to group any number of expressions into a single statement. This is basically an artifact of the for statement, where multiple assignment expressions are often grouped together in the header. Most people do not know that such syntax is still valid outside a for loop. So you can do this
+
+var i = 0;
+while (i < 10)
+    alert(i + ' * ' + i + ' = '),
+    alert(i * i + '!!'),
+    i++;
+
+alert("Wasn't that fun??");
+
+Instead of
+var i = 0;
+while (i < 10) {
+    alert(i + ' * ' + i + ' = ');
+    alert(i * i + '!!');
+    i++;
+}
+alert("Wasn't that fun??");
+
+Though most people would advise you not to.
+Statements, such as var, cannot be used this way. That is you cannot have var in the middle of a bunch of other comma separated expressions.
+#-（九十八）Java 8 Lambda Expression
+<-1->FunctionalInterface 
+@FunctionalInterface is annotated on an interface with a single NON DEFAULT method
+The method generated from a lambda 8 expression must have the same signature as the method in the functional interface
+In Java 8 the type of a Lambda expression is the same as the functional interface that the lambda expression is assigned to
+@FunctionalInterface
+public interface PasswordEncoder {
+	public String encode(String password, String salt);
+}
+pulbic PasswordEncoder makeBadEncoder() {
+	return (password, salt) -> password.toUpperCase();
+}
+public void doSomething(PasswordEncoder encoder) {
+	String salted = encoder.encode("abc", "123");
+}
+PasswordEncoder encoder = makerBadEncoder();
+doSomething(encoder);
+
+<-2->Lambda vs. Anonymous Inner Class
+Inner classes can have state in the form of class level instance variables, lambdas can not
+Inner classes can have multiple methods, lambdas only have a single method body
+this(keyword) points to the object instance for an anonymous Inner class but it points to the enclosing object for a lambda
+Lambda != Anonymous inner class
+
+<-3->Default method
+A default method on an interface can have an implementation body
+if there is a conflitct between default methods the class that is implementing, the default methods must override the conflicting default method
+In an inheritance hierarchy with default methods the most specific default method wins
+
+<-4->Stream
+Streams are a functional programming design pattern for processing sequences of elements sequentially or in parallel
+Stream Structure:
+A stream has a
+-SOURCE that the stream can pull objects from
+-PIPELINE of operations that will execute on the elements of the stream
+-TERMINAL OPERATION that pulls values down the stream
+Stream Lifecycle:
+-CREATION Streams get created from a source object such as a collection, file, or generator
+-CONFIGURATION Streams get configured with a collection of pipeline operations
+-EXECUTION Stream terminal operation is invoked which starts pulling objects through the operations pipeline of the stream
+-CLEANUP Stream can only be used once. It has to be recreated, reconfigured, reexcuted...
+Stream Terminal Operations
+-Recduction Terminal Operations return a single result (.min, .max)
+-Mutable Reduction Terminal Operations return multiple results in a container data structure (.collect, .toArray)
+-Search Terminal Operations return a result as soon as a match is found (.findFirst, .anyMatch, .allMatch)
+-Generic Terminal Operations do any kind of processing you want on each stream element (.forEach)
+-Nothing happens until the terminal operation is invoked!
+#-（九十九）Spring MVC Controllers Return Type
+It's the same logic but it's not the same version of spring.
+
+The ModelAndView object is the spring 2.x way of handling model and views. In the example you gave, the modelandview object will load the "helloWorld" view (depending on your templating engine could be helloWorld.jsp, or helloWorld.html, ...) with one data "message" in the model.
+
+The other way is the spring 3.x way. You could have wrote exactly the same example as your helloworld.
+
+@RequestMapping(value="/helloWorld", method=RequestMethod.GET)
+public String helloWorld(Model model) {
+    model.addAttribute("message", "Hello World!");
+    return "helloWorld";
+}
+The model is automaticly populated at request.
+
+And we can simplify this notation as the url mapping "helloWorld" is directly the view name.
+
+@RequestMapping(value="/helloWorld", method=RequestMethod.GET)
+public void helloWorld(Model model) {
+     model.addAttribute("message", "Hello World!");
+}
+the helloWorld view will be automaticly loaded
+#-（一百）Spring Interceptor
+A HandlerInterceptor gives you more fine-grained control than a filter, because you have access to the actual target "handler" - this means that whatever action you perform can vary depending on what the request is actually doing (whereas the servlet filter is generically applied to all requests - only able to take into account the parameters of each request). The handlerInterceptor also provides 3 different methods, so that you can apply behavior prior to calling a handler, after the handler has completed but prior to view rendering (where you may even bypass view rendering altogether), or after the view itself has been rendered. Also, you can set up different interceptors for different groups of handlers - the interceptors are configured on the handlerMapping, and there may be multiple handlerMappings.
+Therefore, if you have a need to do something completely generic (e.g. log all requests), then a filter is sufficient - but if the behavior depends on the target handler or you want to do something between the request handling and view rendering, then the HandlerInterceptor provides that flexibility.
