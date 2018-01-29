@@ -3720,6 +3720,7 @@ sclaper [n.] 黄牛
 strong suit 强处，长处，强项；一手同花大牌 (Even in the area of foreign policy, his strong suit, he failed to deliver a major foreign policy address. 即使在他擅长的外交政策领域里，他也没能发表过一个重要的外交政策演讲)
 sanction [n. vt.] 制裁；处罚 (administrative sanction 行政处分，行政处罚)
 succinct [adj.] 简洁的；简明扼要的
+suffocate [vt. vi.] 使窒息而死；阻碍；呼吸困难，窒息
 #T: 
 transaction [n.] 事务，业务
 The funniest thing about it is that ... 最有趣的是...
