@@ -13,7 +13,7 @@ ak-,al-系列，P牛39
 arena [n.] 斗争场所；竞争舞台 (the political/international ~ 政治/国际舞台)
 allot [vt.] 拨款
 authoritarian [adj. n.] 专制的，独裁的；专制主义者
-apprentice [n.] 学徒
+apprentice [n.] 徒弟，学徒；新手 (I started off as an apprentice and worked my way up. 我从学徒开始干起，逐步上升)
 aggregate [v. n.] 总计
 affection [n.] 思想感情
 accompany sb. to somewhere (不能+ to do) 陪伴某人去...
@@ -1477,6 +1477,7 @@ flat-out [adj. adv.] 完完全全，彻头彻尾
 fishy [adj.] 可疑的，值得怀疑的；不对劲儿的 (It smells fishy. 感觉有点不对劲儿; There seems to be something fishy going on. 事情好像有点不对劲)
 for the record 顺便告诉你；需要指出的是；声明一下 (Just for the record, I've never really been good at sports. 说实话，我体育向来不在行)
 figurine [n.] 小塑像，小雕像；手办
+foul up 搞砸
 #G:
 gross [adj. adv. v. n.]总的，毛(重)的；恶心的；总共；总共赚得；一罗(十二打，144个 a ~ of 一罗...) (-ing 赚钱的; -"He ate it with mustard." -"Oh, ~!" -“他用芥末拌着吃。”-“噢，真恶心！”; ~ sb. out 令人作呕，使人恶心 His bad breath really grossed me out. 他的口臭实在使我作呕。)
 guidelines [n.] 行动纲领，指导方针
