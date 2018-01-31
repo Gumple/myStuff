@@ -858,7 +858,7 @@ concede [v.] 承认；给予(权利、特权等) (concession [n.]; Conceding. fo
 clear one's thraot 清了清嗓子
 conspicuous [adj.] 显而易见的
 cutting-edge [adj.] 尖端的；科技前沿的
-cut to the chase 开门见山；转入正题 (With that out of the way. We'll ~ before getting into the nitty-gritty.)
+cut to the chase 开门见山；转入正题 (With that out of the way, we'll ~ before getting into the nitty-gritty.)
 consult my watch 看了看我的表 (I lost track of the hours and forgot to ~, though I was frightened when I thought of the distance I must have been traversing.)
 covetous [adj.] 贪图的；垂涎的；贪求(他人之物等)的(of) (be ~ of another person's property 贪图他人财产; He raised his head, with a look of unrestrained greed in his ~ eyes.)
 casting couch (娱乐圈)潜规则
@@ -958,6 +958,7 @@ carefree [adj.] 无忧无虑的；没有牵挂的，没有顾虑的 (Swallows fl
 compatible [adj.] 兼容的 (compatibility [n.] 兼容性)
 convoluted [adj.] 复杂的；盘绕的 (Despite its length and convoluted plot, 'Asta's Book' is a rich and rewarding read. 虽然篇幅很长，而且情节复杂，但是《阿斯塔的书》仍不失为一部内容丰富、值得一读的作品)
 consumable [n.] 消耗品
+constraint [n.] 约束；限制 (Their decision ot abandon the trip was made because of financial constraints. 他们决定放弃这次出游是因为财力有限)
 #D:
 discrimnate [vt.] 歧视 (~ against women and in favor of men 重男轻女)
 discrimation [n.] 歧视 (show ~ against/in favor of 歧视/偏袒)
@@ -1648,6 +1649,7 @@ give or take 或多或少；左右；出入 (They grow to a height of 12 ins, gi
 gobsmacked [adj.] 大吃一惊的；目瞪口呆的 (I was really gobsmacked when I saw your picture of a model wearing a hat with a toy airplane on it. 看到你照片中的模特戴着一个顶上立着一架玩具飞机的帽子，我真是目瞪口呆)
 gloss over 粉饰，掩饰(错误)；把...搪塞过去 (Some foreign governments appear happy to gloss over continued human righs abuses. 一些外国政府似乎乐于掩饰不断出现的侵犯人权现象)
 go viral 像病毒一样传播开来 (Jonah mentioned you both shared a philosophical approach to why things go viral. Jonah提到，你们俩曾经分享过为什么视频会走红的一个哲学方法)
+grit [n.] 勇气；坚韧，刚毅；细沙，砂砾 (He felt tine bits of grit and sand peppering his knees. 他感到细小的砂砾不断打在膝盖上)
 #H:
 husband-to-be [n.] 未婚夫，未来老公 (wife-to-be) 
 hubby [n.] 老公
@@ -2994,6 +2996,7 @@ prevalent [adj.] 流行的，盛行的；普遍存在的，普遍发生的 (This
 perception [n.] 感知，感官；观念，看法；洞察力
 the physically fit 正常人；身体健康的人(与残疾人相对)
 prop [n.] 道具
+perpetual [adj.] 永久的；不断的；无限期的 (perpetual motion machine 永动机)
 #Q:
 quadratic [adj.] （数学）二次的
 quotation [n.] 引用；引证
@@ -4178,6 +4181,7 @@ veranda [n.] 阳台；走廊
 vivacious [adj.] 活泼的；快活的
 vis-a-vis [prep. adv.] (1. face to face with; opposite to. 2. compared with. 3. in relation to) 和...有关；针对于；相对于
 VAT value added tax 增值税
+voracious [adj.] 贪婪的；如饥似渴的；渴求的
 #W:
 work one's way through sth. 由始至终做(尤指耗费时间、精力的事)
 Way to go! 干得好！ (Good work, guys! ~ 伙计们，活儿不错！干得好！)
