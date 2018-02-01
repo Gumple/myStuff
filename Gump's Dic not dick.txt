@@ -2997,6 +2997,8 @@ perception [n.] 感知，感官；观念，看法；洞察力
 the physically fit 正常人；身体健康的人(与残疾人相对)
 prop [n.] 道具
 perpetual [adj.] 永久的；不断的；无限期的 (perpetual motion machine 永动机)
+poka yoke 防误防错；防错法；防错装置
+proficiency [n.] 熟练，精通，娴熟 (Evidence of basic proficiency in English is part of the admission requirement. 英语基本熟练是入学条件之一)
 #Q:
 quadratic [adj.] （数学）二次的
 quotation [n.] 引用；引证
@@ -3725,6 +3727,7 @@ strong suit 强处，长处，强项；一手同花大牌 (Even in the area of f
 sanction [n. vt.] 制裁；处罚 (administrative sanction 行政处分，行政处罚)
 succinct [adj.] 简洁的；简明扼要的
 suffocate [vt. vi.] 使窒息而死；阻碍；呼吸困难，窒息
+set the tone for 为...定下基调
 #T: 
 transaction [n.] 事务，业务
 The funniest thing about it is that ... 最有趣的是...
