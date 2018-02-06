@@ -651,6 +651,7 @@ best do 做到最好；最大化 (There is no manual for how to best do this, an
 bulletin [vt. n.] 公布；公告；新闻快报 (At 3:30 p.m. a bulletin was released announcing that the president was out of immediate danger. 下午3点30分发布了公告，称总统已经暂时脱离危险)
 buffalo [n.] 野牛，水牛
 bouncer [n.] 保镖
+be backed by 由...支持；由...做后盾
 #C:
 contradict [vt.] 反驳，驳斥 (~ oneself 与自己所说的自相矛盾 -ion [n.] 矛盾)
 compile [vt.] 编写，编译
