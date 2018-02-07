@@ -3730,6 +3730,7 @@ sanction [n. vt.] 制裁；处罚 (administrative sanction 行政处分，行政
 succinct [adj.] 简洁的；简明扼要的
 suffocate [vt. vi.] 使窒息而死；阻碍；呼吸困难，窒息
 set the tone for 为...定下基调
+slip my mind 突然忘了
 #T: 
 transaction [n.] 事务，业务
 The funniest thing about it is that ... 最有趣的是...
