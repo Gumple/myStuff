@@ -749,3 +749,13 @@ Therefore, if you have a need to do something completely generic (e.g. log all r
 #-（一百零一）Arrays.asList()
 Returns a fixed-size list backed by the specified array. (Changes to the returned list "write through" to the array.)
 It means the size of the returned list is unmodifieable just like []("array" in a broader sense)
+#-（一百零二）StackOverflow: How to return value from an asynchronous callback function?
+This is impossible as you cannot return from an asynchronous call inside a synchronous method.
+In this case you need to pass a callback to foo that will receive the return value
+#-（一百零三）StackExchange: in shell how can I tell the difference between a directory and a file
+ls -l or ls -F; the former gives full information, the latter tacks on a suffix which indicates the type of filesystem object.
+ls -F does the job. What's the second column in ls -l output? I notice files generally have 1 in this field while folders have 2. But I see other numbers 4,5,8... I don't know what this field means.
+Number of hard links. People don't often use them these days, so it's usually 1 for on-directories; for directories on local Unixlike filesystems, it's 2 + the number of subdirectories (the additional 2 being for the . and .. entries); what it means for network and non-Unix-native filesystems depends on the
+#-（一百零四）Find a file by name using command-line
+find ~/ -type f -name "postgis-2.0.0"
+Using . will only search the current directory.  ~/ will search your entire home directory (likely where you downloaded it to). If you used wget as root, its possible it could be somewhere else so you could use / to search the whole filesystem.
