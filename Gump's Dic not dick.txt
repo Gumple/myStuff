@@ -1287,6 +1287,7 @@ ease-of-us [n.] 易用性
 evangelist [n.] 推广者；外联
 elite [n. adj.] (社会)精英；中坚分子；出类拔萃的，精锐的 (an elite group of artists 一批出类拔萃的艺术家)
 elastic [adj. n.] 有弹力的；可伸缩的；灵活的；松紧带，橡皮圈 (Beat i until the dough is slightly elastic. 一直搅打，直至生面团略有弹性)
+excrement [n.] 屎，粪便；排泄物
 #F:
 fianceé[n.] 未婚妻 (fiancé未婚夫)
 fabric [n.] (社会、建筑)结构
@@ -2692,6 +2693,7 @@ on a whim 一时兴起；一时冲动；随心所欲，随随便便 (We decided,
 old-time [adj.] 以前的，旧式的，资深的 (The effect of that singing, as the old-time reporters used to say, was electrical. 正如从前的记者常说的那样，歌声直击人心)
 overhead [n.] 额外开销
 opaque [adj. n.] 不透明的；无光泽的；含糊的；晦暗的；不透明，晦暗 (You can always user opaque glass if you need to block a street view. 如果不想从室内看到街景，可以使用不透明玻璃)
+OP (original poster) 楼主；题主
 #P:
 put-together [adj.] 得体的
 patch quilt 拼缝床罩
@@ -3002,6 +3004,7 @@ prop [n.] 道具
 perpetual [adj.] 永久的；不断的；无限期的 (perpetual motion machine 永动机)
 poka yoke 防误防错；防错法；防错装置
 proficiency [n.] 熟练，精通，娴熟 (Evidence of basic proficiency in English is part of the admission requirement. 英语基本熟练是入学条件之一)
+PM (private message) 私信
 #Q:
 quadratic [adj.] （数学）二次的
 quotation [n.] 引用；引证
@@ -4086,6 +4089,7 @@ to each his own 各得其所；萝卜青菜各有所爱；你有你的想法，�
 the cat's pajamas/the bee's knees/the duck's nuts (an excellent person or thing) 很棒的人或者事物 
 tipsy [adj.] 微醉的，微醺的；不稳的，歪斜的
 take a whiz 嘘嘘；尿尿
+TL;DR (too long; didn't read) 太长没看(的话请看这里)
 #U:
 usage [n.] (词语的)用法
 use [n.] 用途
@@ -4776,6 +4780,7 @@ XSS attack Cross-Site Scripting attack 跨站脚本攻击
 #-UD
 bic [n.] A 'Bic' is the most common type of lighter available. Tried, trusted and relatively inexpensive, it's the only type of lighter I use. (Pass me the Bic, so I can light my cone.)
 bail [vi.] to leave; to bounce
+beauty sus [n.] The opposite of beauty bias, where the attractiveness of a person makes you more suspicious about their true character, usually causing you to act more closed off or cold around that person than usual because of their beauty, thus the sus. (-Do you have something against them? Is there some kind of beef going on that I don't know about? -Nothing really, I just don't trust them. Beauty sus I guess, they're just too hot to not be some kind of freak if you ask me.)
 cootchie [n.] female genitalia
 cherry pie [] A virgin's pussy
 corny [adj.] Trying to be cool, but ultimately very uncool indeed, and often even extremely embarrassing (Man, did you see that Manowar show? The way they posed? And all that "Knights of Steel" bullshit? Hell that was corny.)
@@ -4789,6 +4794,7 @@ knockers [] A woman's breasts, especially when unrestrained and allowed to move.
 O rly [] internet slang, short for 'Oh, really?'
 shitfaced [adj.] To be really, really drunk (Uh-oh. Sarah's a little shitfaced and Andy's a smooth talker. Better go find them.)
 stage five clinger [] A member of the opposite sex that is likely to become overly attached, overly fast. Virgins, those on the rebound, and the emotionally fragile are more likely to have this term applied to them. Originally from the movie Wedding Crashers. (I nailed that chick last weekend and seriously regret giving her my number - I'm getting 2 or 3 calss a day. I think what we've got ourselves here is a stage five clinger.)
+sus [adj.] The word sus is meant to suggest that someone is believed to be shady or false. They are hiding something or are believed to have a serious character flaw which makes them undesireble as friend or acqaintence. It is derived from its root word suspect. In some areas it is primarily used to describe a nigga that is Bitch-made or one who is not feminine but suspected of homosexuality or other sexual deviances. Most commonly used to denote suspected homosexual tendencies.
 Ya rly [] 'yeah, really'
 
 #-Catcher
