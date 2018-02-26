@@ -310,6 +310,7 @@ analogy [n.] 类推；类似，相似；比拟，类比，拟人
 aversion [n.] (to)厌恶，反感；讨厌的人
 alienate [vt.] 使疏远，离间 (The government cannot afford to alienate either group. 疏远两个团体中的任何一方都是政府承受不起的)
 auspicious [adj.] 吉利的；有前途的 (This New Year marks the start of the year of the dog, which is regarded in Chinese culture as auspicious animal.)
+address [vt.] 称呼
 #B: 
 bracelet [n.] 手镯，手链
 be fresh out of sth. 刚用完，售完
@@ -961,6 +962,7 @@ compatible [adj.] 兼容的 (compatibility [n.] 兼容性)
 convoluted [adj.] 复杂的；盘绕的 (Despite its length and convoluted plot, 'Asta's Book' is a rich and rewarding read. 虽然篇幅很长，而且情节复杂，但是《阿斯塔的书》仍不失为一部内容丰富、值得一读的作品)
 consumable [n.] 消耗品
 constraint [n.] 约束；限制 (Their decision ot abandon the trip was made because of financial constraints. 他们决定放弃这次出游是因为财力有限)
+circumvent [vt.] 避免，绕开；围绕，包围；用计防止 (Military planners tried to circumvent the treaty. 军事策略家们企图绕开这一条约)
 #D:
 discrimnate [vt.] 歧视 (~ against women and in favor of men 重男轻女)
 discrimation [n.] 歧视 (show ~ against/in favor of 歧视/偏袒)
@@ -1823,7 +1825,7 @@ high-spec [adj.] 高配的 (high in specifications)
 hipster [n.] 裤腰低到臀部的裤子；消息灵通人士；潮客
 hypocrite [n.] 伪君子，伪善者
 hoover [vt. vi. n.] 用吸尘器扫除；胡佛真空吸尘器
-highbrow [adj. n.] 高雅的；文化修养高的；显得文艺的；学术性的；炫耀学问的(人)；自认为文化修养很高的(人)
+highbrow [adj. n.] 装逼的；高雅的；文化修养高的；显得文艺的；学术性的；炫耀学问的(人)；自认为文化修养很高的(人)
 hop-on-hop-off [adj.] 招手即停的
 horse around 鬼混；闹哄；胡闹 (Later that day I was horsing around with Katie when she accidentally stuck her finger in my eye. 那天晚些时候，我正和凯蒂一起胡闹时，她不小心用手指戳到了我的一只眼睛)
 haggle [n. vi.] 讨价还价；争论 (Ella taught her how to haggle with used furniture dealers. 艾拉教她如何和旧家具经销商砍价)
@@ -2069,6 +2071,7 @@ in the shadow of 在...附近；离...处不远；在...的影响下；在...的
 It is in/with ... as in/with ... 犹如，正如；...正像...一样 (It is in studying as in eating; he who does it gets the benefits and not he who sees it being done. 读书犹如吃饭，得益的是吃饭的人，而不是看人家吃饭的人; It is with time as with the currents of water; once it goes, it never comes back. 时间与流水一样，一旦流过就永远回不来; It is with narrow-souled people as with narrow-necked bottles; the less they have in them, the more noise they make in pouring their contents out. 气量窄的人如窄瓶子一样，里面装的东西越少，倒出时所发出的声音就越大)
 incognito [adj. adv. n.] 化装的(地)；用假名的(地)；隐姓埋名的(地)；用假名的人 (Hotel inspectors have to tarvel incognito. 酒店巡查员巡查时必须隐瞒真实身份)
 implicit [adj.] 无疑问的，绝对的；隐式的，存在但是你没有感觉到的
+It's not my place/I'm in no position to ... 我无权...；我没办法... (I'm in no position to judge. 我无权评价)
 #J:
 jerk [v.] 猝然一动 (~ sth. out 结巴的说)
 jumble [v. n.] （使）混乱;混乱，杂乱的一堆东西 (-d [adj.] in -d order杂乱无序的)
@@ -4731,6 +4734,7 @@ DOS Disk Operating System 磁盘操作系统
 DIP Dependency Inversion Principle 依赖倒置原则
 DI Dependency Injection 依赖注入
 DOM Document Object Model 文档对象模型
+DDoS Attack Distributed Denial of Service Attack 分布式拒绝服务攻击
 #-E
 ERP Enterprise Resource Planning 企业资源计划
 #-F
