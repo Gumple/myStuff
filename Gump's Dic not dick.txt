@@ -311,6 +311,7 @@ aversion [n.] (to)厌恶，反感；讨厌的人
 alienate [vt.] 使疏远，离间 (The government cannot afford to alienate either group. 疏远两个团体中的任何一方都是政府承受不起的)
 auspicious [adj.] 吉利的；有前途的 (This New Year marks the start of the year of the dog, which is regarded in Chinese culture as auspicious animal.)
 address [vt.] 称呼
+acronym [n.] An acronym is a word or name formed as an abbreviation from the initial components in a phrase or a word, usually individual letters (as in NATO or laser) and sometimes syllables (as in Benelux).
 #B: 
 bracelet [n.] 手镯，手链
 be fresh out of sth. 刚用完，售完
@@ -963,6 +964,7 @@ convoluted [adj.] 复杂的；盘绕的 (Despite its length and convoluted plot,
 consumable [n.] 消耗品
 constraint [n.] 约束；限制 (Their decision ot abandon the trip was made because of financial constraints. 他们决定放弃这次出游是因为财力有限)
 circumvent [vt.] 避免，绕开；围绕，包围；用计防止 (Military planners tried to circumvent the treaty. 军事策略家们企图绕开这一条约)
+counter-offer [n.] an offer made in response to another
 #D:
 discrimnate [vt.] 歧视 (~ against women and in favor of men 重男轻女)
 discrimation [n.] 歧视 (show ~ against/in favor of 歧视/偏袒)
@@ -1290,6 +1292,7 @@ evangelist [n.] 推广者；外联
 elite [n. adj.] (社会)精英；中坚分子；出类拔萃的，精锐的 (an elite group of artists 一批出类拔萃的艺术家)
 elastic [adj. n.] 有弹力的；可伸缩的；灵活的；松紧带，橡皮圈 (Beat i until the dough is slightly elastic. 一直搅打，直至生面团略有弹性)
 excrement [n.] 屎，粪便；排泄物
+ensue [vi.] 接踵发生；继而产生 (If the Europeans did not reduce subsidies, a trade war would ensue. 如果欧洲人不减少补贴，便会发生贸易战)
 #F:
 fianceé[n.] 未婚妻 (fiancé未婚夫)
 fabric [n.] (社会、建筑)结构
@@ -1834,6 +1837,7 @@ HVAC [abbr.] Heating, Ventilating and Air Conditioning 采暖通风与空调；�
 hotfix [n.] 紧急在线修复；修复当前版本的bug并作为补充更新在当前版本发布
 hired hand 雇员 (He was just a hired hand. 他不过是个雇来的伙计)
 homogenized [adj.] 成为均匀分布的；均匀的 (The Barnes's quirky magnificence is increasingly rare in today's corporatized and homogenized art world.)
+hierarchy [n.] 等级制度 (Like most other American companies with a rigid hierarchy, workers and managers had strictly defined duties. 和其他多数拥有严格等级制度的美国公司一样，这里的工人和管理里人员都有严格的职责)
 #I:
 intuition [n.] 直觉
 infectious [adj.] 传染性的；富有感染力的
@@ -2153,6 +2157,7 @@ knick-knack [n.] 小饰品；小摆设
 keep something under your hat 别到处张扬；千万别告诉别人
 know sb. by sight 跟某人只是眼熟；跟某人只是点头之交
 knee-high to a grasshopper (Quite young, as in "I haven't seen him since I was knee-high to a grasshopper.) 小时候；年幼时；孩提时
+kick in 介入；起效；开始出现 (When you're confronted with the problem, emotions kick in, fear kickks in, and you don't always do the rational and thought-out approach. 当面临这个问题时，人会变得情绪激动、恐惧不安，你不一定总能采取理性且慎重的方法)
 #L:
 likelihood [n.] 可能性 (in all ~ = very probably; The ~ is that ... = It's likely that ...; In all ~ the meeting will be cancelled.
 这次会议十有八九会被取消。)
@@ -4093,6 +4098,7 @@ the cat's pajamas/the bee's knees/the duck's nuts (an excellent person or thing)
 tipsy [adj.] 微醉的，微醺的；不稳的，歪斜的
 take a whiz 嘘嘘；尿尿
 TL;DR (too long; didn't read) 太长没看(的话请看这里)
+thought-out [adj.] 经过深思熟虑的；计划周密的；考虑周全的
 #U:
 usage [n.] (词语的)用法
 use [n.] 用途
@@ -4782,14 +4788,19 @@ XSS attack Cross-Site Scripting attack 跨站脚本攻击
 #-Z
 
 #-UD
+acronym [] Abbreviated Coded Rendition of Name Yielding Meaning (A.C.R.O.N.Y.M is an acronym.)
 bic [n.] A 'Bic' is the most common type of lighter available. Tried, trusted and relatively inexpensive, it's the only type of lighter I use. (Pass me the Bic, so I can light my cone.)
 bail [vi.] to leave; to bounce
 beauty sus [n.] The opposite of beauty bias, where the attractiveness of a person makes you more suspicious about their true character, usually causing you to act more closed off or cold around that person than usual because of their beauty, thus the sus. (-Do you have something against them? Is there some kind of beef going on that I don't know about? -Nothing really, I just don't trust them. Beauty sus I guess, they're just too hot to not be some kind of freak if you ask me.)
+brb [] Acronym for "be right back"
 cootchie [n.] female genitalia
 cherry pie [] A virgin's pussy
 corny [adj.] Trying to be cool, but ultimately very uncool indeed, and often even extremely embarrassing (Man, did you see that Manowar show? The way they posed? And all that "Knights of Steel" bullshit? Hell that was corny.)
 freeloader [n.] Someone who lives off other people's lives. They don't pay for anything and never pay you back.
+g2g [] Got to Go
+IRL [] Abbreviation for "In Real Life"
 moon cricket [] Derived from early slave times when black people would come out at night and sing slave songs under the moonlight like crickets (extemely offensive)
+MRW [] An abbreviation for "My Reaction When"
 penetration [n.] Penetration is the medical term for the penis entering into the vagina. It's a good way term for talking about sex if one wants to seem mature. Even if you're a dirty little pervert, you'll sound like sex is more than just an emotionless action caused by hormones if you call it 'penetration' rather than 'fucking around', 'doing it' etc. (-Did you fucked your girlfriend last night? -Penetration occured and I deposited my semen inside of her vagina. -What the fuck? You're a frat boy, you don't talk like that. -I know, but I sure sound mature, don't I? )
 rod [n.] an erect penis
 R.O.D [] Ride or Die;Tight Friends (Girl your my R.O.D chiick.)
@@ -4799,6 +4810,7 @@ O rly [] internet slang, short for 'Oh, really?'
 shitfaced [adj.] To be really, really drunk (Uh-oh. Sarah's a little shitfaced and Andy's a smooth talker. Better go find them.)
 stage five clinger [] A member of the opposite sex that is likely to become overly attached, overly fast. Virgins, those on the rebound, and the emotionally fragile are more likely to have this term applied to them. Originally from the movie Wedding Crashers. (I nailed that chick last weekend and seriously regret giving her my number - I'm getting 2 or 3 calss a day. I think what we've got ourselves here is a stage five clinger.)
 sus [adj.] The word sus is meant to suggest that someone is believed to be shady or false. They are hiding something or are believed to have a serious character flaw which makes them undesireble as friend or acqaintence. It is derived from its root word suspect. In some areas it is primarily used to describe a nigga that is Bitch-made or one who is not feminine but suspected of homosexuality or other sexual deviances. Most commonly used to denote suspected homosexual tendencies.
+TFW [] That Feel When (TFW you smoke the day's first cigarette.)
 Ya rly [] 'yeah, really'
 
 #-Catcher
