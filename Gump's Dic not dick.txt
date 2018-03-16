@@ -3743,6 +3743,7 @@ succinct [adj.] 简洁的；简明扼要的
 suffocate [vt. vi.] 使窒息而死；阻碍；呼吸困难，窒息
 set the tone for 为...定下基调
 slip my mind 突然忘了
+showcase [vt.] 展现；炫耀
 #T: 
 transaction [n.] 事务，业务
 The funniest thing about it is that ... 最有趣的是...
@@ -4743,6 +4744,7 @@ DOM Document Object Model 文档对象模型
 DDoS Attack Distributed Denial of Service Attack 分布式拒绝服务攻击
 #-E
 ERP Enterprise Resource Planning 企业资源计划
+escape character 转义字符
 #-F
 FAQ Frequently Asked Questions 常见问题
 #-G
