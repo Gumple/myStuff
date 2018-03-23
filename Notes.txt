@@ -759,3 +759,20 @@ Number of hard links. People don't often use them these days, so it's usually 1 
 #-（一百零四）Find a file by name using command-line
 find ~/ -type f -name "postgis-2.0.0"
 Using . will only search the current directory.  ~/ will search your entire home directory (likely where you downloaded it to). If you used wget as root, its possible it could be somewhere else so you could use / to search the whole filesystem.
+#-（一百零五）Regex pattern including all special characters
+Try a negative match:
+Pattern regex = Pattern.compile("[^A-Za-z0-9]");
+#-（一百零六）Wiki: ECMAScript (or ES) is a trademarked scripting-language specification standardized by Ecma International in ECMA-262 and ISO/IEC 16262.
+The Sixth Edition, initially known as ECMAScript 6 (ES6) and later renamed to ECMAScript 2015 (ES2015) adds significant new syntax for writing complex applications, including classes and modules, but defines them semantically in the same terms as ECMAScript 5 strict mode. Other new features include iterators and for/of loops, Python-style generators and generator expressions, arrow functions, binary data, typed arrays, collections (maps, sets and weak maps), promises, number and math enhancements, reflection, and proxies (metaprogramming for virtual objects and wrappers). As the first "ECMAScript Harmony" specification, it is also known as "ES6 Harmony."
+#-（一百零七）How to go back to lines edited before the last one in Vim?
+g; and g. jump backward and forward in the changelist. (:help changelist)
+CTRL-O and CTRL-I jump backward and forward in the jumplist. (:help jumplist)
+`` jumps between current position and last position in the jumplist.
+#-（一百零八）What is the difference between Load Balancer and Reverse Proxy?
+Your confusion is reasonable - they are often the same thing. But not always. When you refer to a load balancer you are referring to a very specific thing - a server or device that balances inbound requests across two or more web servers to spread the load. A reverse proxy, however, typically has any number of features:
+1. load balancing: as discussed above
+2. caching: it can cache content from the web server(s) behind it and thereby reduce the load on the web server(s) and return some static content back to the requester without having to get the data from the web server(s)
+3. security: it can protect the web server(s) by preventing direct access from the internet; it might do this through simple means by just obfuscating the web server(s) or it may have some more active components that actually review inbound requests looking for malicious code
+4. SSL acceleration: when SSL is used; it may serve as a termination point for those SSL sessions so that the workload of dealing with the encryption is offloaded from the web server(s)
+I think this covers most of it but there are probably a few other features I've missed. Certainly it isn't uncommon to see a device or piece of software marketed as a load balancer/reverse proxy because the features are so commonly bundled together.
++connection pooling (allow multiple requests on one frontend connection when backend doesn't handle it well; or reuse backend connection for multiple frontend connections)

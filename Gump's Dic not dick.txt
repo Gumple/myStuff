@@ -682,7 +682,7 @@ coverage [n.] 新闻报道；信息范围；覆盖范围
 crack down (on) 严惩，严厉打击；大力整顿
 crack sb. up 逗得某人哈哈大笑 (... as sb. be cracked up to be 不像人们说的那么好; He's not nearly such a good writer as he's cracked up to be. 他远不是人们所说的那种优秀作家)
 class sponsor 班主任
-club together 或者 clip in(此短语可+宾语) 凑份子钱 
+club together 或者 chip in(此短语可+宾语) 凑份子钱  (They chip in for the petrol and food. 他们凑钱买汽油和食物)
 compact [adj. n.] 袖珍的；小汽车；契约，约法 (~ disk CD)
 curse [n. v.] 诅咒 (be -d with sth. 因...而连连遭殃)
 cow-webbed corners 不为人注意的角落
@@ -1488,6 +1488,7 @@ for the record 顺便告诉你；需要指出的是；声明一下 (Just for the
 figurine [n.] 小塑像，小雕像；手办
 foul up 搞砸
 foil [vt.] 挫败；使受挫折
+forge [n. v.] 锻造车间；铁匠工场；伪造(尤指文书、笔迹等)；锻制；缔造(尤指与其他人或国家形成牢固的关系) (The Prime Minister is determined to forge a good relationship with America's new leader. 首相决意要和美国的新任领导人建立良好的关系)
 #G:
 gross [adj. adv. v. n.]总的，毛(重)的；恶心的；总共；总共赚得；一罗(十二打，144个 a ~ of 一罗...) (-ing 赚钱的; -"He ate it with mustard." -"Oh, ~!" -“他用芥末拌着吃。”-“噢，真恶心！”; ~ sb. out 令人作呕，使人恶心 His bad breath really grossed me out. 他的口臭实在使我作呕。)
 guidelines [n.] 行动纲领，指导方针
@@ -3013,6 +3014,7 @@ perpetual [adj.] 永久的；不断的；无限期的 (perpetual motion machine 
 poka yoke 防误防错；防错法；防错装置
 proficiency [n.] 熟练，精通，娴熟 (Evidence of basic proficiency in English is part of the admission requirement. 英语基本熟练是入学条件之一)
 PM (private message) 私信
+pitch in 参与；做出贡献；协力；凑份子钱 (The agency says international relief agencies also have pitched in. 该机构说国际救援机构也提供了支援)
 #Q:
 quadratic [adj.] （数学）二次的
 quotation [n.] 引用；引证
@@ -3744,6 +3746,7 @@ suffocate [vt. vi.] 使窒息而死；阻碍；呼吸困难，窒息
 set the tone for 为...定下基调
 slip my mind 突然忘了
 showcase [vt.] 展现；炫耀
+stack [n.] 技术栈 (What's the stack for your web application? 你开发的网站用了什么技术？)
 #T: 
 transaction [n.] 事务，业务
 The funniest thing about it is that ... 最有趣的是...
@@ -4750,6 +4753,8 @@ FAQ Frequently Asked Questions 常见问题
 #-G
 #-H
 HC Headcount 职数
+HTTP Hypertext Transfer Protocol 超文本传输协议
+HTTPS Hypertext Transfer Protocol over Secure Socket Layer
 #-I
 IoC Inversion of Control 控制反转
 IDE Integrated Development Environment 集成开发环境
@@ -4763,6 +4768,9 @@ LDAP Lightweight Directory Access Protocol 轻量目录访问协议
 MMP Massive Parallel Processing 大规模并行处理：专用内联网连接一组处理器形成的一个计算系统
 MPI Message Passing Interface 消息传递并行接口
 MIME Multipurpose Internet Mail Extensions 互联网媒体类型
+#-N
+Nonce 一个只被使用一次的任意或非重复的随机数值 In cryptography, a nonce is an arbitary number that can only be used once.
+#-O
 OSI Open System Interconnection 开放式系统互联
 OTA Online Travel Agent 在线旅行社
 #-P
@@ -4779,9 +4787,13 @@ SSO Single Sign On 单点登录
 SLF4J the Simple Logging Facade for Java 简单日志门面
 SPA Single-Page Application 单页面应用
 SOA Service-Oriented Architecture 面向服务架构
+Soft Delete = Logical Delete is a way of removing business entities, which impliey that we mark an entity as deleted instead of physically removing it from the database.
+SSL Secure Sockets Layer 安全套接层协议
 #-T
+TLS Transport Layer Security 安全传输层协议
 #-U
 UML Unified Modeling Language 标准建模语言
+URL Uniform Resource Locator 统一资源定位符
 #-V
 #-W
 #-X
