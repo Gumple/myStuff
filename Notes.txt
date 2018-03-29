@@ -776,3 +776,13 @@ Your confusion is reasonable - they are often the same thing. But not always. Wh
 4. SSL acceleration: when SSL is used; it may serve as a termination point for those SSL sessions so that the workload of dealing with the encryption is offloaded from the web server(s)
 I think this covers most of it but there are probably a few other features I've missed. Certainly it isn't uncommon to see a device or piece of software marketed as a load balancer/reverse proxy because the features are so commonly bundled together.
 +connection pooling (allow multiple requests on one frontend connection when backend doesn't handle it well; or reuse backend connection for multiple frontend connections)
+#-（一百零九）upstream/downstream in computer science
+Upstream components are other parts of the system that your component depends on to do its job. If the design of an upstream component changes, the ability of your component to function may be affected. If an upstream component has a bug, this bug may be manifested in your component.
+Downstream components are parts of the system that your component can affect. Changes in your component can ripple to components that are downstream from your component.
+Consider an application that consists of a database tier and an application tier. The database tier would be considereded to be upstream of the application tier.
+#-（一百一十）always use 1 << n instead of Math.pow(2, n)
+#-（一百一十一）The difference between Right Shift and Zero-Fill Right Shift is in how the sign bit is treated. With Right Shift, the sign is preserved by keeping the most significant bit unchanged. With Zero-Fill Right Shift, the most significant bit is set to zero.
+Examples: 
+  16>>>3 = 2  (10000 >>> 3 = 00010)
+  12>>>2 = 3  (01100 >>> 2 = 00011)
+  -12>>>2 = 1073741821  (sign is not preserved)

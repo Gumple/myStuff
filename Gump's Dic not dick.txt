@@ -965,6 +965,7 @@ consumable [n.] 消耗品
 constraint [n.] 约束；限制 (Their decision ot abandon the trip was made because of financial constraints. 他们决定放弃这次出游是因为财力有限)
 circumvent [vt.] 避免，绕开；围绕，包围；用计防止 (Military planners tried to circumvent the treaty. 军事策略家们企图绕开这一条约)
 counter-offer [n.] an offer made in response to another
+chump [n.] 傻瓜，笨蛋；短而厚的木块 (The guy's a chump. I could do a better job myself. 那家伙是个笨蛋。我自己做得都比他好)
 #D:
 discrimnate [vt.] 歧视 (~ against women and in favor of men 重男轻女)
 discrimation [n.] 歧视 (show ~ against/in favor of 歧视/偏袒)
@@ -2703,6 +2704,7 @@ old-time [adj.] 以前的，旧式的，资深的 (The effect of that singing, a
 overhead [n.] 额外开销
 opaque [adj. n.] 不透明的；无光泽的；含糊的；晦暗的；不透明，晦暗 (You can always user opaque glass if you need to block a street view. 如果不想从室内看到街景，可以使用不透明玻璃)
 OP (original poster) 楼主；题主
+One-itis 真命天女症
 #P:
 put-together [adj.] 得体的
 patch quilt 拼缝床罩
@@ -3205,6 +3207,7 @@ resilience [n.] 弹性；回弹；弹力；快速恢复的能力 (This wool poss
 retrospective meeting 回顾会议
 reimbursement [n.] 补偿；赔偿，偿还；报销 (She is demanding reimbursement for medical and other expenses. 她正在索赔医药费和其他花费)
 repulsive [adj.] 丑恶的；令人厌恶的，令人作呕的，令人反感的；排斥的
+right off the bat 立刻，立即 (He learned right off the bat that you can't count on anything in this business. 他立刻明白在这一行业中不能依靠任何东西)
 #S:
 submarine [n.] 潜艇
 socialization [n.] 社会化
@@ -4738,6 +4741,7 @@ CDN Content Delivery Network 内容分发网络
 CISC Complex Instruction Set Computer 复杂指令集计算机
 CRM Customer Relationship Management 客户关系管理
 CSRF Cross-Site Request Forgery 跨站请求伪造
+Code Smell in computer programmings, is any symptom in the source code of a program that possibly indicates a deeper problem.
 #-D
 Dynamic Programming 动态规划
 DOS Disk Operating System 磁盘操作系统
@@ -4803,16 +4807,21 @@ XSS attack Cross-Site Scripting attack 跨站脚本攻击
 
 #-UD
 acronym [] Abbreviated Coded Rendition of Name Yielding Meaning (A.C.R.O.N.Y.M is an acronym.)
+AFC [n.] Average Frustrated Chump. A guy who lacks skills, and confidence when it comes to women. He will often ends up in the "friend zone" because he obeys girls like a slave. (An AFC in a bar with gorgeous women would sit in the corner, and ask himeself "why aren't they coming up to me." when he should be going up to them, but won't, because he lacks confidence.)
 bic [n.] A 'Bic' is the most common type of lighter available. Tried, trusted and relatively inexpensive, it's the only type of lighter I use. (Pass me the Bic, so I can light my cone.)
 bail [vi.] to leave; to bounce
 beauty sus [n.] The opposite of beauty bias, where the attractiveness of a person makes you more suspicious about their true character, usually causing you to act more closed off or cold around that person than usual because of their beauty, thus the sus. (-Do you have something against them? Is there some kind of beef going on that I don't know about? -Nothing really, I just don't trust them. Beauty sus I guess, they're just too hot to not be some kind of freak if you ask me.)
 brb [] Acronym for "be right back"
+beta male [] An unremarkable, careful man who avoids risk and confrontation. Beta males lack the physical presence, charisma and confidence of the Alpha male. (Pete knew he was losing the girl he'd just met at the bar to the guy who bought her a drink, but he was too much of a beta male to do anything about it.)
 cootchie [n.] female genitalia
 cherry pie [] A virgin's pussy
 corny [adj.] Trying to be cool, but ultimately very uncool indeed, and often even extremely embarrassing (Man, did you see that Manowar show? The way they posed? And all that "Knights of Steel" bullshit? Hell that was corny.)
 freeloader [n.] Someone who lives off other people's lives. They don't pay for anything and never pay you back.
+FTFY [] Acronym for "fixed that for you."
 g2g [] Got to Go
 IRL [] Abbreviation for "In Real Life"
+IMO [] In My Opinion
+just because [] A valid excuse when doing something
 moon cricket [] Derived from early slave times when black people would come out at night and sing slave songs under the moonlight like crickets (extemely offensive)
 MRW [] An abbreviation for "My Reaction When"
 penetration [n.] Penetration is the medical term for the penis entering into the vagina. It's a good way term for talking about sex if one wants to seem mature. Even if you're a dirty little pervert, you'll sound like sex is more than just an emotionless action caused by hormones if you call it 'penetration' rather than 'fucking around', 'doing it' etc. (-Did you fucked your girlfriend last night? -Penetration occured and I deposited my semen inside of her vagina. -What the fuck? You're a frat boy, you don't talk like that. -I know, but I sure sound mature, don't I? )
@@ -4821,6 +4830,7 @@ R.O.D [] Ride or Die;Tight Friends (Girl your my R.O.D chiick.)
 snob [n.] Someone who claims to be of higher intelligence than others, understands the finer thing in life, and generally deems themself higher being than most others; they often refer to the 'lesser beings' as peasant of philistines. In simple terms, snobs are wankers.
 knockers [] A woman's breasts, especially when unrestrained and allowed to move.
 O rly [] internet slang, short for 'Oh, really?'
+oneitis [] Often confused with love, this is the feeling that a particular woman is actually special. This is just an illusion; she is the same as the other three or so billion. "Go fuck ten other women" is the most commonly prescribed treatment for this "disease" (hence the "itis"), as it tends to show quite quickly how very alike people are. In other words, get over yourself and your obsession with that girl, because it's just an illusion. And when you get rejected, don't be depressed. Because there's really not much to worry about. (Dude, you definitely have oneitis for that girl. You've been talking about her nonstop for the past week. Don't you realize she's nothing special, and that you are just being fooled? Snap out of it so you won't be so depressed when she rejects you!)
 shitfaced [adj.] To be really, really drunk (Uh-oh. Sarah's a little shitfaced and Andy's a smooth talker. Better go find them.)
 stage five clinger [] A member of the opposite sex that is likely to become overly attached, overly fast. Virgins, those on the rebound, and the emotionally fragile are more likely to have this term applied to them. Originally from the movie Wedding Crashers. (I nailed that chick last weekend and seriously regret giving her my number - I'm getting 2 or 3 calss a day. I think what we've got ourselves here is a stage five clinger.)
 sus [adj.] The word sus is meant to suggest that someone is believed to be shady or false. They are hiding something or are believed to have a serious character flaw which makes them undesireble as friend or acqaintence. It is derived from its root word suspect. In some areas it is primarily used to describe a nigga that is Bitch-made or one who is not feminine but suspected of homosexuality or other sexual deviances. Most commonly used to denote suspected homosexual tendencies.
