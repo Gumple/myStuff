@@ -665,7 +665,7 @@ complement [v. n.] 补足，补充；使完美 (-ary [adj.]; ~ each other
 core [n.] 果心，核儿；核心；精髓
 costodian [n.] 监护人；保管人
 click 咯哒地做 (-ing [adj.]; The door -ed shut. 门咯哒一声关上了。)
-cringe [vi.] 畏缩，怯退；感到难堪
+cringe [vi. n.] 畏缩，怯退；感到难堪；尴尬癌 (The way I used to dress and my haircut were so awful it gave me a cringe attack.)
 concise [adj.] 简明的，简练的
 courtesy [n.] 礼貌
 canal [n.] 运河
@@ -2078,6 +2078,8 @@ It is in/with ... as in/with ... 犹如，正如；...正像...一样 (It is in 
 incognito [adj. adv. n.] 化装的(地)；用假名的(地)；隐姓埋名的(地)；用假名的人 (Hotel inspectors have to tarvel incognito. 酒店巡查员巡查时必须隐瞒真实身份)
 implicit [adj.] 无疑问的，绝对的；隐式的，存在但是你没有感觉到的
 It's not my place/I'm in no position to ... 我无权...；我没办法... (I'm in no position to judge. 我无权评价)
+in the heat of the moment 盛怒之下；一时激动之下；一时冲动；上头 (It was all done in the heat of the moment and I have certainly learned by my mistake. 所有的一切都是在一怒之下干的，我无疑已经从自己的错误中吸取了教训)
+in a nutshell (in the fewest possible words) 简单地说，简而言之；总的来说，总而言之 (A recent review argues that the problem is no longer simply a lack of opportunity or encouragement -- in a nutshell, girls just seem to prefer other subjects. 最近的一篇文章表示，造成这种现象不仅仅是简单的因为女性缺乏机会和鼓励——简单地说，就是女生更偏好其他科目)
 #J:
 jerk [v.] 猝然一动 (~ sth. out 结巴的说)
 jumble [v. n.] （使）混乱;混乱，杂乱的一堆东西 (-d [adj.] in -d order杂乱无序的)
@@ -3017,8 +3019,9 @@ poka yoke 防误防错；防错法；防错装置
 proficiency [n.] 熟练，精通，娴熟 (Evidence of basic proficiency in English is part of the admission requirement. 英语基本熟练是入学条件之一)
 PM (private message) 私信
 pitch in 参与；做出贡献；协力；凑份子钱 (The agency says international relief agencies also have pitched in. 该机构说国际救援机构也提供了支援)
+permutation [n.] (数学)排列 (permutation and combination (数学)排列组合)
 #Q:
-quadratic [adj.] （数学）二次的
+quadratic [adj.] (数学)二次的
 quotation [n.] 引用；引证
 quench [vt.] 使熄灭；解渴 (~ one's thirst with beer 以啤酒解渴; ~ one's passion 冷却某人的热情)
 queer [n. adj.] 假娘们；同性恋；娘儿们似的；妖里妖气的
@@ -3036,6 +3039,7 @@ quote [v.] 引述；报价
 quintessential [adj.] 典型的；精髓的
 quibble [n. vi.] 吹毛求疵的反对意见或批评；遁词，模棱两可的话；含糊其辞；吹毛求疵 (Council members spent the day quibbling over the final wording of the resolution. 委员会成员一整天都在为决议的最终措辞争论不休)
 queer as a three-dollar bill 娘炮的；像娘娘腔的
+quotient [n.] (数学)商；系数
 #R:
 rigid [adj.] 死板的；僵硬的
 rise to 克服处理；上当
@@ -3208,6 +3212,7 @@ retrospective meeting 回顾会议
 reimbursement [n.] 补偿；赔偿，偿还；报销 (She is demanding reimbursement for medical and other expenses. 她正在索赔医药费和其他花费)
 repulsive [adj.] 丑恶的；令人厌恶的，令人作呕的，令人反感的；排斥的
 right off the bat 立刻，立即 (He learned right off the bat that you can't count on anything in this business. 他立刻明白在这一行业中不能依靠任何东西)
+remainder [n.] (数学)余数
 #S:
 submarine [n.] 潜艇
 socialization [n.] 社会化
@@ -4369,6 +4374,7 @@ write-up [n.] 报导；评论(尤指捧场文章)；账面价值的提高；资�
 works for me 我没问题；成！
 whiz [n. vi.] 能手，专家；飕飕声；有吸引力的东西；发出飕飕声；<口>高速移动 (Gee whiz, they carried on and on, they loved the evening. 啊，他们玩个没完了，他们很喜欢这个晚会)
 with a grain of salt 半信半疑地，有保留地；怀疑地 (take something with a grain of salt 对某事持保留/怀疑态度)
+well-rounded [adj.] 丰满的；面面俱到的；多才多艺的 (Graduates need leadership qualities and the ability to articulate how those experiences have created a well-rounded individual. 毕业生需要具备领导能力和表达能力，明确有力地表达自己的这些经历是如何把自己打造成了一个多才多艺全面型的个人)
 #X:
 wholesome [adj.] 健全的；合乎卫生的；有益健康的
 XYZ (examine your zipper) (slang) 检查一下你的裤链 (XYZ. You're flying low(also slang). 检查一下你的裤链，你裤链没拉)

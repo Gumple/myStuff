@@ -786,3 +786,86 @@ Examples:
   16>>>3 = 2  (10000 >>> 3 = 00010)
   12>>>2 = 3  (01100 >>> 2 = 00011)
   -12>>>2 = 1073741821  (sign is not preserved)
+#-（一百一十二）What is container in spring framework?
+In this context a container has the meaning of something that provides an infrastructrure needed by some components to life.
+You can imagine it this way:
+Like the JVM is a container to run Java Programms,
+a Tomcat (or Servlet Container in general) is the thing that runs servlets
+a EJB-Container is the environmet where EJB live (see this wikipedia article (in german, but you can use your browser translator))
+The same way Spring is the container where Spring Beans live.
+
+What is the difference between servlet container and spring container?
+A Servlet Container or Web Container (like Tomcat) is an implementation of various Java EE specifications like Java Servlet, JSP, etc. Put in a simple way, it is an environment where Java web applications can live. A web server + Java support.
+A Spring Container on the other hand, is the core and the engine of the Spring Framework. It is an IoC Container, infact it handles Spring applications lifecycle creating new beans and injecting dependencies.
+Because a Spring application can be a web application, a Spring Container can "live" inside a Web Container.
+#-（一百一十三）How multiple threads invoke singleton object's method and work on them? (Stateful and Stateless)
+I think you have to distinguish between what you've already stored in memory and code execution.
+
+In a Singleton Object you have:
+
+Fields: They are stored in memory. They can be shared amongst multiple threads and you have no guarantee they will keep consistent (unless you make them synchronized).
+Methods to be called: They can be called from more than one thread. Each execution is independent and thread safe, unless they access some shared field improperly.
+Now coming to your question: if you share your singleton object among multiple threads and access it concurrently, every single thread will execute Singleton object's portion of code, wrapped in its own execution.
+
+Also if you write a Thread.currentThread().getId(); which basically returns the thread ID you're executing into singleton's methods, you will obtain different ids, because different threads are executing their own method stack. Being stateless means you've no fields into the singleton to be shared amongst them!
+
+A word on Stateless and Stateful
+
+Stateless means that the bean hasn't got any modifiable field to share. That means you have only methods or/and static stuff in your object, so you can use them anywhere and will always return you same result. You don't have to worry about synchronizing the access to the field.
+
+That's a basic example about stateless, let's suppose you have a class that only performs the sum operation:
+
+public class StatelessClass{
+
+    public int sum(int a, int b){
+        return a+b;
+    }
+
+}
+In the same way, you can declare it as a abstract class (no instantiable itself) and make its methods static, which means you don't need any instance of it to call its methods:
+
+public abstract class StatelessClass{
+
+    /**
+    *   I only sum objects
+    */
+    public static int sum(int a, int b){
+        return a+b;
+    }
+
+}
+Then you can use it as StatelessClass.sum(1,1);, this actually would be very similar to have a Singleton object itself, with the difference that in the Singleton you have a unique instance shared in the application.
+
+In the same way, having a field which is injected and provides access to a service neither is considered to alter the state of the object: (Note: !!!important Service itself or the methods the class call from the service has to be Stateless
+
+public class StatelessServiceClass{
+
+    private Service service;
+
+    public int sum(int a, int b){
+        return service.sum(a,b);
+    }
+
+    public void setService(Service serv){
+        this.service=serv;
+    }
+
+}
+However, having a field which is modifiable makes the Object stateful:
+
+public class StatefulClass{
+
+    //This fields make the object STATEFUL
+    private int totalSum = 0;
+
+    public int sum(int a, int b){
+        int sum = a + b;
+        totalSum = totalSum + sum;
+        if (totalSum > 100)
+            System.out.println("This thread "+Thread.currentThread().getId()+
+                +" got it!");
+        return sum;
+    }
+
+}
+As sum can be accessed by multiple threads at the same time, you should guarantee that totalSum is accessed in a synchronized way. The printed sentence is not guaranteed to be true unless you do it.
