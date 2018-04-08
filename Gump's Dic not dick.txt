@@ -4769,6 +4769,7 @@ HTTPS Hypertext Transfer Protocol over Secure Socket Layer
 #-I
 IoC Inversion of Control 控制反转
 IDE Integrated Development Environment 集成开发环境
+IaaS Infrastructure-as-a-Service 基础设施即服务
 #-J
 JDK Java Development Kit Java语言开发包
 #-K
@@ -4785,6 +4786,7 @@ Nonce 一个只被使用一次的任意或非重复的随机数值 In cryptograp
 OSI Open System Interconnection 开放式系统互联
 OTA Online Travel Agent 在线旅行社
 #-P
+Paas Platform-as-a-Service 平台即服务
 #-Q
 #-R
 RISC Reduced Instruction Set Computer 精简指令集计算机
@@ -4800,6 +4802,8 @@ SPA Single-Page Application 单页面应用
 SOA Service-Oriented Architecture 面向服务架构
 Soft Delete = Logical Delete is a way of removing business entities, which impliey that we mark an entity as deleted instead of physically removing it from the database.
 SSL Secure Sockets Layer 安全套接层协议
+SaaS Software-as-a-Service 软件即服务
+SCM Source Code Management 源代码管理；版本控制
 #-T
 TLS Transport Layer Security 安全传输层协议
 #-U
