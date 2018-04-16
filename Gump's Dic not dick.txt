@@ -1172,6 +1172,7 @@ drumstick [n.] 鸡腿；鸡翅跟
 dumbfound [vt.] 使人哑然失声；使发愣 (This suggestion dumbfounded Joe. 这个建议使Joe目瞪口呆)
 differentiator [n.] 区分者；优势 (Quality code has become not only a necessity, but a competitive differentiator. 代码质量不仅成为了一个必需品，更成为了一个竞争优势)
 digress [vi. adj.] 离题；岔开话题；离题的；枝节的 (I've digressed a little to explain the situation so far, so let me now recap. 刚才我稍稍离题说明了迄今的情况，现在让我来概述一下)
+drama queen 喜欢小题大做的人
 #E 
 Everything works out all right in the end. 最后一切都正常(大团圆结局)。
 emission [n.] 排放
@@ -1661,6 +1662,7 @@ gobsmacked [adj.] 大吃一惊的；目瞪口呆的 (I was really gobsmacked whe
 gloss over 粉饰，掩饰(错误)；把...搪塞过去 (Some foreign governments appear happy to gloss over continued human righs abuses. 一些外国政府似乎乐于掩饰不断出现的侵犯人权现象)
 go viral 像病毒一样传播开来 (Jonah mentioned you both shared a philosophical approach to why things go viral. Jonah提到，你们俩曾经分享过为什么视频会走红的一个哲学方法)
 grit [n.] 勇气；坚韧，刚毅；细沙，砂砾 (He felt tine bits of grit and sand peppering his knees. 他感到细小的砂砾不断打在膝盖上)
+go out on a limb 冒险；担风险 (I think it's way too early to go out on a limb on any stock in the sector. The odds are still unfavorable on a bill, and the shape of any legislation is anyone's guess. 我认为对于这个版块中的股票而言，现在押注还为时过早，是不利提案的几率及提案的具体内容都只是猜测，加上现在股市疲软的表现，我会选择观望)
 #H:
 husband-to-be [n.] 未婚夫，未来老公 (wife-to-be) 
 hubby [n.] 老公
@@ -2080,6 +2082,7 @@ implicit [adj.] 无疑问的，绝对的；隐式的，存在但是你没有感�
 It's not my place/I'm in no position to ... 我无权...；我没办法... (I'm in no position to judge. 我无权评价)
 in the heat of the moment 盛怒之下；一时激动之下；一时冲动；上头 (It was all done in the heat of the moment and I have certainly learned by my mistake. 所有的一切都是在一怒之下干的，我无疑已经从自己的错误中吸取了教训)
 in a nutshell (in the fewest possible words) 简单地说，简而言之；总的来说，总而言之 (A recent review argues that the problem is no longer simply a lack of opportunity or encouragement -- in a nutshell, girls just seem to prefer other subjects. 最近的一篇文章表示，造成这种现象不仅仅是简单的因为女性缺乏机会和鼓励——简单地说，就是女生更偏好其他科目)
+if only 只要；但愿；要是...就好了 (If only it were that simple! 要是那么简单就好了！)
 #J:
 jerk [v.] 猝然一动 (~ sth. out 结巴的说)
 jumble [v. n.] （使）混乱;混乱，杂乱的一堆东西 (-d [adj.] in -d order杂乱无序的)

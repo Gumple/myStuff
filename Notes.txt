@@ -917,3 +917,13 @@ public class ExampleServlet extends HttpServlet {
         thisIsThreadSafe = request.getParameter("foo"); // OK, this is thread safe.
     }
 }
+#-（一百一十五）When to use double or single quotes in JavaScript?
+There is no one better solution; however, I would like to argue that double quotes may be more desirable at times:
+
+Newcomers will already be familiar with double quotes from their language. In English, we must use double quotes " to identify a passage of quoted text. If we were to use a single quote ', the reader may misinterpret it as a contraction. The other meaning of a passage of text surrounded by the ' indicates the 'colloquial' meaning. It makes sense to stay consistent with pre-existing languages, and this may likely ease the learning and interpretation of code.
+Double quotes eliminate the need to escape apostrophes (as in contractions). Consider the string: "I'm going to the mall", vs. the otherwise escaped version: 'I\'m going to the mall'.
+Double quotes mean a string in many other languages. When you learn a new language like Java or C, double quotes are always used. In Ruby, PHP and Perl, single-quoted strings imply no backslash escapes while double quotes support them.
+
+JSON notation is written with double quotes.
+
+Nonetheless, as others have stated, it is most important to remain consistent.
