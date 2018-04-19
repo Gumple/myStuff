@@ -927,3 +927,61 @@ Double quotes mean a string in many other languages. When you learn a new langua
 JSON notation is written with double quotes.
 
 Nonetheless, as others have stated, it is most important to remain consistent.
+#-（一百一十六）快速失败(fail-fast)和安全失败(fail-safe)的区别是什么？
+一：快速失败（fail—fast）
+
+          在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出Concurrent Modification Exception。
+
+          原理：迭代器在遍历时直接访问集合中的内容，并且在遍历过程中使用一个 modCount 变量。集合在被遍历期间如果内容发生变化，就会改变modCount的值。每当迭代器使用hashNext()/next()遍历下一个元素之前，都会检测modCount变量是否为expectedmodCount值，是的话就返回遍历；否则抛出异常，终止遍历。
+
+      注意：这里异常的抛出条件是检测到 modCount！=expectedmodCount 这个条件。如果集合发生变化时修改modCount值刚好又设置为了expectedmodCount值，则异常不会抛出。因此，不能依赖于这个异常是否抛出而进行并发操作的编程，这个异常只建议用于检测并发修改的bug。
+
+      场景：java.util包下的集合类都是快速失败的，不能在多线程下发生并发修改（迭代过程中被修改）。
+
+二：安全失败（fail—safe）
+
+      采用安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，而是先复制原有集合内容，在拷贝的集合上进行遍历。
+
+      原理：由于迭代时是对原集合的拷贝进行遍历，所以在遍历过程中对原集合所作的修改并不能被迭代器检测到，所以不会触发Concurrent Modification Exception。
+
+      缺点：基于拷贝内容的优点是避免了Concurrent Modification Exception，但同样地，迭代器并不能访问到修改后的内容，即：迭代器遍历的是开始遍历那一刻拿到的集合拷贝，在遍历期间原集合发生的修改迭代器是不知道的。
+
+      场景：java.util.concurrent包下的容器都是安全失败，可以在多线程下并发使用，并发修改。
+#-（一百一十七）Hashmap vs Hashtable
+1. HashMap is non synchronized. It is not-thread safe and can’t be shared between many threads without proper synchronization code whereas Hashtable is synchronized. It is thread-safe and can be shared with many threads.
+2. HashMap allows one null key and multiple null values whereas Hashtable doesn’t allow any null key or value.
+3. HashMap is generally preferred over HashTable if thread synchronization is not needed
+
+Why HashTable doesn’t allow null and HashMap does?
+To successfully store and retrieve objects from a HashTable, the objects used as keys must implement the hashCode method and the equals method. Since null is not an object, it can’t implement these methods. HashMap is an advanced version and improvement on the Hashtable. HashMap was created later.
+#-（一百一十八）Can you nest html forms?
+In a word, no. You can have several forms in a page but they should not be nested.
+From the html5 working draft:
+
+4.10.3 The form element
+Content model:
+Flow content, but with no form element descendants.
+#-（一百一十九）Java: How to use null in switch?
+This is not possible with a switch statement in Java. Check for null before the switch:
+
+if (i == null) {
+    doSomething0();
+} else {
+    switch (i) {
+    case 1:
+        // ...
+        break;
+    }
+}
+You can't use arbitrary objects in switch statements*. The reason that the compiler doesn't complain about switch (i) where i is an Integer is because Java auto-unboxes the Integer to an int. As assylias already said, the unboxing will throw a NullPointerException when i is null.
+
+* Since Java 7 you can use String in switch statements.
+#-（一百二十）Is there anything like static class in java?
+Java has static nested classes but it sounds like you're looking for a top-level static class. Java has no way of making a top-level class static but you can simulate a static class like this:
+
+Declare your class final - Prevents extension of the class since extending a static class makes no sense
+Make the constructor private - Prevents instantiation by client code as it makes no sense to instantiate a static class
+Make all the members and functions of the class static - Since the class cannot be instantiated no instance methods can be called or instance fields accessed
+Note that the compiler will not prevent you from declaring an instance (non-static) member. The issue will only show up if you attempt to call the instance member
+
+What good are static classes? A good use of a static class is in defining one-off, utility and/or library classes where instantiation would not make sense. A great example is the Math class that contains some mathematical constants such as PI and E and simply provides mathematical calculations. Requiring instantiation in such a case would be unnecessary and confusing. See Java's Math class. Notice that it is final and all of its members are static. If Java allowed top-level classes to be declared static then the Math class would indeed be static.

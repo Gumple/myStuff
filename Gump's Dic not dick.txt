@@ -660,8 +660,7 @@ compile [vt.] 编写，编译
 catchy [adj.] 悦耳易记的 (~ phrases 朗朗上口的语句，经典的语句)
 cardiac [adj.] 心脏的
 commission [n.] 佣金
-complement [v. n.] 补足，补充；使完美 (-ary [adj.]; ~ each other
-互相取长补短)
+complement [v. n.] 补足，补充；使完美 (-ary [adj.]; ~ each other 互相取长补短)
 core [n.] 果心，核儿；核心；精髓
 costodian [n.] 监护人；保管人
 click 咯哒地做 (-ing [adj.]; The door -ed shut. 门咯哒一声关上了。)
@@ -1173,6 +1172,7 @@ dumbfound [vt.] 使人哑然失声；使发愣 (This suggestion dumbfounded Joe.
 differentiator [n.] 区分者；优势 (Quality code has become not only a necessity, but a competitive differentiator. 代码质量不仅成为了一个必需品，更成为了一个竞争优势)
 digress [vi. adj.] 离题；岔开话题；离题的；枝节的 (I've digressed a little to explain the situation so far, so let me now recap. 刚才我稍稍离题说明了迄今的情况，现在让我来概述一下)
 drama queen 喜欢小题大做的人
+deadpan [adj. n.] 面无表情的；不动声色的；故作严肃的；面无表情的人
 #E 
 Everything works out all right in the end. 最后一切都正常(大团圆结局)。
 emission [n.] 排放
