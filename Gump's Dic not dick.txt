@@ -654,6 +654,7 @@ bulletin [vt. n.] 公布；公告；新闻快报 (At 3:30 p.m. a bulletin was re
 buffalo [n.] 野牛，水牛
 bouncer [n.] 保镖
 be backed by 由...支持；由...做后盾
+blindside [vt.] 攻其不备；乘虚而入 (Nobody is going to blindside you and hit you as hard as life will. 生活会打击你，使你攻其不备挫败连连，这就是生活)
 #C:
 contradict [vt.] 反驳，驳斥 (~ oneself 与自己所说的自相矛盾 -ion [n.] 矛盾)
 compile [vt.] 编写，编译
@@ -1173,6 +1174,7 @@ differentiator [n.] 区分者；优势 (Quality code has become not only a neces
 digress [vi. adj.] 离题；岔开话题；离题的；枝节的 (I've digressed a little to explain the situation so far, so let me now recap. 刚才我稍稍离题说明了迄今的情况，现在让我来概述一下)
 drama queen 喜欢小题大做的人
 deadpan [adj. n.] 面无表情的；不动声色的；故作严肃的；面无表情的人
+deja vu [n.] 似曾相识的感觉；记忆幻觉 (As I listened to him explain the work, I had a very strong sense of deja vu. 当他向我解释这项工作时，我有一种强烈的似曾相识的感觉)
 #E 
 Everything works out all right in the end. 最后一切都正常(大团圆结局)。
 emission [n.] 排放
