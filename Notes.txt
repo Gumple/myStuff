@@ -932,7 +932,7 @@ Nonetheless, as others have stated, it is most important to remain consistent.
 
           在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出Concurrent Modification Exception。
 
-          原理：迭代器在遍历时直接访问集合中的内容，并且在遍历过程中使用一个 modCount 变量。集合在被遍历期间如果内容发生变化，就会改变modCount的值。每当迭代器使用hashNext()/next()遍历下一个元素之前，都会检测modCount变量是否为expectedmodCount值，是的话就返回遍历；否则抛出异常，终止遍历。
+          原理：迭代器在遍历时直接访问集合中的内容，并且在遍历过程中使用一个 modCount 变量。集合在被遍历期间如果内容发生变化，就会改变modCount的值。每当迭代器使用hasNext()/next()遍历下一个元素之前，都会检测modCount变量是否为expectedmodCount值，是的话就返回遍历；否则抛出异常，终止遍历。
 
       注意：这里异常的抛出条件是检测到 modCount！=expectedmodCount 这个条件。如果集合发生变化时修改modCount值刚好又设置为了expectedmodCount值，则异常不会抛出。因此，不能依赖于这个异常是否抛出而进行并发操作的编程，这个异常只建议用于检测并发修改的bug。
 
@@ -985,3 +985,72 @@ Make all the members and functions of the class static - Since the class cannot 
 Note that the compiler will not prevent you from declaring an instance (non-static) member. The issue will only show up if you attempt to call the instance member
 
 What good are static classes? A good use of a static class is in defining one-off, utility and/or library classes where instantiation would not make sense. A great example is the Math class that contains some mathematical constants such as PI and E and simply provides mathematical calculations. Requiring instantiation in such a case would be unnecessary and confusing. See Java's Math class. Notice that it is final and all of its members are static. If Java allowed top-level classes to be declared static then the Math class would indeed be static.
+#-（一百二十一）Working With hashcode() and equals()
+equals(Object obj): a method provided by java.lang.Object that indicates whether some other object passed as an argument is "equal to" the current instance. The default implementation provided by the JDK is based on memory location — two objects are equal if and only if they are stored in the same memory address.
+hashcode(): a method provided by java.lang.Object that returns an integer representation of the object memory address. By default, this method returns a random integer that is unique for each instance. This integer might change between several executions of the application and won't stay the same.
+
+In order to achieve a fully working custom equality mechanism, it is mandatory to override hashcode() each time you override equals(). Follow the tips below and you'll never have leaks in your custom equality mechanism:
+If two objects are equal, they MUST have the same hash code.
+If two objects have the same hash code, it doesn't mean that they are equal.
+Overriding equals() alone will make your business fail with hashing data structures like: HashSet, HashMap, HashTable ... etc.
+Overriding hashcode() alone doesn't force Java to ignore memory addresses when comparing two objects. (Because Object.equals() is based on memory location)
+#-（一百二十二）Iterator vs Foreach In Java
+In for-each loop, we can’t modify collection, it will throw a ConcurrentModificationException on the other hand with iterator we can modify collection.
+Modifying a collection simply means removing an element or changing content of an item stored in the collection. This occurs because for-each loop implicitly creates an iterator but it is not exposed to the user thus we can’t modify the items in the collections.
+
+When to use which traversal?
+If we have to modify collection, we must use an Iterator.
+While using nested for loops it is better to use for-each loop, consider the below code for better understanding.
+
+Performance Analysis:
+Traversing a collection using for-each loops or iterators give the same performance. Here, by performance we mean the time complexity of both these traversals.
+If you iterate using the old styled C for loop then we might increase the time complexity drastically.
+
+// Here l is List ,it can be ArrayList /LinkedList and n is size of the List
+for (i=0;i<n;i++)
+   System.out.println(l.get(i));
+
+Here if the list l is an ArrayList then we can access it in O(1) time since it is allocated contiguous memory blocks (just like an array) i.e random access is possible. But if the collection is LinkedList, then random access is not possible since it is not allocated contiguous memory blocks, so in order to access a element we will have to traverse the link list till you get to the required index, thus the time taken in worst case to access an element will be O(n).
+
+Iterator and for-each loop are faster than simple for loop for collections with no random access, while in collections which allows random access there is no performance change with for-each loop/for loop/iterator.
+#-（一百二十三）static methods with same signature
+Superclass
+public class ClassA {
+    public static void printStatic(){
+        System.out.println("hi static from A");
+    }
+    public void printDynamic(){
+        System.out.println("hi dynamic from A");
+    }
+}
+
+Subclass
+public class ClassB extends ClassA {
+    public static void printStatic(){
+        System.out.println("hi static from B");
+    }
+    public void printDynamic(){
+        System.out.println("hi dynamic from B");
+    }
+
+}
+
+Test code
+public static void main (String args[]){
+	ClassA a = new ClassB();
+	ClassB b = new ClassB();
+	a.printDynamic();
+	a.printStatic();
+	b.printDynamic();
+	b.printStatic();
+	((ClassA)b).printStatic();
+}
+
+Output
+hi dynamic from B
+hi static from A
+hi dynamic from B
+hi static from B
+hi static from A
+#-（一百二十四）ava Reflection: Difference between getMethods() and getDeclaredMethods()
+getDeclaredMethods includes all methods declared by the class itself, whereas getMethods returns only public methods, but also those inherited from a base class (here from java.lang.Object).
