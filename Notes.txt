@@ -1054,3 +1054,15 @@ hi static from B
 hi static from A
 #-（一百二十四）ava Reflection: Difference between getMethods() and getDeclaredMethods()
 getDeclaredMethods includes all methods declared by the class itself, whereas getMethods returns only public methods, but also those inherited from a base class (here from java.lang.Object).
+#-（一百二十五）Singleton design pattern vs Singleton beans in Spring container
+I find "per container per bean" difficult to apprehend. I would say "one bean per bean id".Lets have an example to understand it. We have a bean class Sample. I have defined two beans from this class in bean definition, like:
+
+<bean id="id1" class="com.example.Sample" scope="singleton">
+        <property name="name" value="James Bond 001"/>    
+</bean>    
+<bean id="id7" class="com.example.Sample" scope="singleton">
+        <property name="name" value="James Bond 007"/>    
+</bean>
+
+So when ever I try to get the bean with id "id1",the spring container will create one bean, cache it and return same bean where ever refered with id1. If I try to get it with id7, another bean will be created from Sample class, same will be cached and returned each time you referred that with id7.
+This is unlikely with Singleton pattern. In Singlton pattern one object per class loader is created always. But in spring many objects are being created for the same class. However in Spring making the scope as Singleton returning same object for the same id.

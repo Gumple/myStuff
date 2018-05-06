@@ -658,6 +658,8 @@ bouncer [n.] 保镖
 be backed by 由...支持；由...做后盾
 blindside [vt.] 攻其不备；乘虚而入 (Nobody is going to blindside you and hit you as hard as life will. 生活会打击你，使你攻其不备挫败连连，这就是生活)
 bloated [adj.] 发胀的；浮肿的；臃肿的 (Rather than feeling healthy however, they often feel bloated and sluggish - symptoms of water retention which can be caused by the hidden salt in these salads. 相比于感觉良好，人们更多的是感觉臃肿和懒洋洋的——这是水潴留的症状，而这些症状可由沙拉中隐藏的盐导致)
+bear with 忍受；宽容 (Despite of this feature developers still have to bear with synchronization and avoiding race conditions. 尽管有这一功能，开发人员仍要忍受同步问题、避免竞态条件)
+boomerang [n. vi.] 回力镖；职场“回头客”(辞职另谋职位后，又返回原公司工作的人)；反受其害，自食其果 (In this world, "if you take one action, it can boomerang and harm something else," says Hassner. 在这个世界上，“如果你采取一步行动，接下来可能反受其害，并因此伤及无辜”，哈斯内尔说道)
 #C:
 contradict [vt.] 反驳，驳斥 (~ oneself 与自己所说的自相矛盾 -ion [n.] 矛盾)
 compile [vt.] 编写，编译
@@ -969,6 +971,7 @@ constraint [n.] 约束；限制 (Their decision ot abandon the trip was made bec
 circumvent [vt.] 避免，绕开；围绕，包围；用计防止 (Military planners tried to circumvent the treaty. 军事策略家们企图绕开这一条约)
 counter-offer [n.] an offer made in response to another
 chump [n.] 傻瓜，笨蛋；短而厚的木块 (The guy's a chump. I could do a better job myself. 那家伙是个笨蛋。我自己做得都比他好)
+catnip [n.] 猫薄荷
 #D:
 discrimnate [vt.] 歧视 (~ against women and in favor of men 重男轻女)
 discrimation [n.] 歧视 (show ~ against/in favor of 歧视/偏袒)
@@ -1081,7 +1084,7 @@ do time 坐牢；蹲监狱
 don't give up the day job 别放弃白天的正职(别放弃老本行去尝试没把握的新事物) (So you want to be a writer? Well my advice is, ~. 这么说你想成为一个作家了？得了，我劝你不要放弃老本行)
 daylight robbery 漫天要价；敲竹杠 (You wouldn't believe some of the prices they charge; it's ~. 他们的要价有一些你都不会相信，简直就是在光天化日之下抢劫呀！)
 D-Day [u.] 重大事情预定发生日；计划行动开始日
-disposable [adj.] (常作定)一次性的 (-s [pl.] 一次性尿布)
+disposable [adj.] (常作定)一次性的；可支配的 (disposables [pl.] 一次性尿布)
 dual [adj.] 双重的
 don't mention it (别人道谢时回答)不客气 (-Thanks for all your help. -~. -多谢你帮忙 -不用客气)
 dynamo [n.] 发电机；精力充沛的人
@@ -1791,7 +1794,7 @@ high-spirited [adj.] (人)兴高采烈的，朝气蓬勃的；(动物)烈性的
 hideous [adj.] 十分丑陋的；令人厌恶的 (a ~ crime 骇人听闻的罪行)
 have been around 老于世故的 (I ~. 我是见过世面的)
 hold ... dear 珍惜
-harmless [adj.] 无害的；无恶意的 (He's ~. 他并无恶意)
+harmless [adj.] 无害的；无恶意的；无辜，天真 (He's ~. 他并无恶意)
 half-assed [adj.] 不称职的；欠妥的
 hit the ceiling 勃然大怒
 haze [n.] 阴霾；薄雾
@@ -2721,6 +2724,7 @@ overhead [n.] 额外开销
 opaque [adj. n.] 不透明的；无光泽的；含糊的；晦暗的；不透明，晦暗 (You can always user opaque glass if you need to block a street view. 如果不想从室内看到街景，可以使用不透明玻璃)
 OP (original poster) 楼主；题主
 One-itis 真命天女症
+on guard 警惕；提防(against)；站岗 (Similarly, women can be so chatty, on guard or defensive at times, that the men can't get a word in edgewise and when they do we jump all over them without hearing them out. 相似的，女人非常喋喋不休，既警惕又处于一种自我保护的状态，让男人根本听不进去一个词，有时就直接忽略了她们的说辞)
 #P:
 put-together [adj.] 得体的
 patch quilt 拼缝床罩
@@ -4196,7 +4200,7 @@ vie [v.] 激烈竞争；争夺 (~ with sb. (for sth.))
 versatile [adj.] 多才多艺的；多功能的 (She is a designer of extraordinary versatility. 她是位特别多才多艺的设计师。)
 vault [n.] 金库
 vacuum [n. adj.] 真空(的) (vacuum cleaner 真空吸尘器)
-vulnerable [adj.] (身体上或感情上)脆弱的，易受伤害的 (be ~ to sb./sth.)
+vulnerable [adj.] (身体上或感情上)脆弱的，易受伤害的；不设防的 (be ~ to sb./sth.)
 vulgarity [n.] 粗俗；粗话
 vicious [adj.] 残酷的
 versus [adv.] (vs) 与...相对
@@ -4787,6 +4791,7 @@ IoC Inversion of Control 控制反转
 IDE Integrated Development Environment 集成开发环境
 IaaS Infrastructure-as-a-Service 基础设施即服务
 In-place algorithm 原地算法 (In computer science, an in-place algorithm is an algorithm which transforms input using no auxiliary data structure. In-place algorithm updates input sequence only through replacement or swapping of elements.)
+IDOR Insecure Direct Object Reference 不安全的直接对象引用
 #-J
 JDK Java Development Kit Java语言开发包
 #-K
@@ -4847,18 +4852,19 @@ corny [adj.] Trying to be cool, but ultimately very uncool indeed, and often eve
 freeloader [n.] Someone who lives off other people's lives. They don't pay for anything and never pay you back.
 FTFY [] Acronym for "fixed that for you."
 g2g [] Got to Go
+gig [n.] A job, usually in the entertainment industry
 IRL [] Abbreviation for "In Real Life"
 IMO [] In My Opinion
 just because [] A valid excuse when doing something
+knockers [] A woman's breasts, especially when unrestrained and allowed to move.
 moon cricket [] Derived from early slave times when black people would come out at night and sing slave songs under the moonlight like crickets (extemely offensive)
 MRW [] An abbreviation for "My Reaction When"
+O rly [] internet slang, short for 'Oh, really?'
+oneitis [] Often confused with love, this is the feeling that a particular woman is actually special. This is just an illusion; she is the same as the other three or so billion. "Go fuck ten other women" is the most commonly prescribed treatment for this "disease" (hence the "itis"), as it tends to show quite quickly how very alike people are. In other words, get over yourself and your obsession with that girl, because it's just an illusion. And when you get rejected, don't be depressed. Because there's really not much to worry about. (Dude, you definitely have oneitis for that girl. You've been talking about her nonstop for the past week. Don't you realize she's nothing special, and that you are just being fooled? Snap out of it so you won't be so depressed when she rejects you!)
 penetration [n.] Penetration is the medical term for the penis entering into the vagina. It's a good way term for talking about sex if one wants to seem mature. Even if you're a dirty little pervert, you'll sound like sex is more than just an emotionless action caused by hormones if you call it 'penetration' rather than 'fucking around', 'doing it' etc. (-Did you fucked your girlfriend last night? -Penetration occured and I deposited my semen inside of her vagina. -What the fuck? You're a frat boy, you don't talk like that. -I know, but I sure sound mature, don't I? )
 rod [n.] an erect penis
 R.O.D [] Ride or Die;Tight Friends (Girl your my R.O.D chiick.)
 snob [n.] Someone who claims to be of higher intelligence than others, understands the finer thing in life, and generally deems themself higher being than most others; they often refer to the 'lesser beings' as peasant of philistines. In simple terms, snobs are wankers.
-knockers [] A woman's breasts, especially when unrestrained and allowed to move.
-O rly [] internet slang, short for 'Oh, really?'
-oneitis [] Often confused with love, this is the feeling that a particular woman is actually special. This is just an illusion; she is the same as the other three or so billion. "Go fuck ten other women" is the most commonly prescribed treatment for this "disease" (hence the "itis"), as it tends to show quite quickly how very alike people are. In other words, get over yourself and your obsession with that girl, because it's just an illusion. And when you get rejected, don't be depressed. Because there's really not much to worry about. (Dude, you definitely have oneitis for that girl. You've been talking about her nonstop for the past week. Don't you realize she's nothing special, and that you are just being fooled? Snap out of it so you won't be so depressed when she rejects you!)
 shitfaced [adj.] To be really, really drunk (Uh-oh. Sarah's a little shitfaced and Andy's a smooth talker. Better go find them.)
 stage five clinger [] A member of the opposite sex that is likely to become overly attached, overly fast. Virgins, those on the rebound, and the emotionally fragile are more likely to have this term applied to them. Originally from the movie Wedding Crashers. (I nailed that chick last weekend and seriously regret giving her my number - I'm getting 2 or 3 calss a day. I think what we've got ourselves here is a stage five clinger.)
 sus [adj.] The word sus is meant to suggest that someone is believed to be shady or false. They are hiding something or are believed to have a serious character flaw which makes them undesireble as friend or acqaintence. It is derived from its root word suspect. In some areas it is primarily used to describe a nigga that is Bitch-made or one who is not feminine but suspected of homosexuality or other sexual deviances. Most commonly used to denote suspected homosexual tendencies.
