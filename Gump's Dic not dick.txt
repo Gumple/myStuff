@@ -314,6 +314,7 @@ address [vt.] 称呼
 acronym [n.] An acronym is a word or name formed as an abbreviation from the initial components in a phrase or a word, usually individual letters (as in NATO or laser) and sometimes syllables (as in Benelux).
 auxiliary [adj. n.] 辅助的；备用的，补充的；附加的；辅助人员；附属机构 (Nursing auxiliaries provide basic care, but are not qualified nurses. 助理护士只提供基本护理，不具备护士资格)
 an axe to grind 另有所图；别有用心 (DDoS attacks are among the most common attacks to take place between cyber punks with an axe to grind, and involve overloading a target site with so much traffic that it is taken offline.)
+amortize [vt.] 摊销，分摊；分期偿还 (In addition, we planned to amortize its cost across a number of Lookoff projects. 此外，我们计划在Lookoff的其他项目中共同承担这个成本; The load of session management is amortized across all the clients, the clients store their session state and the servers can service many orders of magnitude or more clients in a stateless fashion.)
 #B: 
 bracelet [n.] 手镯，手链
 be fresh out of sth. 刚用完，售完
@@ -1674,6 +1675,7 @@ go viral 像病毒一样传播开来 (Jonah mentioned you both shared a philosop
 grit [n.] 勇气；坚韧，刚毅；细沙，砂砾 (He felt tine bits of grit and sand peppering his knees. 他感到细小的砂砾不断打在膝盖上)
 go out on a limb 冒险；担风险 (I think it's way too early to go out on a limb on any stock in the sector. The odds are still unfavorable on a bill, and the shape of any legislation is anyone's guess. 我认为对于这个版块中的股票而言，现在押注还为时过早，是不利提案的几率及提案的具体内容都只是猜测，加上现在股市疲软的表现，我会选择观望)
 grind [vt. vi.] 硬磕；刷题；折磨；(grind out)生拼硬凑地写出，粗制滥造 (I wish they would stop grinding out the same old propaganda. 我总是希望他们不要再绞尽脑汁搞那种老调重弹的宣传)
+gibberish/jibberish/jibber-jabber/gobbledygook [n.] 官样文章；官话；晦涩的语言，难懂的文字；冗繁难解的文字
 #H:
 husband-to-be [n.] 未婚夫，未来老公 (wife-to-be) 
 hubby [n.] 老公
@@ -2300,6 +2302,7 @@ lay eyes/an eye on 看到，瞧见；注视 (He would never again see Natalie, n
 leave off 停止；中断；脱掉 (Let's pick up where we left off. 我们从上次说到的地方开始吧)
 lucid [adj.] 神志清醒的；清楚的,明白的，清晰的；清澈的，透明的 (His prose is always lucid and compelling. 他的散文速来简洁有力; I come here because there are experts who really understand the topic well and they answer questions in a simple and lucid manner.)
 leukemia [n.] 白血病
+legacy [n. adj.] 遗赠，遗产；遗留的问题；(系统、软件等)遗留的，老旧的
 #M:
 munble [vt.] 咕哝着说
 modem [n.] 调制调解器
@@ -3039,6 +3042,7 @@ PM (private message) 私信
 pitch in 参与；做出贡献；协力；凑份子钱 (The agency says international relief agencies also have pitched in. 该机构说国际救援机构也提供了支援)
 permutation [n.] (数学)排列 (permutation and combination (数学)排列组合)
 pinpoint [vt. adj. n.] 查明；精确定位；准确描述；精确的，详尽的；精确位置 (They need to pinpoint exactly what skills are necessary. 他们应该准确指出何种技能是必需的)
+preclude [vt.] 排除；妨碍；阻止 (And although a modified waterfall approach does not preclude the use of feedback, it does not facilitate, accommodate, or encourage it. 虽然一个改进的瀑布型开发方法并不排除反馈的使用，但是它并没有促进、支持和鼓励反馈的使用)
 #Q:
 quadratic [adj.] (数学)二次的
 quotation [n.] 引用；引证
@@ -3776,6 +3780,7 @@ slip my mind 突然忘了
 showcase [vt.] 展现；炫耀
 stack [n.] 技术栈 (What's the stack for your web application? 你开发的网站用了什么技术？)
 spurious [adj.] 假的；伪造的；蹩脚的 (While the mail server is bogged down with all the spurious requests, it can't handle real mails, some of which may be sales leads or support requests. 邮件服务器被所有这些伪请求所包围，无法处理真正的电子邮件，而其中一些邮件可能是销售线索或支持请求)
+spew [vt. vi.] 喷出；发泄，破口大骂；呕吐；喷涌 (I therefore don't understand all this stateless gobbledygook that everyone keeps spewing.)
 #T: 
 transaction [n.] 事务，业务
 The funniest thing about it is that ... 最有趣的是...
@@ -4132,6 +4137,8 @@ tipsy [adj.] 微醉的，微醺的；不稳的，歪斜的
 take a whiz 嘘嘘；尿尿
 TL;DR (too long; didn't read) 太长没看(的话请看这里)
 thought-out [adj.] 经过深思熟虑的；计划周密的；考虑周全的
+troubleshoot [vt. vi.] 寻找故障，故障排解，故障诊断；充当故障检修员，当调解人 (This data can now be used to determine the percentage of outliers for each page and toubleshoot potential bottlenecks. 现在您可以使用该数据来决定每一页面和故障排除潜在瓶颈的百分比)
+tit for tat 以牙还牙；针锋相对 (The films and songs about love and revenge and friendship teach young people to give kindness for kindness, hatred for hatred and tit for tat. 一些关于爱情和恩仇的电影、歌曲教人有恩报恩、有仇报仇和针锋相对)
 #U:
 usage [n.] (词语的)用法
 use [n.] 用途
