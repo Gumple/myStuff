@@ -1069,3 +1069,57 @@ This is unlikely with Singleton pattern. In Singlton pattern one object per clas
 #-（一百二十六）Why should I store a hash of the persistent login cookie and the password reset token?
 Let's suppose that you're a web application developer and you do the right thing and you only store hashes of your users passwords in the database (not plaintext), but you decide to store their authenticated login tokens in the database without hashing them.
 Now suppose a malicious attacker breaks into the web application's database and does a dump and shares it with his malicious attacker buddies on the web. Well, those password hashes won't do him much good, because he can't log in with a hash. But he sees those login tokens are stored in plain text. Now it's trivial for him to put one in a cookie and send it along with a HTTP request to the server. The server will take the cookie, authenticate it against the database, and allow the attacker in. So even though those login tokens are just random values, once the attacker has them, he or she can use them to impersonate the authenticated user.
+#-（一百二十七）Difference between abstraction and encapsulation?
+Encapsulation (Binding data and Code)
+Encapsulation is the mechanism that binds together code and the data it manipulates, and keeps both safe from outside interference and misuse.
+In an object-oriented language, code and data may be combined in such a way that a self-contained "black box" is created. When code and data are linked together in this fashion, an object is created. In other words, an object is the device that supports encapsulation.
+Encapsulation leads to the concept of data hiding, but the concept of encapsulation must not be restricted to information hiding.
+Encapsulation clearly represents the ability to bundle related data and functionality within a single, autonomous entity called a class.
+
+Abstraction (Hiding how data stored and Hiding how function is implemented)
+Data abstraction is a process of representing the essential features without including implementation details.
+Abstraction is one of the most powerful and vital features provided by object-oriented programming.
+The main idea behind data abstraction is to give a clear separation between properties of data type and the associated implementation details. This separation is achieved in order that the properties of the abstract data type are visible to the user interface and the implementation details are hidden.
+Abstraction is separating the logical properties from implementation details. For example driving the car is a logical property and design of the engine is the implementation detail.
+#-（一百二十八）What is a difference between traditional loop and for-each loop?
+Traditional loop
+
+for (int i = 0; i < list.size(); i++) {
+    list.get(i).doSomething();
+}
+
+allows to modify the list, e.g.:
+you can add extra element at the end of list and it will be also iterated through
+you know the index
+can be used to refer to another list of the same size
+can be used to refer to previous/next element
+efficient only in RandomAccess lists
+in case of LinkedList in every iteration of the loop, get(i) will have to iterate over all elements starting from head/tail to i
+works only with List since List#get(int) is used
+error prone, a lot of things that can go wrong, e.g.:
+i = 0; instead of int i = 0; - will refer to variable declared before the loop, possible side effects outside of the loop
+> instead of < - loop will not execute
+j++ instead of i++ - infinite loop
+.get(j) instead of .get(i) - will always get the same element
+
+For-each loop
+
+for (Example example : list) {
+    example.doSomething();
+}
+
+does not allow to modify the list
+trying to do so will most likely result in ConcurrentModificationException
+you don't know the index of the element
+you cannot refer to previous/next element
+efficient in all cases because uses Iterator specific for the collection
+efficient in case of LinkedList
+works not only with every Collection, but with every Iterable since Iterable#iterator() is used
+you can easily replace List with a Set - no changes to the loop required
+you can easily replace with your own class, it just has to implement Iterable
+more robust (less code, fewer special characters)
+
+Summary
+The only reason to use a traditional loop is when:
+the index of element is required, or
+the list has to be modified

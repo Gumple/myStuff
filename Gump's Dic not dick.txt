@@ -1183,6 +1183,7 @@ drama queen 喜欢小题大做的人
 deadpan [adj. n.] 面无表情的；不动声色的；故作严肃的；面无表情的人
 deja vu [n.] 似曾相识的感觉；记忆幻觉 (As I listened to him explain the work, I had a very strong sense of deja vu. 当他向我解释这项工作时，我有一种强烈的似曾相识的感觉)
 demean [vt.] 贬低...的身份；使...失去尊严 (From the get-go, that is the last thing we had in mind... How can we celebrate Chinese women if we demean Chinese women? 从一开始，我们就没有想过要贬低中国女性。我们怎么能一边赞美中国女性，一边贬低中国女性呢？)
+deficiency [n.] 缺陷，缺点；缺乏，不足；不足的数额 (To live in despair is a mark of great endurance, whereas to grow dull and stupid after a great unhappiness is a mark of deficiency. 生活在绝望之中象征着巨大的忍耐力，而在经历巨大的痛苦之后变得迟钝愚蠢则是缺乏忍耐力的表现)
 #E 
 Everything works out all right in the end. 最后一切都正常(大团圆结局)。
 emission [n.] 排放
@@ -2097,6 +2098,7 @@ in the heat of the moment 盛怒之下；一时激动之下；一时冲动；上
 in a nutshell (in the fewest possible words) 简单地说，简而言之；总的来说，总而言之 (A recent review argues that the problem is no longer simply a lack of opportunity or encouragement -- in a nutshell, girls just seem to prefer other subjects. 最近的一篇文章表示，造成这种现象不仅仅是简单的因为女性缺乏机会和鼓励——简单地说，就是女生更偏好其他科目)
 if only 只要；但愿；要是...就好了 (If only it were that simple! 要是那么简单就好了！)
 in layman's term 通俗来说；从门外汉的角度来说 (If you're unfamiliar with the term "bacteriophages", let us put it in a layman's term for you. 如果您不熟悉其中的“噬菌体”，让我们把它放在一个外行人的角度给你解释)
+idiom [n.] (计算机)语句 (for(:) idiom foreach语句)
 #J:
 jerk [v.] 猝然一动 (~ sth. out 结巴的说)
 jumble [v. n.] （使）混乱;混乱，杂乱的一堆东西 (-d [adj.] in -d order杂乱无序的)
@@ -4816,6 +4818,7 @@ OSI Open System Interconnection 开放式系统互联
 OTA Online Travel Agent 在线旅行社
 #-P
 Paas Platform-as-a-Service 平台即服务
+programming/code idiom (Generally speaking, a programming idiom is a natural language expression of a simple task, algorithm, or data structure that is not a built-in feature in the programming language being used, or, conversely, the use of an unusual or notable feature that is built into a programming language. Furthermore, the term can be used more broadly, to refer to complex algorithms or programming design patterns in terms of implementation and omitting design rationale.)
 #-Q
 #-R
 RISC Reduced Instruction Set Computer 精简指令集计算机
@@ -4833,6 +4836,7 @@ Soft Delete = Logical Delete is a way of removing business entities, which impli
 SSL Secure Sockets Layer 安全套接层协议
 SaaS Software-as-a-Service 软件即服务
 SCM Source Code Management 源代码管理；版本控制
+syntatic sugar 语法糖
 #-T
 TLS Transport Layer Security 安全传输层协议
 #-U
