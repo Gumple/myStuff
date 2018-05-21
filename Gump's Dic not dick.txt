@@ -4778,6 +4778,7 @@ CISC Complex Instruction Set Computer 复杂指令集计算机
 CRM Customer Relationship Management 客户关系管理
 CSRF Cross-Site Request Forgery 跨站请求伪造
 Code Smell in computer programmings, is any symptom in the source code of a program that possibly indicates a deeper problem.
+CAPTCHA Completely Automated Public Turing test to tell Computers and Humans Apart 全自动区分计算机和人类的图灵测试；验证码
 #-D
 Dynamic Programming 动态规划
 DOS Disk Operating System 磁盘操作系统
@@ -4805,6 +4806,7 @@ IDOR Insecure Direct Object Reference 不安全的直接对象引用
 JDK Java Development Kit Java语言开发包
 #-K
 KPI Key Performance Indicator 关键绩效指标
+KDF Key Derivation Function 密钥派生函数
 #-L
 LDAP Lightweight Directory Access Protocol 轻量目录访问协议
 #-M
@@ -4816,6 +4818,8 @@ Nonce 一个只被使用一次的任意或非重复的随机数值 In cryptograp
 #-O
 OSI Open System Interconnection 开放式系统互联
 OTA Online Travel Agent 在线旅行社
+OKR Objectives and Key Results 目标与关键成果法
+ORM, O/RM Object-relational Mapping 对象关系映射
 #-P
 Paas Platform-as-a-Service 平台即服务
 programming/code idiom (Generally speaking, a programming idiom is a natural language expression of a simple task, algorithm, or data structure that is not a built-in feature in the programming language being used, or, conversely, the use of an unusual or notable feature that is built into a programming language. Furthermore, the term can be used more broadly, to refer to complex algorithms or programming design patterns in terms of implementation and omitting design rationale.)
@@ -4828,7 +4832,7 @@ RPC Remote Procedure Call 远程过程调用
 #-S
 SDK Software Development Kit 软件开发工具包
 singleton pattern 单例模式
-SSO Single Sign On 单点登录
+SSO Single Sign-On 单点登录 (SSO is a property of access control of multiple related, yet independent, software systems. With this property, a user logs in with a single ID and password to gain access to a connected system or systems without using different usernames or passwords, or in some configurations seamlessly sign on at each system.)
 SLF4J the Simple Logging Facade for Java 简单日志门面
 SPA Single-Page Application 单页面应用
 SOA Service-Oriented Architecture 面向服务架构
@@ -4837,6 +4841,7 @@ SSL Secure Sockets Layer 安全套接层协议
 SaaS Software-as-a-Service 软件即服务
 SCM Source Code Management 源代码管理；版本控制
 syntatic sugar 语法糖
+SDLC System Development Life Cycle 系统开发生命周期
 #-T
 TLS Transport Layer Security 安全传输层协议
 #-U

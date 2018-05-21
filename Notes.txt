@@ -1123,3 +1123,36 @@ Summary
 The only reason to use a traditional loop is when:
 the index of element is required, or
 the list has to be modified
+#-（一百二十九）How does Java overload operator "+" connect two strings? How does that invisible part work?
+The invisible part is that any Java reference type or primitive that appears where a String is expected will be converted or coerced into a String type by calling the toString() method of the class. The String representations are then concatenated using the StringBuilder class.
+
+Example:
+
+System.out.println( "1 + 2 =" + ( 1 + 2 ) );
+
+The Compiler knows that System.out.println( String arg ) expects a String object. The first expression is converted to a String object by calling the String constructor:
+
+String literal = new String( "1 + 2 =" );
+
+The second expression has a value equivalent to "int sum = 1+2;". It is converted to a String type using the wrapper class Integer that has a toString() method:
+
+String sum = new Integer(1+2).toString();
+
+After this, both the string objects are concatenated using String builder and the original arguments to System.out.println() are replaced with the result:
+
+System.out.println( new StringBuilder( literal ).append( sum ).toString() );
+#-（一百三十）Autoboxing and Unboxing in Java
+Converting a primitive value (an int, for example) into an object of the corresponding wrapper class (Integer) is called autoboxing. The Java compiler applies autoboxing when a primitive value is:
+Passed as a parameter to a method that expects an object of the corresponding wrapper class.
+Assigned to a variable of the corresponding wrapper class.
+
+Converting an object of a wrapper type (Integer) to its corresponding primitive (int) value is called unboxing. The Java compiler applies unboxing when an object of a wrapper class is:
+Passed as a parameter to a method(including operators like "+", "-", "*", etc. #I've checked with javap command.#) that expects a value of the corresponding primitive type.
+Assigned to a variable of the corresponding primitive type.
+#-（一百三十一）Java stream forEach() vs peek()
+peek is an itermediate operation whereas forEach is a terminal operation
+
+Don't use the API in an unintended way, even if it accomplishes your immediate goal. That approach may break in the future, and it is also unclear to future maintainers.
+There is no harm in breaking this out to multiple operations, as they are distinct operations. There is harm in using the API in an unclear and unintended way, which may have ramifications if this particular behavior is modified in future versions of Java.
+Using forEach on this operation would make it clear to the maintainer that there is an intended side effect on each element of accounts, and that you are performing some operation that can mutate it.
+It's also more conventional in the sense that peek is an intermediate operation which doesn't operate on the entire collection until the terminal operation runs, but forEach is indeed a terminal operation. This way, you can make strong arguments around the behavior and the flow of your code as opposed to asking questions about if peek would behave the same as forEach does in this context.
