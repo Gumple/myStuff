@@ -1184,6 +1184,7 @@ deadpan [adj. n.] 面无表情的；不动声色的；故作严肃的；面无�
 deja vu [n.] 似曾相识的感觉；记忆幻觉 (As I listened to him explain the work, I had a very strong sense of deja vu. 当他向我解释这项工作时，我有一种强烈的似曾相识的感觉)
 demean [vt.] 贬低...的身份；使...失去尊严 (From the get-go, that is the last thing we had in mind... How can we celebrate Chinese women if we demean Chinese women? 从一开始，我们就没有想过要贬低中国女性。我们怎么能一边赞美中国女性，一边贬低中国女性呢？)
 deficiency [n.] 缺陷，缺点；缺乏，不足；不足的数额 (To live in despair is a mark of great endurance, whereas to grow dull and stupid after a great unhappiness is a mark of deficiency. 生活在绝望之中象征着巨大的忍耐力，而在经历巨大的痛苦之后变得迟钝愚蠢则是缺乏忍耐力的表现)
+drag on (时间)过得缓慢；熬日子；拖得很久 (The days dragged on and she was in despair. 日子过得缓慢，她处于绝望之中)
 #E 
 Everything works out all right in the end. 最后一切都正常(大团圆结局)。
 emission [n.] 排放
@@ -3239,6 +3240,8 @@ repulsive [adj.] 丑恶的；令人厌恶的，令人作呕的，令人反感的
 right off the bat 立刻，立即 (He learned right off the bat that you can't count on anything in this business. 他立刻明白在这一行业中不能依靠任何东西)
 remainder [n.] (数学)余数
 relapse [vi. n.] 故态复萌；旧病复发；再度堕落；复发 (They should continue taking the medication for the time specified by their doctor, even if they are feeling better, in order to prevent a relapse of the depression. 即使他们正感觉好起来了，但是为了避免抑郁复发，他们也应该按他们的医生规定的时长继续服用药物)
+replicate [vt. vi. adj. n.] 复制；重复；复制的；折叠的；复制品 (We should learn from these rather than replicate them. 我们应该从这些错误中吸取教训，而非重复它们)
+redundancy [n.] 冗余；裁员；人浮于事 (The closure of the export department resulted in over 100 redundancies. 出口部关闭导致一百多人被解雇)
 #S:
 submarine [n.] 潜艇
 socialization [n.] 社会化
