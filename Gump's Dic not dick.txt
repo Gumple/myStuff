@@ -390,7 +390,7 @@ bathing suit (AmE)泳衣
 broaden one's horizon 拓展视野
 break away from ... 逃脱...
 (be) at sixs and sevens(not well organized;in confusion) 乱七八糟；凌乱
-bummer [n.] 不愉快的经历，令人失望的情形 (What a ~! 真扫兴啊！；真倒霉！)
+bummer [n.] 不愉快的经历，令人失望的情形 (What a bummer! 真扫兴啊！；真倒霉！)
 be/live in each other's pocket (两个人)形影不离；终日厮混在一起
 birthday suit 赤条条，一丝不挂 (He wears the ~. 他一丝不挂)
 bell pepper 青椒；灯笼椒
@@ -1439,7 +1439,7 @@ for my/his等 part (speaking for me; personally) 就我而言...
 fall victim (to sth.) 受伤；受损；被害 (Many plants have fallen victim to the sudden frost. 许多植物因突如其来的霜降冻伤了)
 freezing [adj. adv.] 极冷的(地) (It's ~ in here! 这儿冷得不得了！; I'm ~! 我要冻成雪了！; It's ~ cold outside. 外面极为寒冷)
 founding president 第一任主席
-fledgling [n.] 雏鸟；少不更事，无经验的人
+fledgling [n.] 雏鸟；少不更事，无经验的人；雏形
 feed [vt.] 使(听、视觉、欲望等)得到满足 (Praise will only ~ his vanity. 称赞只会满足他的虚荣心)
 fling [n.] (短暂的)恣情放肆 (I'll take another wild guess: you two had a ~. 我再大胆猜一下，你俩有一腿吧)
 frenzied [adj.] 狂暴的 (~ rage 盛怒; become ~ 发狂)
@@ -2472,6 +2472,7 @@ mannerism [n.]/ 言谈举止；风格注意；习性；(绘画、写作中)过�
 mockup [n.] 实体模型；实例演示；制造模型；制造样机
 malicious [adj.] 恶意的，有敌意的；存心不良的；蓄意的 (That might merely have been malicious gossip. 那也许仅仅是些不怀好意的流言蜚语罢了)
 manhole conver 井盖
+mortgage [vt. n.] 抵押；按揭；房屋抵押贷款，房贷 (We have to do it again because the mortgage institutions have deteriorated somewhat. 我们必须再做一次改革，因为抵押贷款机构已经有所恶化)
 #N:
 nurture [v.] 培育
 nutritional [adj.] 营养的
