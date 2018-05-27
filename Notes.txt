@@ -1191,6 +1191,24 @@ If your application creates CallableStatement objects for invoking stored proced
 *通过对象的组合实现对象的创建：对象的创建被实现在工厂接口所暴露出来的方法中
 *创建一个产品家族的抽象类型；要使用这个工厂，必须先实例化它，然后将它传入一些针对抽象类型所写的代码中
 *优点是可以把一群相关的产品集合起来；缺点是如果需要扩展这组相关产品（比如新增一个产品），则需要改变接口，意味着必须深入改变每个子类的接口
+#Singleton Design Pattern 确保一个类只有一个实例，并提供一个全局访问点
+*在Java中实现单例模式需要私有的构造器、一个静态方法和一个静态变量
+*在getInstance()方法中，如果实例不存在，就利用私有的构造器产生一个实例并赋值到静态变量中。如果不需要这个实例，它就永远不会产生，这就是“延迟化实例”（lazy instantiate）。这种做法对资源敏感的对象特别重要
+*确保单例模式能在多线程的状况下正常工作，可以 1)如果getInstance()的性能对应用程序不是很关键，就直接同步getInstance()方法；2)使用“急切”（eagerly）创建实例，而不是延迟实例化的做法：private static Singleton uniqueInstance = new Singleton()，利用这个做法，JVM在加载这个类时马上创建此唯一的单例实例。JVM保证在任何线程访问uniqueInstance静态变量之前，一定先创建此实例；3)用“双重检查加锁”（double-checked locking），在getInstance()中减少使用同步。首先检查实例是否已经创建了，如果尚未创建，“才”进行同步。这样一来，只有第一次会同步：
+public class Singleton {
+	private volatile static Singleton uniqueInstance;
+	private Singletone() {}
+	public static Singleton getInstance() {
+		if (uniqueInstance == null) { //#mark
+			synchronized (Singleton.class) {
+				if (uniqueInstance == null) { //在没有进入同步块前，多线程情况下仍会有多个线程通过#mark判断条件的可能
+					uniqueInstance = new Singleton();
+				}
+			}
+		}
+		return uniqueInstance;
+	}
+} //volatile关键词确保：当uniqueInstance变量被初始化成Singleton实例时，多个线程正确地处理uniqueInstance变量
 #设计原则
 *找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混在一起
 *针对接口编程，而不是针对实现编程
