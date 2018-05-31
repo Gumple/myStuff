@@ -315,6 +315,7 @@ acronym [n.] An acronym is a word or name formed as an abbreviation from the ini
 auxiliary [adj. n.] 辅助的；备用的，补充的；附加的；辅助人员；附属机构 (Nursing auxiliaries provide basic care, but are not qualified nurses. 助理护士只提供基本护理，不具备护士资格)
 an axe to grind 另有所图；别有用心 (DDoS attacks are among the most common attacks to take place between cyber punks with an axe to grind, and involve overloading a target site with so much traffic that it is taken offline.)
 amortize [vt.] 摊销，分摊；分期偿还 (In addition, we planned to amortize its cost across a number of Lookoff projects. 此外，我们计划在Lookoff的其他项目中共同承担这个成本; The load of session management is amortized across all the clients, the clients store their session state and the servers can service many orders of magnitude or more clients in a stateless fashion.)
+at daggers drawn 势不两立；剑拔弩张 (I didn't expect them to be at daggers drawn over such a trivial thing. 我没料到他们为这一点小事竟会如此势不两立)
 #B: 
 bracelet [n.] 手镯，手链
 be fresh out of sth. 刚用完，售完
@@ -2100,6 +2101,7 @@ in a nutshell (in the fewest possible words) 简单地说，简而言之；总�
 if only 只要；但愿；要是...就好了 (If only it were that simple! 要是那么简单就好了！)
 in layman's term 通俗来说；从门外汉的角度来说 (If you're unfamiliar with the term "bacteriophages", let us put it in a layman's term for you. 如果您不熟悉其中的“噬菌体”，让我们把它放在一个外行人的角度给你解释)
 idiom [n.] (计算机)语句 (for(:) idiom foreach语句)
+intrinsic [adj.] 本质的；内在的；固有的 (People rarely consider that the tangible features assumed to be intrinsic to the "computer" were imitations of other objects, with keyboards inherited from typewriters and screens from television. 人们很少考虑，这些被假定为“计算机”固有的可触知的特征是对其他事物的模仿，如键盘继承自打字机，显示屏模仿了电视机)
 #J:
 jerk [v.] 猝然一动 (~ sth. out 结巴的说)
 jumble [v. n.] （使）混乱;混乱，杂乱的一堆东西 (-d [adj.] in -d order杂乱无序的)
@@ -2306,6 +2308,7 @@ leave off 停止；中断；脱掉 (Let's pick up where we left off. 我们从�
 lucid [adj.] 神志清醒的；清楚的,明白的，清晰的；清澈的，透明的 (His prose is always lucid and compelling. 他的散文速来简洁有力; I come here because there are experts who really understand the topic well and they answer questions in a simple and lucid manner.)
 leukemia [n.] 白血病
 legacy [n. adj.] 遗赠，遗产；遗留的问题；(系统、软件等)遗留的，老旧的
+live by example 作为榜样地生活 (When you live by example, you create a certain level of awareness.)
 #M:
 munble [vt.] 咕哝着说
 modem [n.] 调制调解器
@@ -2473,6 +2476,7 @@ mockup [n.] 实体模型；实例演示；制造模型；制造样机
 malicious [adj.] 恶意的，有敌意的；存心不良的；蓄意的 (That might merely have been malicious gossip. 那也许仅仅是些不怀好意的流言蜚语罢了)
 manhole conver 井盖
 mortgage [vt. n.] 抵押；按揭；房屋抵押贷款，房贷 (We have to do it again because the mortgage institutions have deteriorated somewhat. 我们必须再做一次改革，因为抵押贷款机构已经有所恶化)
+man of letters 作家；文人
 #N:
 nurture [v.] 培育
 nutritional [adj.] 营养的
@@ -3047,6 +3051,7 @@ pitch in 参与；做出贡献；协力；凑份子钱 (The agency says internat
 permutation [n.] (数学)排列 (permutation and combination (数学)排列组合)
 pinpoint [vt. adj. n.] 查明；精确定位；准确描述；精确的，详尽的；精确位置 (They need to pinpoint exactly what skills are necessary. 他们应该准确指出何种技能是必需的)
 preclude [vt.] 排除；妨碍；阻止 (And although a modified waterfall approach does not preclude the use of feedback, it does not facilitate, accommodate, or encourage it. 虽然一个改进的瀑布型开发方法并不排除反馈的使用，但是它并没有促进、支持和鼓励反馈的使用)
+push for 奋力争取；迫切要求 (This discorery prompted consumer groups, as well as scientists, to push for comprehensive testing of the potential allergenicity of GM foods. 这一发现促使消费团体和科学家推动对转基因食物潜在过敏性进行更加全面的测试)
 #Q:
 quadratic [adj.] (数学)二次的
 quotation [n.] 引用；引证
@@ -3797,7 +3802,7 @@ suspense [n.] 悬念；兴奋；焦虑；刺激 (Don't keep us in ~. 别让我�
 tattoo 纹身
 transitive [adj.] 及物的 (in- 不及物的)
 tailback [n.] (堵车时)车辆长龙
-trivial [adj.] 不重要的；琐碎的
+trivial [adj.] 不重要的；琐碎的 (They always spar over tirvial matters. 他们总是为一些小事而争吵)
 two ticks 一会儿，很快 (I'll be there in ~. 我马上到)
 testimony [n.] 证明
 turn over a new leaf (喻)掀开新的一页
@@ -4145,12 +4150,13 @@ TL;DR (too long; didn't read) 太长没看(的话请看这里)
 thought-out [adj.] 经过深思熟虑的；计划周密的；考虑周全的
 troubleshoot [vt. vi.] 寻找故障，故障排解，故障诊断；充当故障检修员，当调解人 (This data can now be used to determine the percentage of outliers for each page and toubleshoot potential bottlenecks. 现在您可以使用该数据来决定每一页面和故障排除潜在瓶颈的百分比)
 tit for tat 以牙还牙；针锋相对 (The films and songs about love and revenge and friendship teach young people to give kindness for kindness, hatred for hatred and tit for tat. 一些关于爱情和恩仇的电影、歌曲教人有恩报恩、有仇报仇和针锋相对)
+tackle [vt.] 处理，对付(难题)  (If you have things to do or a brilliant idea on your mind to tackle later, make a note and, if need be, a plan.)
 #U:
 usage [n.] (词语的)用法
 use [n.] 用途
 utility [adj. n.] 多用途的；功力
 urine [n.] 尿
-upshot [n.] 结局，结果；（论证等的）要点
+upshot [n.] 结局，结果；(论证等的)要点
 underestimate [n. v.] 低估
 undo [v.] 解开；拆开；撤销
 ultimatum [n.] 最后通牒 (pl. ultimata; to issue an ~ 发出最后通牒)
@@ -4186,7 +4192,7 @@ unruly [adj.] 任性的；不守规矩的；难驾驭的
 unwind [v.] 展开，松开；(使)心情轻松
 underachieve [vi.] 未能充分发挥学习潜力；学习成绩不良
 underwhelming [adj.] 没吸引力的；不能给人深刻印象的
-underlying [adj.] 潜在的；基础的，底层的，深层的
+underlying [adj.] 潜在的；基础的，底层的，深层的 (underlying structure 底层结构; So the moral here, again, is whenever you're doing an implementation of a simulation, you do need to have some underlying theory about the model. 所以这里的寓意还是，不管你在做什么东西的仿真程序，你需要有一个模型的底层理论)
 uphold [vt.] 支撑；鼓励；赞成
 upscale [vt. adj.] 升档；迎合(高层次消费者)；高档的
 understated [adj.] 低调的；轻描淡写的；朴素的
@@ -4806,6 +4812,7 @@ IDE Integrated Development Environment 集成开发环境
 IaaS Infrastructure-as-a-Service 基础设施即服务
 In-place algorithm 原地算法 (In computer science, an in-place algorithm is an algorithm which transforms input using no auxiliary data structure. In-place algorithm updates input sequence only through replacement or swapping of elements.)
 IDOR Insecure Direct Object Reference 不安全的直接对象引用
+IPC Inter-Process Communication 进程间通信
 #-J
 JDK Java Development Kit Java语言开发包
 #-K
@@ -4846,6 +4853,7 @@ SaaS Software-as-a-Service 软件即服务
 SCM Source Code Management 源代码管理；版本控制
 syntatic sugar 语法糖
 SDLC System Development Life Cycle 系统开发生命周期
+STL Standard Template Library
 #-T
 TLS Transport Layer Security 安全传输层协议
 #-U
