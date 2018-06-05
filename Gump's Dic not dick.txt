@@ -316,6 +316,7 @@ auxiliary [adj. n.] 辅助的；备用的，补充的；附加的；辅助人员
 an axe to grind 另有所图；别有用心 (DDoS attacks are among the most common attacks to take place between cyber punks with an axe to grind, and involve overloading a target site with so much traffic that it is taken offline.)
 amortize [vt.] 摊销，分摊；分期偿还 (In addition, we planned to amortize its cost across a number of Lookoff projects. 此外，我们计划在Lookoff的其他项目中共同承担这个成本; The load of session management is amortized across all the clients, the clients store their session state and the servers can service many orders of magnitude or more clients in a stateless fashion.)
 at daggers drawn 势不两立；剑拔弩张 (I didn't expect them to be at daggers drawn over such a trivial thing. 我没料到他们为这一点小事竟会如此势不两立)
+adapter [n.] 适配器，转接器
 #B: 
 bracelet [n.] 手镯，手链
 be fresh out of sth. 刚用完，售完
@@ -2137,6 +2138,7 @@ jungle law 弱肉强食的原则
 janitor [n.] 看门人；宿管；看管房屋的人
 jump out of the frying pan into the fire 逃脱小难，更遭大难；躲得过初一，躲不过十五 (Sure, you convinced Mom to stop those boring violin lessons! But that makes it easier for her to send us to Sunday school. Don't you realize we've jumped out of the frying pan into the fire? 你的确说服了妈不让我们上那些枯燥乏味的小提琴课了，但是这只会让她更有可能送我们去主日学。你难道不明白我们这是跳出了油锅却掉进火坑了吗？)
 jersey [n.] 毛织运动衫，毛线衫；球衣 (jersey retirement ceremony 球衣退役仪式)
+jump scare 吓一跳 (A Jump Scare is a technique often used in horror films and video games which attempts to scare the viewer by surprising them with a sudden or unexpected event.) (The movie gave me a jump scare every two nanoseconds.)
 #K:
 keep up with the Joneses 与邻居比排场；赶时髦
 karaoke [n.] 卡拉OK
@@ -2573,6 +2575,7 @@ nothingness [u.] 虚无；不存在 (There might be something beyond the grave, 
 noob [n.] 菜鸟，新手
 novice [n.] 初学者，新手
 nose out of joint 生气；鼻子都气歪了 (He is so conceited that when she refused his invitation, it really put his nose out of joint. 他很自负，她没接受他的邀请可把他的鼻子气歪了)
+need (to have) a word with 需要跟...谈一谈 (Also I think you need to have a word with our catering company about the quality of the food lately in the company cafeteria. I've been receiving a lot of complaints lately. 此外我认为你有必要和提供我们餐饮的公司就公司食堂的食品质量问题谈一谈。最近我听到好多抱怨)
 #O:
 offal [n.] (食用的)动物内脏
 offset [vt.] 抵消
@@ -3792,6 +3795,7 @@ showcase [vt.] 展现；炫耀
 stack [n.] 技术栈 (What's the stack for your web application? 你开发的网站用了什么技术？)
 spurious [adj.] 假的；伪造的；蹩脚的 (While the mail server is bogged down with all the spurious requests, it can't handle real mails, some of which may be sales leads or support requests. 邮件服务器被所有这些伪请求所包围，无法处理真正的电子邮件，而其中一些邮件可能是销售线索或支持请求)
 spew [vt. vi.] 喷出；发泄，破口大骂；呕吐；喷涌 (I therefore don't understand all this stateless gobbledygook that everyone keeps spewing.)
+safety goggles 防护眼镜；护目镜
 #T: 
 transaction [n.] 事务，业务
 The funniest thing about it is that ... 最有趣的是...
@@ -4874,6 +4878,7 @@ bail [vi.] to leave; to bounce
 beauty sus [n.] The opposite of beauty bias, where the attractiveness of a person makes you more suspicious about their true character, usually causing you to act more closed off or cold around that person than usual because of their beauty, thus the sus. (-Do you have something against them? Is there some kind of beef going on that I don't know about? -Nothing really, I just don't trust them. Beauty sus I guess, they're just too hot to not be some kind of freak if you ask me.)
 brb [] Acronym for "be right back"
 beta male [] An unremarkable, careful man who avoids risk and confrontation. Beta males lack the physical presence, charisma and confidence of the Alpha male. (Pete knew he was losing the girl he'd just met at the bar to the guy who bought her a drink, but he was too much of a beta male to do anything about it.)
+bottom [n.] Someone who takes it up the ass in sex. A.K.A. Daniel James Howell 受 (-Hey, is Dan top or bottom? -He's definitely a bottom. Have you seen him?!)
 cootchie [n.] female genitalia
 cherry pie [] A virgin's pussy
 corny [adj.] Trying to be cool, but ultimately very uncool indeed, and often even extremely embarrassing (Man, did you see that Manowar show? The way they posed? And all that "Knights of Steel" bullshit? Hell that was corny.)
