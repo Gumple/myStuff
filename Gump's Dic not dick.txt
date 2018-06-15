@@ -4860,6 +4860,7 @@ SDLC System Development Life Cycle 系统开发生命周期
 STL Standard Template Library
 #-T
 TLS Transport Layer Security 安全传输层协议
+TPS Transactions per Second 每秒事务数
 #-U
 UML Unified Modeling Language 标准建模语言
 URL Uniform Resource Locator 统一资源定位符
