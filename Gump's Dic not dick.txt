@@ -1680,6 +1680,7 @@ grit [n.] 勇气；坚韧，刚毅；细沙，砂砾 (He felt tine bits of grit 
 go out on a limb 冒险；担风险 (I think it's way too early to go out on a limb on any stock in the sector. The odds are still unfavorable on a bill, and the shape of any legislation is anyone's guess. 我认为对于这个版块中的股票而言，现在押注还为时过早，是不利提案的几率及提案的具体内容都只是猜测，加上现在股市疲软的表现，我会选择观望)
 grind [vt. vi.] 硬磕；刷题；折磨；(grind out)生拼硬凑地写出，粗制滥造 (I wish they would stop grinding out the same old propaganda. 我总是希望他们不要再绞尽脑汁搞那种老调重弹的宣传)
 gibberish/jibberish/jibber-jabber/gobbledygook [n.] 官样文章；官话；晦涩的语言，难懂的文字；冗繁难解的文字
+go out of the way 特地，特意；不辞劳苦 (Some people become depressed and withdraw from their peers or go out of the way to avoid the places or situations that remind them of the person who has died. 一些人会变得非常沮丧，不和同伴们走在一起，或者在出去的时候会刻意避免去那些能让他们想起曾经的地方)
 #H:
 husband-to-be [n.] 未婚夫，未来老公 (wife-to-be) 
 hubby [n.] 老公
@@ -2311,6 +2312,8 @@ lucid [adj.] 神志清醒的；清楚的,明白的，清晰的；清澈的，透
 leukemia [n.] 白血病
 legacy [n. adj.] 遗赠，遗产；遗留的问题；(系统、软件等)遗留的，老旧的
 live by example 作为榜样地生活 (When you live by example, you create a certain level of awareness.)
+lowball [vt. n.] 向顾客虚报低价；虚价 (America satisfied a minimum requirement of coming Copenhagen with a defined pledge to cut emissions, but it was a lowball offer. 美国满足了带着削减排放保证参加哥本哈根峰会的最低要求，但是带来的是个虚报低价)
+lively [adj.] 活泼的；生动的；真实的；生气勃勃的
 #M:
 munble [vt.] 咕哝着说
 modem [n.] 调制调解器
@@ -3796,6 +3799,7 @@ stack [n.] 技术栈 (What's the stack for your web application? 你开发的网
 spurious [adj.] 假的；伪造的；蹩脚的 (While the mail server is bogged down with all the spurious requests, it can't handle real mails, some of which may be sales leads or support requests. 邮件服务器被所有这些伪请求所包围，无法处理真正的电子邮件，而其中一些邮件可能是销售线索或支持请求)
 spew [vt. vi.] 喷出；发泄，破口大骂；呕吐；喷涌 (I therefore don't understand all this stateless gobbledygook that everyone keeps spewing.)
 safety goggles 防护眼镜；护目镜
+steroid [n.] 激素；类固醇
 #T: 
 transaction [n.] 事务，业务
 The funniest thing about it is that ... 最有趣的是...
