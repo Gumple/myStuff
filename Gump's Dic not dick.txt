@@ -975,6 +975,7 @@ circumvent [vt.] 避免，绕开；围绕，包围；用计防止 (Military plan
 counter-offer [n.] an offer made in response to another
 chump [n.] 傻瓜，笨蛋；短而厚的木块 (The guy's a chump. I could do a better job myself. 那家伙是个笨蛋。我自己做得都比他好)
 catnip [n.] 猫薄荷
+corollary [n.] 推论；必然结果 (One corollary of this general principle is that services should not be stateful. 此总体原则的一个推论就是，服务不应为有状态型的)
 #D:
 discrimnate [vt.] 歧视 (~ against women and in favor of men 重男轻女)
 discrimation [n.] 歧视 (show ~ against/in favor of 歧视/偏袒)
@@ -1309,6 +1310,7 @@ elite [n. adj.] (社会)精英；中坚分子；出类拔萃的，精锐的 (an 
 elastic [adj. n.] 有弹力的；可伸缩的；灵活的；松紧带，橡皮圈 (Beat i until the dough is slightly elastic. 一直搅打，直至生面团略有弹性)
 excrement [n.] 屎，粪便；排泄物
 ensue [vi.] 接踵发生；继而产生 (If the Europeans did not reduce subsidies, a trade war would ensue. 如果欧洲人不减少补贴，便会发生贸易战)
+enforce [vt.] 实施，执行；实现 (All of the above methods enforce non-instiability (unable to make instances) using private constructor.)
 #F:
 fianceé[n.] 未婚妻 (fiancé未婚夫)
 fabric [n.] (社会、建筑)结构
@@ -1681,6 +1683,7 @@ go out on a limb 冒险；担风险 (I think it's way too early to go out on a l
 grind [vt. vi.] 硬磕；刷题；折磨；(grind out)生拼硬凑地写出，粗制滥造 (I wish they would stop grinding out the same old propaganda. 我总是希望他们不要再绞尽脑汁搞那种老调重弹的宣传)
 gibberish/jibberish/jibber-jabber/gobbledygook [n.] 官样文章；官话；晦涩的语言，难懂的文字；冗繁难解的文字
 go out of the way 特地，特意；不辞劳苦 (Some people become depressed and withdraw from their peers or go out of the way to avoid the places or situations that remind them of the person who has died. 一些人会变得非常沮丧，不和同伴们走在一起，或者在出去的时候会刻意避免去那些能让他们想起曾经的地方)
+get butterflies (in one's stomach) 紧张不安；七上八下；忐忑不安 (I always get butterflies (in my stomach) when I speak in front of large groups. 我在一大群人面前讲话时总是很紧张)
 #H:
 husband-to-be [n.] 未婚夫，未来老公 (wife-to-be) 
 hubby [n.] 老公
@@ -2043,7 +2046,7 @@ invent a new way to ... 找...的新方法
 innermost [adj.] 最深处的 (~ emotions)
 in acknowledgement of 以感谢...；确认，得知；承认
 inhospitable desolate terrain 荒凉贫瘠的地域
-illusion [n.] 幻觉；错觉 (Life is only (an) ~. 浮生若梦; Many of us have been under the ~ that ... 我们一直误以为...)
+illusion [n.] 幻觉；错觉 (Life is only (an) ~. 浮生若梦; Many of us have been under the illusion that ... 我们一直误以为...)
 implement [vt.] 实现；执行；补充
 It's OK. Forget about it. 没事的，别放在心上
 I'll be bugger(BrE)/damned(AmE)! (slang) (表示惊讶) 我的乖乖！；我的天哪！ (Well, ~ Look who's here. 嗬，老天爷！看是谁在这儿)
@@ -2104,6 +2107,7 @@ if only 只要；但愿；要是...就好了 (If only it were that simple! 要�
 in layman's term 通俗来说；从门外汉的角度来说 (If you're unfamiliar with the term "bacteriophages", let us put it in a layman's term for you. 如果您不熟悉其中的“噬菌体”，让我们把它放在一个外行人的角度给你解释)
 idiom [n.] (计算机)语句 (for(:) idiom foreach语句)
 intrinsic [adj.] 本质的；内在的；固有的 (People rarely consider that the tangible features assumed to be intrinsic to the "computer" were imitations of other objects, with keyboards inherited from typewriters and screens from television. 人们很少考虑，这些被假定为“计算机”固有的可触知的特征是对其他事物的模仿，如键盘继承自打字机，显示屏模仿了电视机)
+impostor [n.] 江湖骗子；冒充者
 #J:
 jerk [v.] 猝然一动 (~ sth. out 结巴的说)
 jumble [v. n.] （使）混乱;混乱，杂乱的一堆东西 (-d [adj.] in -d order杂乱无序的)
@@ -3058,6 +3062,7 @@ permutation [n.] (数学)排列 (permutation and combination (数学)排列组�
 pinpoint [vt. adj. n.] 查明；精确定位；准确描述；精确的，详尽的；精确位置 (They need to pinpoint exactly what skills are necessary. 他们应该准确指出何种技能是必需的)
 preclude [vt.] 排除；妨碍；阻止 (And although a modified waterfall approach does not preclude the use of feedback, it does not facilitate, accommodate, or encourage it. 虽然一个改进的瀑布型开发方法并不排除反馈的使用，但是它并没有促进、支持和鼓励反馈的使用)
 push for 奋力争取；迫切要求 (This discorery prompted consumer groups, as well as scientists, to push for comprehensive testing of the potential allergenicity of GM foods. 这一发现促使消费团体和科学家推动对转基因食物潜在过敏性进行更加全面的测试)
+premature [adj.] 不成熟的；比预期早的；早产的；过早的 (The baby was six weeks premature. 那个婴儿早产了六个星期; premature ejeculation 早泄; It would be premature to forecast the outcome. 预言结果还为时过早)
 #Q:
 quadratic [adj.] (数学)二次的
 quotation [n.] 引用；引证
@@ -3254,6 +3259,7 @@ remainder [n.] (数学)余数
 relapse [vi. n.] 故态复萌；旧病复发；再度堕落；复发 (They should continue taking the medication for the time specified by their doctor, even if they are feeling better, in order to prevent a relapse of the depression. 即使他们正感觉好起来了，但是为了避免抑郁复发，他们也应该按他们的医生规定的时长继续服用药物)
 replicate [vt. vi. adj. n.] 复制；重复；复制的；折叠的；复制品 (We should learn from these rather than replicate them. 我们应该从这些错误中吸取教训，而非重复它们)
 redundancy [n.] 冗余；裁员；人浮于事 (The closure of the export department resulted in over 100 redundancies. 出口部关闭导致一百多人被解雇)
+relatable [adj.] 共鸣的；感同身受的 (Dina is an incredibly hard-working, passionate mom that I think our viewers will find both relatable and highly entertaining. 迪娜是一个让人难以置信的母亲，她工作努力，充满激情，我认为观众将会觉得这个节目十分有趣并产生共鸣; She makes the most heroic characters vulnerable, the most konwn familiar, the most despised relatable. 她让崇高英勇的角色脆弱，让赫赫有名的大人物亲近，让可鄙卑贱的小人物值得同情)
 #S:
 submarine [n.] 潜艇
 socialization [n.] 社会化
@@ -4159,6 +4165,7 @@ thought-out [adj.] 经过深思熟虑的；计划周密的；考虑周全的
 troubleshoot [vt. vi.] 寻找故障，故障排解，故障诊断；充当故障检修员，当调解人 (This data can now be used to determine the percentage of outliers for each page and toubleshoot potential bottlenecks. 现在您可以使用该数据来决定每一页面和故障排除潜在瓶颈的百分比)
 tit for tat 以牙还牙；针锋相对 (The films and songs about love and revenge and friendship teach young people to give kindness for kindness, hatred for hatred and tit for tat. 一些关于爱情和恩仇的电影、歌曲教人有恩报恩、有仇报仇和针锋相对)
 tackle [vt.] 处理，对付(难题)  (If you have things to do or a brilliant idea on your mind to tackle later, make a note and, if need be, a plan.)
+telescope [vt. vi. adj.] 压缩；使套叠；伸缩式的，可折叠的
 #U:
 usage [n.] (词语的)用法
 use [n.] 用途
@@ -4221,6 +4228,7 @@ unfazed [adj.] 不担忧的；不苦恼的 (Despite the potential trouble and so
 ups and downs 人生的起起伏伏；波折 (I've had my ~, but in general life has been good to me. 我经历了不少波折，但是总的来说生活对我还是比较仁慈的; ~ are to be expected in life, but that doesn't make the down parts any easier.)
 unilateral [adj.] 单边的；单方面的 (The Chinese Government never regards aid to other countries as a kind of ~ alms but as something mutual. 中国政府从来不把对外援助看作是单方面的恩赐，而认为援助是相互的)
 underperform [v.] 表现不佳；工作不如预期；发挥失常
+under the hood 底层；在背后 (Although they look similar on the surface, the two libraries are quite diffrent under the hood. 虽然他们表面上看起来很像，但是两个库在底层是非常不一样的)
 #V:
 via [prep.] 经过；通过，凭借
 vie [v.] 激烈竞争；争夺 (~ with sb. (for sth.))
@@ -4262,6 +4270,7 @@ vivacious [adj.] 活泼的；快活的
 vis-a-vis [prep. adv.] (1. face to face with; opposite to. 2. compared with. 3. in relation to) 和...有关；针对于；相对于
 VAT value added tax 增值税
 voracious [adj.] 贪婪的；如饥似渴的；渴求的
+verbose [adj.] 冗长的；啰嗦的 (This is straightforward, but can lead to some extremely verbose code. 这虽然很直观，却会导致出现非常冗长的代码)
 #W:
 work one's way through sth. 由始至终做(尤指耗费时间、精力的事)
 Way to go! 干得好！ (Good work, guys! ~ 伙计们，活儿不错！干得好！)
@@ -4823,6 +4832,8 @@ IDOR Insecure Direct Object Reference 不安全的直接对象引用
 IPC Inter-Process Communication 进程间通信
 #-J
 JDK Java Development Kit Java语言开发包
+JPA Java Persistence API Java持久层API
+JDBC Java Database Connectivity Java数据库连接
 #-K
 KPI Key Performance Indicator 关键绩效指标
 KDF Key Derivation Function 密钥派生函数

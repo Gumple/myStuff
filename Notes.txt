@@ -1183,6 +1183,49 @@ If your application creates CallableStatement objects for invoking stored proced
 不过，在这三种技术之间存在着一些潜在的重叠区域，如：DOM 技术可以用来改变网页的结构。在 CSS 身上也可以找到这种技术相互重叠的例子。诸如 :hover 和 :focus 之类的预定义符号（伪 class 属性） 使我们可以根据用户触发事件来改变呈现效果。改变元素的呈现效果当然是表示层的“势力范围”，但对用户触发事件做出反应却是行为层的领地。表示层和行为层 的这种重叠形成了一个灰色地带。
 伪 class 属性是 CSS 正在深入 DOM 领地证据，但 DOM 在这方面也不是毫无作为。我们完全可以利用 DOM 技术把样式信息施加在 HTML 元素身上。
 分离的效果要做到即使去掉表示层和行为层，文档的内容也依然可以访问，因为“内容才是一切”。而且网页的行为层 (javascript) 与其结构 (XHTML) 是彼此互不干扰的，不能混杂在一起。还要给行为层“预留退路”，要考虑到如果你的用户禁用了 Javascript 会怎样？是不可网页还可以正常运作。
+#-（一百三十四）Singleton inheritance
+When you have a class A extends B, an instance of A essentially "includes" instance of B. So the very concept of inheritance is contrary to the singleton model.
+
+Depending on what you need it for, I would consider using composition/delegation. (A would have a reference to the singleton, rather than extending its class). If you need inheritance for some reason, create an interface with the Singleton methods, have Singleton implement that interface, and then have another class also implement that interface, and delegate to the singleton for its implementation of the relevant methods.
+#-（一百三十五）Spring Interceptor vs AOP
+MVC Interceptor is a MVC only concept. They are more or less Servlet Filters. They can intercept requests to the controller only. AOP can be used to intercept calls to any public method in any Spring loaded bean.
+
+So, the question is when you would use one over the other?
+AOP is the only option to use if you are trying to waave code into your service layer.
+A Controller method can be intercepted by either an Aspect or a HandlerInterceptor. The difference is that the AOP advice only has access to the controller being called, and the parameters being passed to the method. A HandlerInterceptor always has access to the complete HttpRequest, HttpResponse and the object being called. So, if your interceptor is doing something that requires it to always have access to the Request and Response, you should use HandlerInterceptor. If you want to do something with the parameters to the controller method, you should write an Aspect.
+#-（一百三十六）Serialization of Enum Constants
+Enum constants are serialized differently than ordinary serializable or externalizable objects. The serialized form of an enum constant consists solely of its name; field values of the constant are not present in the form. To serialize an enum constant, ObjectOutputStream writes the value returned by the enum constant's name() method. To deserialize an enum constant, ObjectInputStream reads the constant name from the stream; the deserialized constant is then obtained by calling the java.lang.Enum.valueOf method, passing the constant's enum type along with the received constant name as arguments. Like other serializable or externalizable objects, enum constants can function as the targets of back references appearing subsequently in the serialization stream.
+
+The process by which enum constants are serialized cannot be customized: any class-specific writeObject, readObject, readObjectNoData, writeReplace, and readresolve methods defined by enum types are ignored during deserialization. Similarly, any serialPersistentFields or serialVersionUID field declarations are also ignored--all enum types have a fixed serialVersionUID of 0L. Documenting serializable fields and data for enum types is unnecessary, since there is no variation in the type of data sent.
+https://docs.oracle.com/javase/6/docs/platform/serialization/spec/serial-arch.html#6469
+#-（一百三十七）What is the reason not to use select *?
+The essence of the quote of not prematurely optimizing is to go for simple and straightforward code and then use a profiler to point out the hot spots, which you can then optimize to be efficient.
+When you use select * you're make it impossible to profile, therefore you're not writing clear & straightforward code and you are going against the spirit of the quote. select * is an anti-pattern.
+
+So selecting columns is not a premature optimization. A few things off the top of my head ....
+1. If you specify columns in a SQL statement, the SQL execution engine will error if that column is removed from the table and the query is executed.
+2. You can more easily scan code where that column is being used.
+3. You should always write queries to bring back the least amount of information.
+4. As others mention if you use ordinal column access you should never use select *
+5. If your SQL statement joins tables, select * gives you all columns from all tables in the join
+
+The corollary is that using select * ...
+1. The columns used by the application is opaque
+2. DBA's and their query profilers are unable to help your application's poor performance
+3. The code is more brittle when changes occur
+4. Your database and network are suffering because they are bringing back too much data (I/O)
+5. Database engine optimizations are minimal as you're bringing back all data regardless (logical).
+
+Writing correct SQL is just as easy as writing Select *. So the real lazy person writes proper SQL because they don't want to revisit the code and try to remember what they were doing when they did it. They don't want to explain to the DBA's about every bit of code. They don't want to explain to their clients why the application runs like a dog.
+#-（一百三十八）JDBC (Java Database Connectivity) vs JPA (Java Persistence Api)
+JDBC is a standard for Database Access
+JPA is a standard for ORM
+
+JDBC is a standard for connecting to a DB directly and running SQL against it - e.g. SELECT * FROM USERS, etc. Data sets can be returned which you can handle in your app, and you can do all the usual things like INSERTS, DELETES, run stored procedures, etc. It is one of the underlying technologies behind most java database access (including JPA providers).
+One of the issues with traditional JDBC apps is that you can often have some crappy code where lots of mapping between data sets and objects occur, logic is mixed in with SQL, etc.
+
+JPA is a standard for Object Relational Mapping. This is a technology which allows you to map between objects in code and database tables. This can "hide" the SQL from the developer so that all they deal with are java classes, and the provider allows you to save them and load them magically. Mostly, XML mapping files or annotations on getters, setters can be used to tell JPA provider which fields on your object map to which fields in the DB. The most famous JPA provider is Hibernate.
+Under the hood, Hibernate and most other providers for JPA write SQL and use JDBC to read and write to the DB.
 
 
 #-Head First Design Pattern
