@@ -317,6 +317,7 @@ an axe to grind 另有所图；别有用心 (DDoS attacks are among the most com
 amortize [vt.] 摊销，分摊；分期偿还 (In addition, we planned to amortize its cost across a number of Lookoff projects. 此外，我们计划在Lookoff的其他项目中共同承担这个成本; The load of session management is amortized across all the clients, the clients store their session state and the servers can service many orders of magnitude or more clients in a stateless fashion.)
 at daggers drawn 势不两立；剑拔弩张 (I didn't expect them to be at daggers drawn over such a trivial thing. 我没料到他们为这一点小事竟会如此势不两立)
 adapter [n.] 适配器，转接器
+asking for a friend 帮朋友问的 (Is she single? Asking for a friend. 她还单着吗？我是帮朋友问的)
 #B: 
 bracelet [n.] 手镯，手链
 be fresh out of sth. 刚用完，售完
@@ -463,7 +464,7 @@ bode well/ill (for sb./sth.) (对某人/某事)是吉兆/凶兆 (These figures d
 be all ears 全神贯注地听 (Go on - I'm all ears. 讲吧——我洗耳恭听)
 be pushing 40/50等 接近40岁/50岁等了
 be pushing up (the) daisies (to be dead and in grave) 葬入地下；正忙着滋润冢上黄花
-bandwagon [n.] (行进队伍领队的)乐队车 (get/hop/jump on/aboard the ~ 加入获胜或得势的一方；顺应潮流；赶时尚)
+bandwagon [n.] (行进队伍领队的)乐队车 (get/hop/jump on/aboard the ~ 加入获胜或得势的一方；顺应潮流；赶时尚；见风使舵；随波逐流; So, how do you get you and your company on board the data-mining bandwagon? 那么，您如何能让您和您的公司跟上数据挖掘的大潮呢？)
 baffle [vt.] 使困惑；难住
 be your own master/mistress (to be free to make your own decisions rather than being told what to do by sb. else) 独立自主
 be on your/its last legs 濒临死亡；奄奄一息；行将就木
@@ -894,7 +895,7 @@ cracking [adj.] 优秀的；美妙的；分裂的；极快的
 cheese plate 干酪盘；芝士拼盘
 causeway [n.] 堤道
 cutlery [n.] 刀叉
-chill out 放松；冷静
+chill out 放松；冷静一下
 crumb [n.] 碎屑(尤指面包屑或糕饼屑)；可鄙的人物
 cramped [adj.] 狭窄的；难懂的
 charismatic [adj.] 有魅力的；有感召力的
@@ -976,6 +977,7 @@ counter-offer [n.] an offer made in response to another
 chump [n.] 傻瓜，笨蛋；短而厚的木块 (The guy's a chump. I could do a better job myself. 那家伙是个笨蛋。我自己做得都比他好)
 catnip [n.] 猫薄荷
 corollary [n.] 推论；必然结果 (One corollary of this general principle is that services should not be stateful. 此总体原则的一个推论就是，服务不应为有状态型的)
+come into the picture 出现；起作用 (The executive search firm is to plough the landscape for someone who has the relevant experience and credentials. Fresh graduates do not come into the picture given this backdrop. 猎头公司要尽量发掘有相关经验和资历的人，在这种前提下毕业生不会被考虑)
 #D:
 discrimnate [vt.] 歧视 (~ against women and in favor of men 重男轻女)
 discrimation [n.] 歧视 (show ~ against/in favor of 歧视/偏袒)
@@ -1311,6 +1313,7 @@ elastic [adj. n.] 有弹力的；可伸缩的；灵活的；松紧带，橡皮�
 excrement [n.] 屎，粪便；排泄物
 ensue [vi.] 接踵发生；继而产生 (If the Europeans did not reduce subsidies, a trade war would ensue. 如果欧洲人不减少补贴，便会发生贸易战)
 enforce [vt.] 实施，执行；实现 (All of the above methods enforce non-instiability (unable to make instances) using private constructor.)
+escalate [vi. vt.] 逐步增强；(使)升级；(使)恶化；发展 (Afterward, go back over the process with your team and learn from your mistakes. And remember that there will be some people you cannot de-escalate without coercion. 接下来，和你的团队一起回顾整个过程，从错误中吸取教训，要记住，总会有些病人是你不采取强制措施就无法处理的)
 #F:
 fianceé[n.] 未婚妻 (fiancé未婚夫)
 fabric [n.] (社会、建筑)结构
@@ -1508,6 +1511,7 @@ foul up 搞砸
 foil [vt.] 挫败；使受挫折
 forge [n. v.] 锻造车间；铁匠工场；伪造(尤指文书、笔迹等)；锻制；缔造(尤指与其他人或国家形成牢固的关系) (The Prime Minister is determined to forge a good relationship with America's new leader. 首相决意要和美国的新任领导人建立良好的关系)
 flinch [vi. n.] 退缩；畏惧 (I stand for this. If we meet the world with eyes that do not flinch and hearts that are open, we will find ourselves capable of what is asked of us. 我坚信，如果我们用无所畏惧的眼睛和开放豁达的心灵和世界相遇，我们会发现自己拥有着所应具备的东西)
+foolproof [adj. n.] 十分简单的；十分安全的；不会错的；万无一失的；安全自锁装置 (This does not provide a foolproof availability option, but is sufficiently close to that. 这不会提供一种简单的可用性方法，但是已经很接近了)
 #G:
 gross [adj. adv. v. n.]总的，毛(重)的；恶心的；总共；总共赚得；一罗(十二打，144个 a ~ of 一罗...) (-ing 赚钱的; -"He ate it with mustard." -"Oh, ~!" -“他用芥末拌着吃。”-“噢，真恶心！”; ~ sb. out 令人作呕，使人恶心 His bad breath really grossed me out. 他的口臭实在使我作呕。)
 guidelines [n.] 行动纲领，指导方针
@@ -2108,6 +2112,9 @@ in layman's term 通俗来说；从门外汉的角度来说 (If you're unfamilia
 idiom [n.] (计算机)语句 (for(:) idiom foreach语句)
 intrinsic [adj.] 本质的；内在的；固有的 (People rarely consider that the tangible features assumed to be intrinsic to the "computer" were imitations of other objects, with keyboards inherited from typewriters and screens from television. 人们很少考虑，这些被假定为“计算机”固有的可触知的特征是对其他事物的模仿，如键盘继承自打字机，显示屏模仿了电视机)
 impostor [n.] 江湖骗子；冒充者
+in turn 依次，挨个；轮流 (We will examine each of these methods in turn. 我们将按照顺序依次分析这些方法)
+in the driver's seat 掌控全局；掌有控制权；占据上风 (It feels good to be in the driver's seat. 掌握主动权的感觉真好)
+in the saddle 掌权 (Kim Jong Il, in other words, is back in the saddle again. 换句话说，金正日又重新掌权了)
 #J:
 jerk [v.] 猝然一动 (~ sth. out 结巴的说)
 jumble [v. n.] （使）混乱;混乱，杂乱的一堆东西 (-d [adj.] in -d order杂乱无序的)
@@ -2144,6 +2151,7 @@ janitor [n.] 看门人；宿管；看管房屋的人
 jump out of the frying pan into the fire 逃脱小难，更遭大难；躲得过初一，躲不过十五 (Sure, you convinced Mom to stop those boring violin lessons! But that makes it easier for her to send us to Sunday school. Don't you realize we've jumped out of the frying pan into the fire? 你的确说服了妈不让我们上那些枯燥乏味的小提琴课了，但是这只会让她更有可能送我们去主日学。你难道不明白我们这是跳出了油锅却掉进火坑了吗？)
 jersey [n.] 毛织运动衫，毛线衫；球衣 (jersey retirement ceremony 球衣退役仪式)
 jump scare 吓一跳 (A Jump Scare is a technique often used in horror films and video games which attempts to scare the viewer by surprising them with a sudden or unexpected event.) (The movie gave me a jump scare every two nanoseconds.)
+judicious [adj.] 明智的；头脑精明的 (However, with some judicious changing, you can have a project that marries the best of both plans and achieves greater results. 然而，作为明智的改变，你可以在项目中结合使用这两种方法的精华，这样就可以获得更好的结果; So we must be judicious about when we close off our work to the public, and we must review our standards frequently to make sure they are rigorous. 因此，对于在什么情况下还不能向公众公布我们的工作内容，我们必须有明智的判断。我们必须经常审查我们的标准，坚持严格的标准)
 #K:
 keep up with the Joneses 与邻居比排场；赶时髦
 karaoke [n.] 卡拉OK
@@ -2412,7 +2420,7 @@ make a pass at sb. 勾引；与某人调情
 make an exception 让...成为例外；破例 (Children are not usually allowed in, but I'm prepared to ~ in this case. 儿童一般不允许入内，不过这次我可以破例)
 master of ceremonies (MC) 司仪；仪式主持人
 meanie [n.] (儿语)小气鬼，刻薄鬼
-mitigate [v.] 减轻；减缓
+mitigate [v.] 减轻；减缓；减少...影响 (In order to bring risks under control, you must have a sense of what risks you face and when you expect to mitigate them. 为了使风险在掌控之下，您必须有高度的意识来判断您所面临的风险以及您期望什么时候可以减轻它)
 mark sth. up/down 升/降价 (All goods have been marked down by 15%. 所有商品都打八五折)
 make no mistake (about sth.) 别搞错 (Make no mistake (about it), this is one crisis that won't just go away. 要知道，这是一场不会自行消失的危机)
 mistaken identity [u.] 认错人 (He was shot in what seems to have been a case of ~. 他像是被人认错了而遭到枪击的)
@@ -2746,6 +2754,7 @@ opaque [adj. n.] 不透明的；无光泽的；含糊的；晦暗的；不透明
 OP (original poster) 楼主；题主
 One-itis 真命天女症
 on guard 警惕；提防(against)；站岗 (Similarly, women can be so chatty, on guard or defensive at times, that the men can't get a word in edgewise and when they do we jump all over them without hearing them out. 相似的，女人非常喋喋不休，既警惕又处于一种自我保护的状态，让男人根本听不进去一个词，有时就直接忽略了她们的说辞)
+on hold 暂停；悬着，停住的；暂时保留 (put ... on hold 暂停；推延，推迟; If you work in India, for example, and the currency is devalued by 20 percent (as happened last year) those college loans might have to be put on hold for a long time. 比如你在印度工作，而该国货币贬值了20%(就像去年发生的状况)，那么那些大学的助学贷款可能就要推迟很长一段时间; If there's a material weakening of the Canadian growth because of the United States, then most likely than not they're going to stay on hold for the time being.)
 #P:
 put-together [adj.] 得体的
 patch quilt 拼缝床罩
@@ -3063,6 +3072,7 @@ pinpoint [vt. adj. n.] 查明；精确定位；准确描述；精确的，详尽
 preclude [vt.] 排除；妨碍；阻止 (And although a modified waterfall approach does not preclude the use of feedback, it does not facilitate, accommodate, or encourage it. 虽然一个改进的瀑布型开发方法并不排除反馈的使用，但是它并没有促进、支持和鼓励反馈的使用)
 push for 奋力争取；迫切要求 (This discorery prompted consumer groups, as well as scientists, to push for comprehensive testing of the potential allergenicity of GM foods. 这一发现促使消费团体和科学家推动对转基因食物潜在过敏性进行更加全面的测试)
 premature [adj.] 不成熟的；比预期早的；早产的；过早的 (The baby was six weeks premature. 那个婴儿早产了六个星期; premature ejeculation 早泄; It would be premature to forecast the outcome. 预言结果还为时过早)
+paraphrase [vt. n.] 改述；意译；...的意思是；释义 (This time away offered me some perspectives on how - to paraphrase Henry David Thoreau - I had become a tool of my tools. 这一次逃离让我进一步洞察到我是怎样——套用亨利·大卫	梭罗的话——成了我的工具的工具)
 #Q:
 quadratic [adj.] (数学)二次的
 quotation [n.] 引用；引证
@@ -3260,6 +3270,7 @@ relapse [vi. n.] 故态复萌；旧病复发；再度堕落；复发 (They shoul
 replicate [vt. vi. adj. n.] 复制；重复；复制的；折叠的；复制品 (We should learn from these rather than replicate them. 我们应该从这些错误中吸取教训，而非重复它们)
 redundancy [n.] 冗余；裁员；人浮于事 (The closure of the export department resulted in over 100 redundancies. 出口部关闭导致一百多人被解雇)
 relatable [adj.] 共鸣的；感同身受的 (Dina is an incredibly hard-working, passionate mom that I think our viewers will find both relatable and highly entertaining. 迪娜是一个让人难以置信的母亲，她工作努力，充满激情，我认为观众将会觉得这个节目十分有趣并产生共鸣; She makes the most heroic characters vulnerable, the most konwn familiar, the most despised relatable. 她让崇高英勇的角色脆弱，让赫赫有名的大人物亲近，让可鄙卑贱的小人物值得同情)
+root for 支持；为...加油 (They came to the baseball field to root for their school team. 他们来到棒球场为他们的校队鼓劲)
 #S:
 submarine [n.] 潜艇
 socialization [n.] 社会化
@@ -4166,6 +4177,7 @@ troubleshoot [vt. vi.] 寻找故障，故障排解，故障诊断；充当故障
 tit for tat 以牙还牙；针锋相对 (The films and songs about love and revenge and friendship teach young people to give kindness for kindness, hatred for hatred and tit for tat. 一些关于爱情和恩仇的电影、歌曲教人有恩报恩、有仇报仇和针锋相对)
 tackle [vt.] 处理，对付(难题)  (If you have things to do or a brilliant idea on your mind to tackle later, make a note and, if need be, a plan.)
 telescope [vt. vi. adj.] 压缩；使套叠；伸缩式的，可折叠的
+take/get a grip 冷静一下；控制一下自己 (Take a grip on yourself and stop shouting. 冷静一下，别大喊大叫了！)
 #U:
 usage [n.] (词语的)用法
 use [n.] 用途
@@ -4692,6 +4704,7 @@ As is a tale, so is life: not how long it is, but how good it is, is what matter
 A hero is nothing but a product of his time./The times produce their heros. 时势造英雄
 Time and tide wait for no man. 光阴似箭，日月如梭
 Vain glory blossoms but never bears. 虚荣能开花，但不会结果
+All bets are off. 世事难料；原来的预测不算数了
 #-Reading Notes
 She recognized no other authority than her own nor any other service than that of her obsession. 除了自己，她不再承认任何权威，除了自己的痴念，她不再受任何他物驱遣。——《Chronicle of a Death Foretold》
 Those who would like to join in the contest are required to get the speech ready and hand it in before May 1st.
@@ -4834,6 +4847,7 @@ IPC Inter-Process Communication 进程间通信
 JDK Java Development Kit Java语言开发包
 JPA Java Persistence API Java持久层API
 JDBC Java Database Connectivity Java数据库连接
+JAX-RS Java API for RESTful Web Services
 #-K
 KPI Key Performance Indicator 关键绩效指标
 KDF Key Derivation Function 密钥派生函数
@@ -4873,6 +4887,7 @@ SCM Source Code Management 源代码管理；版本控制
 syntatic sugar 语法糖
 SDLC System Development Life Cycle 系统开发生命周期
 STL Standard Template Library
+SOP Standard Operating Procedure 标准作业程式
 #-T
 TLS Transport Layer Security 安全传输层协议
 TPS Transactions per Second 每秒事务数

@@ -1150,7 +1150,7 @@ Converting an object of a wrapper type (Integer) to its corresponding primitive 
 Passed as a parameter to a method(including operators like "+", "-", "*", etc. #I've checked with javap command.#) that expects a value of the corresponding primitive type.
 Assigned to a variable of the corresponding primitive type.
 #-（一百三十一）Java stream forEach() vs peek()
-peek is an itermediate operation whereas forEach is a terminal operation
+peek is an intermediate operation whereas forEach is a terminal operation
 
 Don't use the API in an unintended way, even if it accomplishes your immediate goal. That approach may break in the future, and it is also unclear to future maintainers.
 There is no harm in breaking this out to multiple operations, as they are distinct operations. There is harm in using the API in an unclear and unintended way, which may have ramifications if this particular behavior is modified in future versions of Java.
@@ -1226,6 +1226,173 @@ One of the issues with traditional JDBC apps is that you can often have some cra
 
 JPA is a standard for Object Relational Mapping. This is a technology which allows you to map between objects in code and database tables. This can "hide" the SQL from the developer so that all they deal with are java classes, and the provider allows you to save them and load them magically. Mostly, XML mapping files or annotations on getters, setters can be used to tell JPA provider which fields on your object map to which fields in the DB. The most famous JPA provider is Hibernate.
 Under the hood, Hibernate and most other providers for JPA write SQL and use JDBC to read and write to the DB.
+#-（一百三十九）Real life scenarios for Transaction propagation
+MANDATORY (expecting transaction): Typically used when you expect that any "higher-context" layer started the transaction and you only want to continue in it. For example if you want one transaction for whole operation from HTTP request to response. Then you start transaction on JAX-RS resource level and lower layers (services) require transation to run within (otherwise exception is thrown).
+REQUIRES_NEW (always create new transaction): This creates a new transaction and suspends the current one if any exists. From above example, this is the level you set on your JAX-RS resource for example. Or generally if your flow somehow changes and you want to split your logic into multiple transactions (so your code have multiple logic operations that should be separated).
+REQUIRED (continue in transaction or create if needed): Some kind of mix between MANDATORY and REQUIRES_NEW. In MADATORY you expect that the transation exists, for this level you hope that it exists and if not, you create it. Typically used in DAO-like services (from my experience), but it really depends on logic of your app.
+SUPPORTS (caller decides whether to not/run in transaction): Used if want to use the same context as caller (higher context), if your caller was running in transaction, then you run in too. If it didn't, you are also non-transactional. May also be used in DAO-like services if you want higher context to decide.
+NESTED (sub-transaction): I must admit I didn't use this one in real code but generally you create a real sub-transaction that works as some kind of checkpoint. So it runs in the context of "parent" transaction but if it fails it returns to that checkpoint (start of nested transaction). This may be useful when you require this kind of logic in your application, for example if you want to insert large number of items to the database, committing valid ones and keeping track of invalid ones (so you can catch exception when nested transaction fails but can still commit the whole transaction for valid ones).
+NEVER (expecting there is no transaction): This is the case when you want to be sure that no transaction exists at all. If some code that runs in transation reaches this code, exception is thrown. So typically this is for cases completely opposite to MANDATORY. E.g. when you konw that no transaction should be affected by this code - very likely because the transaction should not exist.
+NO_SUPPORTED (continue non-transactionally): This is weaker than NEVER, you want the code to be run non-transactionally. If somehow you enter this code from context where transaction is, you suspend this transaction and continue non-transactionally.
+
+From my experience, you very often want one business action to be atomic. Thus you want only one transaction per request/... For example simple REST call via HTTP that does some DB operations all in one HTTP-like transaction. So my typical usage is REQUIRES_NEW on the top level (JAX-RS Resource) and MANDATORY on all lower level services that are injected to this resource (or even lower).
+
+This may be useful for you. It describes how code behave with given propagation (caller->method)
+REQUIRED: NONE->T1, T1->T1
+REQUIRES_NEW: NONE->T1, T1->T2
+MANDATORY: NONE->Exception, T1->T1
+NOT_SUPPORTED: NONE->NONE, T1->NONE
+SUPPORTS: NONE->NONE, T1->T1
+NEVER: NONE->NONE, T1->Exception
+#-（一百四十）I am setting value of threadlocal in one class can I access the value in another class
+You don't seem to have understood how ThreadLocal variables work. A ThreadLocal instance is a bit like a container for a single value. If you store something in it, it will be associated to the current thread, and you can retrieve it later, from the same thread.
+
+But of course, if you store something in a ThreadLocal instance, and try to retrieve it from a different ThreadLocal instance, you'll always get null: they're not the same container.
+
+So a ThreadLocal is often hidden behind static methods. Suppose you want to associate a user with the current thread, for example. You would do
+pulbic class CurrentUser {
+	private static final ThreadLocal<User> CURRENT = new ThreadLocal<User>();
+
+	public static User getCurrentUser() {
+		return CURRENT.get();
+	}
+
+	public static void setCurrentUser(User user) {
+		CURRENT.set(user);
+	}
+}
+Then let's design a scenario:
+public class Test {
+	public static void main(String[] args) {
+		CurrentUser.set(new User("foo"));
+		System.out.println(CurrentUser.get()); // prints foo
+		new Thread(new Runnable() {
+			public void run() {
+				System.out.println(CurrentUser.get()); // prints null: different thread
+			}
+		}).start();
+	}
+}
+#-（一百四十一）JIT compiler
+A JIT compiler runs after the program has started and compiles the code (usually bytecode or some kind of VM instructions) on the fly (or just-in-time, as it's called) into a form that's usually faster, typically the host CPU's native instruction set. A JIT has access to dynamic runtime information whereas a standard compiler doesn't and can make better optimizations like inlining functions that are used frequently.
+This is in contrast to a traditional compiler that compiles all the code to machine language before the program is first run.
+To paraphrase, conventional compilers build the whole program as an EXE file BEFORE the first time you run it. For newer style programs, an assembly is generated with pseudocode (p-code). Only AFTER you execute the program on the OS (e.g., by double-clicking on its icon) will the (JIT) compiler kick in and generate machine code (m-code) that the Intel-based processor or whatever will understand.
+
+JIT-Just in time the word itself says when it's needed (on demand)
+Typical Scenario:
+The source code is completely converted into machine code
+JIT Scenario:
+The source code will be converted into assembly language like structure (e.g., IL (intermediate language) for C#, ByteCode for Java).
+The intermediate code is converted into machine language only when the application needs.
+JIT vs Non-JIT comparison:
+In JIT, not all the code is converted into machine code. First, a part of the code that is necessary will be converted into machine code then if a method or functionality called is not in machine. Then that will be turned into machine code... It reduces burden on the GPU.
+As the machine code will be generated on run time, the JIT compiler will produce machine code that is optimised for running machine's CPU architecture.
+JIT Examples:
+In Java JIT is in JVM (Java Virtual Machine)
+In C# it is in CLR (Common Language Runtime)
+In Android it is in DVM (Dalvik Virtual Machine), or ART (Android RunTime) in newer versions
+#-（一百四十二）验证SynchronousQueue在线程池中的工作方式
+public class SynchronousQueueValidation {
+	static class Countdown10 implements Runnable {
+		@Override
+		public void run() {
+			System.out.println(Thread.currentThread().getName() + " starts running");
+			int i = 10;
+			while (i > 0) {
+				try {
+					Thread.sleep(1000);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				System.out.println(Thread.currentThread().getName() + " is running: " + i--);
+			}
+		}
+	}
+
+	static class Countdown18 implements Runnable {
+		@Override
+		public void run() {
+			System.out.println(Thread.currentThread().getName() + " starts running");
+			int i = 18;
+			while (i > 0) {
+				try {
+					Thread.sleep(1000);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				System.out.println(Thread.currentThread().getName() + " is running: " + i--);
+			}
+		}
+	}
+
+	public static void main(String[] args){
+		ExecutorService es = new ThreadPoolExecutor(1, 2, 5L, TimeUnit.SECONDS, new SynchronousQueue<>());
+		es.submit(new Countdown10());
+		es.submit(new Countdown18());
+		try {
+			Thread.sleep(11000);  // #MARK
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		es.submit(new Countdown10());
+	}
+}
+更改 #MARK 的时间可以验证SynchronousQueue的工作方式：
+只有线程池里还有空闲线程，且池子线程数大于corePoolSize，任务才能进队成功，且空闲线程马上执行该任务
+如果设成11s < Countdown + keepAliveTime 任务3进队成功，执行的线程为线程#1
+如果设成16s > Countdonw + keepAliveTime 线程#1被回收，池子里只剩线程#2，此时没有空闲线程，任务3进队失败，但线程数没超过maximumPoolSize，创建线程#3执行任务3
+PS: ThreadPoolExecutor works like this:
+if (numberOfWorkingThreads < corePoolSize) {
+	startNewThreadAndRunTask();
+} else if (workQueue.offer(task)) {
+	if (numberOfWorkingThreads == 0) {
+		startNewThreadAndRunTask();
+	}
+} else if (numberOfWorkingThreads < maxPoolSize) {
+	startNewThreadAndRunTask();
+} else {
+	rejectTask();
+}
+#-（一百四十三）Different ways to Create Object in Java
+1. Using new Keyword
+  MyObject myObject = new MyObject();
+Creating Java object using new keyword is known to everyone who works in Java. But what not everyone knows is that by writing above line of code, we have loaded the class and initialized it at the same time. If we define it in two lines then we can break it into two different steps, one to load class and other to initialize the reference.
+  MyObject myObject;
+  myObject = new MyObject();
+2. Using forName method of Class class and newInstance method
+  MyObject myObject = (MyObject)Class.forName("com.talentcookie.MyObject").newInstance();
+As we have read above in different ways of loading a class, this code will load the class and also create an instance of the same class.
+3. By creating a clone of the object
+  MyObject myObject = new MyObject();
+  MyObject anotherObject = (MyObject)myObject.clone();
+The clone() method can be called on an instance of the class to clone its state into another reference of the class.
+4. De-serializing a serialized input stream (of same class's object) into an object
+  ObjectInputStream inStream = new ObjectInputStream(anInputStream);
+  MyObject object = (MyObject)inStream.readObject();
+Object De-serialization is one another way to create an object. The object is actually created from the serialized form of the object available as input stream.
+#-（一百四十四）Difference between loading a class using ClassLoader and Class.forName
+As stated in the documentation for Class.forName(String):
+   Returns the Class object associated with the class or interface with the given string name. Invoking this method is equivalent to: Class.forName(className, true, currentLoader) (it will invoke a native mathod #private static native Class<?> forName0(String name, boolean initialize, ClassLoader loader, Class<?> caller)#, true here refers to do you want to initialize the class?)
+
+On the other hand, ClassLoader.loadClass(String):
+   Invoking this method is equivalent to invoking: loadClass(name, false) (here the boolean has nothing to do with initialization; but if you check loadClass(String, boolean) documentation, you will see that all it does is load the class, not initialize it)
+
+Class.forName() will:
+·use the class loader that loaded the class which calls this code
+·initialize the class (that is, all static initializers will be run)
+
+ClassLoader.getSystemClassLoader().loadClass() will:
+·use the "system" class loader
+·not initialize the class (say, if you use it ot load a JDBC driver, it won't get registered, and you won't be able to use JDBC!)
+   (JDBC example code:
+     ...
+	 // Step 2: Register JDBC driver
+	 Class.forName("com.mysql.jdbc.Driver");
+	 // Step 3: Open a connection
+	 conn = DriverManager.getConnection(DB_URL, USER, PWD);
+	 ...)
+
+Suppose you are coding a web application that will be executed on a container such as Tomcat. What Tomcat does is create a class loader for each web application (so that it can unload the webapps later and release memory -- you need a dedicated class loader for this to work!). In this situation, you can see that both calss will yield quite different results!
 
 
 #-Head First Design Pattern
@@ -1307,6 +1474,10 @@ public class Singleton {
 ##Composite Pattern 允许你将对象组合成树形结构来表现“整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合
 *外部迭代器必须维护它在遍历中的位置，以便外部客户可以通过调用hasNext()和next()来驱动遍历。在组合层次结构中上上下下时，可以使用堆栈来维护我们的位置
 *组合和叶节点对象通常是用树形结构，也就是一种层次结构。根就是顶层的组合，然后往下是它的孩子，最末端是叶节点
+
+#State Pattern 允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类
+*"看起来好像修改了它的对象"：从客户的视角来看，如果说你使用的对象能够完全改变它的行为，那么你会觉得，这个对象实际上是从别的类实例化而来的。然而，实际上，你知道我们是在使用组合通过简单引用不同的状态对象来造成类改变的假象
+*状态模式vs策略模式：对状态模式而言，我们将一群行为封装在状态对象中，context的行为随时可委托到那些状态对象中的一个。随着时间的流逝，当前状态在状态对象集合中游走改变，以反映出context内部的状态，因此，context的行为也会跟着改变。但是context的客户对于状态对象了解不多，甚至根本是浑然不觉；而对策略模式而言，客户通常主动指定context所要组合的策略对象是哪一个。现在，固然策略模式让我们具有弹性，能够在运行时改变策略，但对于某个context对象来说，通常都只有一个最适合的策略对象。比方说，在第1章，有些鸭子（例如绿头鸭）被设置成利用典型的飞翔行为进行飞翔，而有些鸭子（例如橡皮鸭和诱饵鸭）使用的飞翔行为只能让他们紧贴地面
 
 #设计原则
 *找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混在一起
