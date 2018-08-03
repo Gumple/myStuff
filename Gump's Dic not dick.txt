@@ -4811,6 +4811,7 @@ API Application Programming Interface 应用程序编程接口
 AR Augmented Reality 增强现实技术
 ACID Atomicity Consistency Isolation Durability 事务的四个特性：原子性、一致性、隔离性、持久性
 AOP Aspect Oriented Programming 面向切面编程
+Agile Software Development 敏捷软件开发
 #-B
 #-C
 CDN Content Delivery Network 内容分发网络
@@ -4867,6 +4868,7 @@ ORM, O/RM Object-relational Mapping 对象关系映射
 #-P
 Paas Platform-as-a-Service 平台即服务
 programming/code idiom (Generally speaking, a programming idiom is a natural language expression of a simple task, algorithm, or data structure that is not a built-in feature in the programming language being used, or, conversely, the use of an unusual or notable feature that is built into a programming language. Furthermore, the term can be used more broadly, to refer to complex algorithms or programming design patterns in terms of implementation and omitting design rationale.)
+PII Personally Identifiable Information 个人可标识信息
 #-Q
 #-R
 RISC Reduced Instruction Set Computer 精简指令集计算机
