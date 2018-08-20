@@ -318,6 +318,7 @@ amortize [vt.] 摊销，分摊；分期偿还 (In addition, we planned to amorti
 at daggers drawn 势不两立；剑拔弩张 (I didn't expect them to be at daggers drawn over such a trivial thing. 我没料到他们为这一点小事竟会如此势不两立)
 adapter [n.] 适配器，转接器
 asking for a friend 帮朋友问的 (Is she single? Asking for a friend. 她还单着吗？我是帮朋友问的)
+autism [n.] 孤独症；自闭症
 #B: 
 bracelet [n.] 手镯，手链
 be fresh out of sth. 刚用完，售完
@@ -664,6 +665,7 @@ blindside [vt.] 攻其不备；乘虚而入 (Nobody is going to blindside you an
 bloated [adj.] 发胀的；浮肿的；臃肿的 (Rather than feeling healthy however, they often feel bloated and sluggish - symptoms of water retention which can be caused by the hidden salt in these salads. 相比于感觉良好，人们更多的是感觉臃肿和懒洋洋的——这是水潴留的症状，而这些症状可由沙拉中隐藏的盐导致)
 bear with 忍受；宽容 (Despite of this feature developers still have to bear with synchronization and avoiding race conditions. 尽管有这一功能，开发人员仍要忍受同步问题、避免竞态条件)
 boomerang [n. vi.] 回力镖；职场“回头客”(辞职另谋职位后，又返回原公司工作的人)；反受其害，自食其果 (In this world, "if you take one action, it can boomerang and harm something else," says Hassner. 在这个世界上，“如果你采取一步行动，接下来可能反受其害，并因此伤及无辜”，哈斯内尔说道)
+buyout [n.] 买断；收购，并购 (During a conference call with analysts, Ms. Bartz declinded to comment about any buyout talks. 通过与分析师的电话会议，巴茨拒绝回答任何关于收购的问题)
 #C:
 contradict [vt.] 反驳，驳斥 (~ oneself 与自己所说的自相矛盾 -ion [n.] 矛盾)
 compile [vt.] 编写，编译
@@ -978,6 +980,8 @@ chump [n.] 傻瓜，笨蛋；短而厚的木块 (The guy's a chump. I could do a
 catnip [n.] 猫薄荷
 corollary [n.] 推论；必然结果 (One corollary of this general principle is that services should not be stateful. 此总体原则的一个推论就是，服务不应为有状态型的)
 come into the picture 出现；起作用 (The executive search firm is to plough the landscape for someone who has the relevant experience and credentials. Fresh graduates do not come into the picture given this backdrop. 猎头公司要尽量发掘有相关经验和资历的人，在这种前提下毕业生不会被考虑)
+counterfeit [vt. vi. n. adj.] 伪造，仿造；赝品，伪造品；假币，伪钞；假冒的，伪造的
+come into play 开始起作用 (Everyone has multiple conversations and priorities going on, competing agendas that come into play every time we make a choice about doing, buying, creating or interacting. 每个人的大脑中都有多组对话及优选选择权同时进行，每次当我们在决定是先做事情，买东西，创作还是先与人沟通交流时，我们的时间安排表就开始起作用，帮我们做决定了)
 #D:
 discrimnate [vt.] 歧视 (~ against women and in favor of men 重男轻女)
 discrimation [n.] 歧视 (show ~ against/in favor of 歧视/偏袒)
@@ -1867,6 +1871,7 @@ hotfix [n.] 紧急在线修复；修复当前版本的bug并作为补充更新�
 hired hand 雇员 (He was just a hired hand. 他不过是个雇来的伙计)
 homogenized [adj.] 成为均匀分布的；均匀的 (The Barnes's quirky magnificence is increasingly rare in today's corporatized and homogenized art world.)
 hierarchy [n.] 等级制度 (Like most other American companies with a rigid hierarchy, workers and managers had strictly defined duties. 和其他多数拥有严格等级制度的美国公司一样，这里的工人和管理里人员都有严格的职责)
+hit (me) hard 直击灵魂
 #I:
 intuition [n.] 直觉
 infectious [adj.] 传染性的；富有感染力的
@@ -2755,6 +2760,7 @@ OP (original poster) 楼主；题主
 One-itis 真命天女症
 on guard 警惕；提防(against)；站岗 (Similarly, women can be so chatty, on guard or defensive at times, that the men can't get a word in edgewise and when they do we jump all over them without hearing them out. 相似的，女人非常喋喋不休，既警惕又处于一种自我保护的状态，让男人根本听不进去一个词，有时就直接忽略了她们的说辞)
 on hold 暂停；悬着，停住的；暂时保留 (put ... on hold 暂停；推延，推迟; If you work in India, for example, and the currency is devalued by 20 percent (as happened last year) those college loans might have to be put on hold for a long time. 比如你在印度工作，而该国货币贬值了20%(就像去年发生的状况)，那么那些大学的助学贷款可能就要推迟很长一段时间; If there's a material weakening of the Canadian growth because of the United States, then most likely than not they're going to stay on hold for the time being.)
+occupational hazard 职业病；职业风险 (Divorce seems to be an occupational hazard for politicians. 离婚对政客们来说似乎是一种职业风险)
 #P:
 put-together [adj.] 得体的
 patch quilt 拼缝床罩
@@ -4444,6 +4450,7 @@ works for me 我没问题；成！
 whiz [n. vi.] 能手，专家；飕飕声；有吸引力的东西；发出飕飕声；<口>高速移动 (Gee whiz, they carried on and on, they loved the evening. 啊，他们玩个没完了，他们很喜欢这个晚会)
 with a grain of salt 半信半疑地，有保留地；怀疑地 (take something with a grain of salt 对某事持保留/怀疑态度)
 well-rounded [adj.] 丰满的；面面俱到的；多才多艺的 (Graduates need leadership qualities and the ability to articulate how those experiences have created a well-rounded individual. 毕业生需要具备领导能力和表达能力，明确有力地表达自己的这些经历是如何把自己打造成了一个多才多艺全面型的个人)
+wingman [n.] 僚机
 #X:
 wholesome [adj.] 健全的；合乎卫生的；有益健康的
 XYZ (examine your zipper) (slang) 检查一下你的裤链 (XYZ. You're flying low(also slang). 检查一下你的裤链，你裤链没拉)
@@ -4860,6 +4867,7 @@ MPI Message Passing Interface 消息传递并行接口
 MIME Multipurpose Internet Mail Extensions 互联网媒体类型
 #-N
 Nonce 一个只被使用一次的任意或非重复的随机数值 In cryptography, a nonce is an arbitary number that can only be used once.
+NAT Network Address Translation 网络地址转换
 #-O
 OSI Open System Interconnection 开放式系统互联
 OTA Online Travel Agent 在线旅行社
@@ -4890,14 +4898,17 @@ syntatic sugar 语法糖
 SDLC System Development Life Cycle 系统开发生命周期
 STL Standard Template Library
 SOP Standard Operating Procedure 标准作业程式
+SEO Search Engine Optimization 搜索引擎优化
 #-T
 TLS Transport Layer Security 安全传输层协议
 TPS Transactions per Second 每秒事务数
 #-U
 UML Unified Modeling Language 标准建模语言
 URL Uniform Resource Locator 统一资源定位符
+UGC User Generated Content 用户原创内容；用户生成内容
 #-V
 #-W
+WMS Warehouse Management System 仓库管理系统
 #-X
 XSS attack Cross-Site Scripting attack 跨站脚本攻击
 #-Y
@@ -4926,6 +4937,7 @@ just because [] A valid excuse when doing something
 knockers [] A woman's breasts, especially when unrestrained and allowed to move.
 moon cricket [] Derived from early slave times when black people would come out at night and sing slave songs under the moonlight like crickets (extemely offensive)
 MRW [] An abbreviation for "My Reaction When"
+nooner [n.] Sex done at lunch, your lunch break or around noon.
 O rly [] internet slang, short for 'Oh, really?'
 oneitis [] Often confused with love, this is the feeling that a particular woman is actually special. This is just an illusion; she is the same as the other three or so billion. "Go fuck ten other women" is the most commonly prescribed treatment for this "disease" (hence the "itis"), as it tends to show quite quickly how very alike people are. In other words, get over yourself and your obsession with that girl, because it's just an illusion. And when you get rejected, don't be depressed. Because there's really not much to worry about. (Dude, you definitely have oneitis for that girl. You've been talking about her nonstop for the past week. Don't you realize she's nothing special, and that you are just being fooled? Snap out of it so you won't be so depressed when she rejects you!)
 penetration [n.] Penetration is the medical term for the penis entering into the vagina. It's a good way term for talking about sex if one wants to seem mature. Even if you're a dirty little pervert, you'll sound like sex is more than just an emotionless action caused by hormones if you call it 'penetration' rather than 'fucking around', 'doing it' etc. (-Did you fucked your girlfriend last night? -Penetration occured and I deposited my semen inside of her vagina. -What the fuck? You're a frat boy, you don't talk like that. -I know, but I sure sound mature, don't I? )
