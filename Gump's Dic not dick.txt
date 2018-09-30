@@ -1516,6 +1516,9 @@ foil [vt.] 挫败；使受挫折
 forge [n. v.] 锻造车间；铁匠工场；伪造(尤指文书、笔迹等)；锻制；缔造(尤指与其他人或国家形成牢固的关系) (The Prime Minister is determined to forge a good relationship with America's new leader. 首相决意要和美国的新任领导人建立良好的关系)
 flinch [vi. n.] 退缩；畏惧 (I stand for this. If we meet the world with eyes that do not flinch and hearts that are open, we will find ourselves capable of what is asked of us. 我坚信，如果我们用无所畏惧的眼睛和开放豁达的心灵和世界相遇，我们会发现自己拥有着所应具备的东西)
 foolproof [adj. n.] 十分简单的；十分安全的；不会错的；万无一失的；安全自锁装置 (This does not provide a foolproof availability option, but is sufficiently close to that. 这不会提供一种简单的可用性方法，但是已经很接近了)
+fall through the cracks 未加注意、疏忽、未加检查而通过 (For example, it can help ensure that important requirements around data privacy do not fall through the cracks as an application and data move through development and deployment. 例如，改进后的协作能够确保当一个应用程序或数据通过开发和部署时，围绕数据隐私的重要要求不会被忽略; And no company wants even a single good idea to fall through the cracks because a manager has subconsciously written off the employee making the suggestion. 没有公司希望任何一个好构想被忽略是因为一个经理下意识地否决员工的建议)
+fetish [n.] ...控；恋物癖
+food for thought 想法；引人思考的东西；引人深思的事 (There is much food for thought in this essay. 这篇杂文中有不少发人深思的东西)
 #G:
 gross [adj. adv. v. n.]总的，毛(重)的；恶心的；总共；总共赚得；一罗(十二打，144个 a ~ of 一罗...) (-ing 赚钱的; -"He ate it with mustard." -"Oh, ~!" -“他用芥末拌着吃。”-“噢，真恶心！”; ~ sb. out 令人作呕，使人恶心 His bad breath really grossed me out. 他的口臭实在使我作呕。)
 guidelines [n.] 行动纲领，指导方针
@@ -2120,6 +2123,8 @@ impostor [n.] 江湖骗子；冒充者
 in turn 依次，挨个；轮流 (We will examine each of these methods in turn. 我们将按照顺序依次分析这些方法)
 in the driver's seat 掌控全局；掌有控制权；占据上风 (It feels good to be in the driver's seat. 掌握主动权的感觉真好)
 in the saddle 掌权 (Kim Jong Il, in other words, is back in the saddle again. 换句话说，金正日又重新掌权了)
+in lieu of 替代，替换；用...来替换 (In other words, we are replacing the resource properties document with a JSON object and using HTTP methods in lieu of SW-RP methods. 换句话说，我们正使用JSON对象替代资源属性文档，并使用HTTP方法替代WS-RP方法)
+in stitches 笑破肚皮，笑不可知；忍俊不禁 (When he was in secondary two, he staged a farce in school that had everyone in stitches. Yet his talent was not affirmed by teachers who were only impressed by impeccable results on the report cards. 当他还是中学二年级的学生时，他在学校演了一出让所有人都捧腹大笑的话剧，然而这并没有得到老师的肯定，他们只看重考试成绩)
 #J:
 jerk [v.] 猝然一动 (~ sth. out 结巴的说)
 jumble [v. n.] （使）混乱;混乱，杂乱的一堆东西 (-d [adj.] in -d order杂乱无序的)
@@ -2499,6 +2504,7 @@ malicious [adj.] 恶意的，有敌意的；存心不良的；蓄意的 (That mi
 manhole conver 井盖
 mortgage [vt. n.] 抵押；按揭；房屋抵押贷款，房贷 (We have to do it again because the mortgage institutions have deteriorated somewhat. 我们必须再做一次改革，因为抵押贷款机构已经有所恶化)
 man of letters 作家；文人
+mangle [vt. n.] 损坏；轧布机，碾压机 (His body was crushed and mangled beyond recognition. 他的身体被压得血肉模糊，根本无法辨认)
 #N:
 nurture [v.] 培育
 nutritional [adj.] 营养的
@@ -3079,6 +3085,8 @@ preclude [vt.] 排除；妨碍；阻止 (And although a modified waterfall appro
 push for 奋力争取；迫切要求 (This discorery prompted consumer groups, as well as scientists, to push for comprehensive testing of the potential allergenicity of GM foods. 这一发现促使消费团体和科学家推动对转基因食物潜在过敏性进行更加全面的测试)
 premature [adj.] 不成熟的；比预期早的；早产的；过早的 (The baby was six weeks premature. 那个婴儿早产了六个星期; premature ejeculation 早泄; It would be premature to forecast the outcome. 预言结果还为时过早)
 paraphrase [vt. n.] 改述；意译；...的意思是；释义 (This time away offered me some perspectives on how - to paraphrase Henry David Thoreau - I had become a tool of my tools. 这一次逃离让我进一步洞察到我是怎样——套用亨利·大卫	梭罗的话——成了我的工具的工具)
+petty [adj.] 小气的；不重要的，小的 (He was miserable all the time and rows would start over petty things. 他总是愁眉苦脸的，常因小事发怒)
+permit [vt. vi. n.] 许可，准许，批准；允许，容许 (He can let the court's decision stand and permit the execution. 他有权维持法庭判决，批准死刑生效)
 #Q:
 quadratic [adj.] (数学)二次的
 quotation [n.] 引用；引证
@@ -4288,7 +4296,7 @@ vivacious [adj.] 活泼的；快活的
 vis-a-vis [prep. adv.] (1. face to face with; opposite to. 2. compared with. 3. in relation to) 和...有关；针对于；相对于
 VAT value added tax 增值税
 voracious [adj.] 贪婪的；如饥似渴的；渴求的
-verbose [adj.] 冗长的；啰嗦的 (This is straightforward, but can lead to some extremely verbose code. 这虽然很直观，却会导致出现非常冗长的代码)
+verbose [adj.] 冗长的；啰嗦的；[计算机]详细的(信息) (This is straightforward, but can lead to some extremely verbose code. 这虽然很直观，却会导致出现非常冗长的代码)
 #W:
 work one's way through sth. 由始至终做(尤指耗费时间、精力的事)
 Way to go! 干得好！ (Good work, guys! ~ 伙计们，活儿不错！干得好！)
@@ -4820,6 +4828,7 @@ ACID Atomicity Consistency Isolation Durability 事务的四个特性：原子�
 AOP Aspect Oriented Programming 面向切面编程
 Agile Software Development 敏捷软件开发
 #-B
+BTS Bug Tracking System 错误跟踪系统
 #-C
 CDN Content Delivery Network 内容分发网络
 CISC Complex Instruction Set Computer 复杂指令集计算机
@@ -4834,12 +4843,14 @@ DIP Dependency Inversion Principle 依赖倒置原则
 DI Dependency Injection 依赖注入
 DOM Document Object Model 文档对象模型
 DDoS Attack Distributed Denial of Service Attack 分布式拒绝服务攻击
+DSL Domain Specific Language 领域专用语言
 #-E
 ERP Enterprise Resource Planning 企业资源计划
 escape character 转义字符
 #-F
 FAQ Frequently Asked Questions 常见问题
 #-G
+GMV Gross Merchandise Volume 成交总额
 #-H
 HC Headcount 职数
 HTTP Hypertext Transfer Protocol 超文本传输协议
@@ -4877,6 +4888,7 @@ ORM, O/RM Object-relational Mapping 对象关系映射
 Paas Platform-as-a-Service 平台即服务
 programming/code idiom (Generally speaking, a programming idiom is a natural language expression of a simple task, algorithm, or data structure that is not a built-in feature in the programming language being used, or, conversely, the use of an unusual or notable feature that is built into a programming language. Furthermore, the term can be used more broadly, to refer to complex algorithms or programming design patterns in terms of implementation and omitting design rationale.)
 PII Personally Identifiable Information 个人可标识信息
+PRD Product Requirements Document 产品需求文档
 #-Q
 #-R
 RISC Reduced Instruction Set Computer 精简指令集计算机
@@ -4899,6 +4911,7 @@ SDLC System Development Life Cycle 系统开发生命周期
 STL Standard Template Library
 SOP Standard Operating Procedure 标准作业程式
 SEO Search Engine Optimization 搜索引擎优化
+SSH Secure Shell
 #-T
 TLS Transport Layer Security 安全传输层协议
 TPS Transactions per Second 每秒事务数
@@ -4909,6 +4922,7 @@ UGC User Generated Content 用户原创内容；用户生成内容
 #-V
 #-W
 WMS Warehouse Management System 仓库管理系统
+WSRP/WS-RP Web Service for Remote Portlets 远程门户网站Web服务
 #-X
 XSS attack Cross-Site Scripting attack 跨站脚本攻击
 #-Y

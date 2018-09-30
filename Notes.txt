@@ -7,11 +7,14 @@
 #-（七）echo “hello Git” > readme.txt 建立一个写有 hello Git 的txt文件
 #-（八）vim中的默认：
 vim provides more improvements comparing with vi. But these improvements are disabled by default. Therefore, you should enable them first. You can append the following content at the end of /etc/vim/vimrc. To enable this settings, exit and run vi(m) again. Note that contents after a double quotation mark (") are comments, and you do not need to include them in /etc/vim/vimrc.
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[4 q"
+let &t_EI.="\e[1 q"
 setlocal noswapfile " 不要生成swap文件
 set bufhidden=hide " 当buffer被丢弃的时候隐藏它
 set nocompatible " 关闭 vi 兼容模式
 syntax on " 自动语法高亮
-colorscheme evening " 设定配色方案
+colorscheme murphy " 设定配色方案
 set number " 显示行号
 set cursorline " 突出显示当前行
 set ruler " 打开状态栏标尺
@@ -1400,6 +1403,54 @@ Abstract class can define constructor. They are more structrued and can have a s
 以前刚学编程的时候，都是在service里直接调用dao，service里面就new一个dao类对象，调用，其他有意义的事没做，也不明白有这个有什么用，参加工作久了以后就会知道，业务才是工作中的重中之重。
 我们都知道，标准主流现在的编程方式都是采用MVC综合设计模式，MVC本身不属于设计模式的一种，它描述的是一种结构，最终目的达到解耦，解耦说的意思是你更改某一层代码，不会影响我其他层代码，如果你会像spring这样的框架，你会了解面向接口编程，表示层调用控制层，控制层调用业务层，业务层调用数据访问层。初期也许都是new对象去调用下一层，比如你在业务层new一个DAO类的对象，调用DAO类方法访问数据库，这样写是不对的，因为在业务层中是不应该含有具体对象，最多只能有引用，如果有具体对象存在，就耦合了。当那个对象不存在，我还要修改业务的代码，这不符合逻辑。好比主板上内存坏了，我换内存，没必要连主板一起换。我不用知道内存是哪家生产，不用知道多大容量，只要是内存都可以插上这个接口使用。这就是MVC的意义。
 接下来说你感觉service的意义，其实因为你现在做东西分层次不是那么严格，在一个你们做东西业务本身也少，举个最简单的例子，你做一个分页的功能，数据1000条，你20条在一个页，你可以把这个功能写成工具类封装起来，然后在业务层里调用这个封装的方法，这才是业务里真正干得事，只要没访问数据库的，都要在业务里写。
+#-（一百四十六）about linux(1)
+linux查询os信息: cat /etc/os-release
+linux logout: gnome-session-quit
+What does --strip-components=1 mean?
+--strip-components=NUMBER strip NUMBER leading components from file names on extraction
+e.g. path1/path2/file becomes path2/file
+#-（一百四十七）关于公安系统的一些英文名称
+一、各级单位名称：
+1、公安部：Ministry of Public Security
+2、国家安全部：theMinistry of State Security
+3、公安厅：Provincial Public Security Bureaus
+4、自治区公安厅：Autonomous Region Public Security Bureaus
+5、直辖市公安局：Municipality Public Security Bureaus
+6、公安局：City Public Security Bureaus
+7、分  局：Public Security Sub-bureau
+8、县  局：County Public Security Bureaus
+9、派出所：Police Station
+二、主要部门名称：
+1、人事部：Personnel Department
+2、刑  侦：Bureau of Criminal Investigation
+3、治安管理：Bureau of Public Order Control
+4、经  侦：Bureau of Policing Economic institutions
+5、户  政：Bureau of Household Administration
+6、出入境管理：Bureau of Control of Entry and Eixt
+7、边  防：Bureau of Border Control and Frontiers Inspection
+8、消  防：Bureau of Fire Prevention and Control
+三、警种名称：
+1、刑  警:criminal police
+2、治安警:civil police 
+3、交  警:transportation police
+4、空  警:civil aviation police
+5、铁  警:railway police
+6、森  警:forestry police
+7、狱  警:prison police
+8、司法警:judicial police
+9、国家安全保卫警察:the State Security police
+10、武 警：People's Armed police
+四、警衔名称：
+1、警  衔：Police Rank
+2、总警监：General Commissioner
+3、副总警监:Deputy General Commissioner
+4、警  监:Commissioner(of first, second or third grade)
+5、警  督:Superintendent(of first, second or third grade)
+6、警  司:Sergeant(of first, second or third grade)
+7、警  员:constable(of first or second grade)
+#-（一百四十八）Override Getter/Setter annotations
+Just do it. No getter/setter gets generated if there's already one present. (已验证)
+You can also use @Getter(AccessLevel.NONE) to disable the generation explicitly.
 
 
 #-Head First Design Pattern
