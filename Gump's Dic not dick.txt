@@ -319,6 +319,7 @@ at daggers drawn 势不两立；剑拔弩张 (I didn't expect them to be at dagg
 adapter [n.] 适配器，转接器
 asking for a friend 帮朋友问的 (Is she single? Asking for a friend. 她还单着吗？我是帮朋友问的)
 autism [n.] 孤独症；自闭症
+ad hoc [adj. adv.] 临时的；专设的 (Those enterprises with minimal or ad hoc IT governance could muddle through with business as usual. 那些只有少量治理或临时IT治理的企业照常可以运行业务; Instead, we learn about threads ad hoc, adding new tips and techniques to our toolboxes as we need them. 相反地，我们临时学习线程，在需要时向我们的工具箱添加新的技巧和技术)
 #B: 
 bracelet [n.] 手镯，手链
 be fresh out of sth. 刚用完，售完
@@ -982,6 +983,7 @@ corollary [n.] 推论；必然结果 (One corollary of this general principle is
 come into the picture 出现；起作用 (The executive search firm is to plough the landscape for someone who has the relevant experience and credentials. Fresh graduates do not come into the picture given this backdrop. 猎头公司要尽量发掘有相关经验和资历的人，在这种前提下毕业生不会被考虑)
 counterfeit [vt. vi. n. adj.] 伪造，仿造；赝品，伪造品；假币，伪钞；假冒的，伪造的
 come into play 开始起作用 (Everyone has multiple conversations and priorities going on, competing agendas that come into play every time we make a choice about doing, buying, creating or interacting. 每个人的大脑中都有多组对话及优选选择权同时进行，每次当我们在决定是先做事情，买东西，创作还是先与人沟通交流时，我们的时间安排表就开始起作用，帮我们做决定了)
+compliant [adj.] 遵从的；规范的；一致的
 #D:
 discrimnate [vt.] 歧视 (~ against women and in favor of men 重男轻女)
 discrimation [n.] 歧视 (show ~ against/in favor of 歧视/偏袒)
@@ -1519,6 +1521,7 @@ foolproof [adj. n.] 十分简单的；十分安全的；不会错的；万无一
 fall through the cracks 未加注意、疏忽、未加检查而通过 (For example, it can help ensure that important requirements around data privacy do not fall through the cracks as an application and data move through development and deployment. 例如，改进后的协作能够确保当一个应用程序或数据通过开发和部署时，围绕数据隐私的重要要求不会被忽略; And no company wants even a single good idea to fall through the cracks because a manager has subconsciously written off the employee making the suggestion. 没有公司希望任何一个好构想被忽略是因为一个经理下意识地否决员工的建议)
 fetish [n.] ...控；恋物癖
 food for thought 想法；引人思考的东西；引人深思的事 (There is much food for thought in this essay. 这篇杂文中有不少发人深思的东西)
+failover [n.] 故障转移；失效转移 (Now there is only one instance of the queue manager running, and there would not be any failover if problems arise. 现在只有一个队列管理器实例正在运行，如果出现问题，将不会再有任何故障转移)
 #G:
 gross [adj. adv. v. n.]总的，毛(重)的；恶心的；总共；总共赚得；一罗(十二打，144个 a ~ of 一罗...) (-ing 赚钱的; -"He ate it with mustard." -"Oh, ~!" -“他用芥末拌着吃。”-“噢，真恶心！”; ~ sb. out 令人作呕，使人恶心 His bad breath really grossed me out. 他的口臭实在使我作呕。)
 guidelines [n.] 行动纲领，指导方针
@@ -1875,6 +1878,7 @@ hired hand 雇员 (He was just a hired hand. 他不过是个雇来的伙计)
 homogenized [adj.] 成为均匀分布的；均匀的 (The Barnes's quirky magnificence is increasingly rare in today's corporatized and homogenized art world.)
 hierarchy [n.] 等级制度 (Like most other American companies with a rigid hierarchy, workers and managers had strictly defined duties. 和其他多数拥有严格等级制度的美国公司一样，这里的工人和管理里人员都有严格的职责)
 hit (me) hard 直击灵魂
+highlight reel 高能时刻；精彩回放 (For whatever reason - lack of Playoff success, playing in Jordan's shadow, a dearth of highlight reel plays - he's yet to receive an invitation to Springfield. 无论什么原因——缺少季后赛经验，在乔丹阴影下打球，缺少逆天的表现——都不能阻止他拿到通往斯普林菲尔德的邀请函)
 #I:
 intuition [n.] 直觉
 infectious [adj.] 传染性的；富有感染力的
@@ -2767,6 +2771,7 @@ One-itis 真命天女症
 on guard 警惕；提防(against)；站岗 (Similarly, women can be so chatty, on guard or defensive at times, that the men can't get a word in edgewise and when they do we jump all over them without hearing them out. 相似的，女人非常喋喋不休，既警惕又处于一种自我保护的状态，让男人根本听不进去一个词，有时就直接忽略了她们的说辞)
 on hold 暂停；悬着，停住的；暂时保留 (put ... on hold 暂停；推延，推迟; If you work in India, for example, and the currency is devalued by 20 percent (as happened last year) those college loans might have to be put on hold for a long time. 比如你在印度工作，而该国货币贬值了20%(就像去年发生的状况)，那么那些大学的助学贷款可能就要推迟很长一段时间; If there's a material weakening of the Canadian growth because of the United States, then most likely than not they're going to stay on hold for the time being.)
 occupational hazard 职业病；职业风险 (Divorce seems to be an occupational hazard for politicians. 离婚对政客们来说似乎是一种职业风险)
+on the fly 运行时改变的；即兴发挥的 (You can compress archives on the fly with standard compression types, or specify an external compression program of your choice. 您可以通过标准的压缩类型来动态压缩归档文件，或指定一个自己选择的外部压缩程序)
 #P:
 put-together [adj.] 得体的
 patch quilt 拼缝床罩
@@ -3087,6 +3092,7 @@ premature [adj.] 不成熟的；比预期早的；早产的；过早的 (The bab
 paraphrase [vt. n.] 改述；意译；...的意思是；释义 (This time away offered me some perspectives on how - to paraphrase Henry David Thoreau - I had become a tool of my tools. 这一次逃离让我进一步洞察到我是怎样——套用亨利·大卫	梭罗的话——成了我的工具的工具)
 petty [adj.] 小气的；不重要的，小的 (He was miserable all the time and rows would start over petty things. 他总是愁眉苦脸的，常因小事发怒)
 permit [vt. vi. n.] 许可，准许，批准；允许，容许 (He can let the court's decision stand and permit the execution. 他有权维持法庭判决，批准死刑生效)
+prophet [n.] 先知；预言者
 #Q:
 quadratic [adj.] (数学)二次的
 quotation [n.] 引用；引证
