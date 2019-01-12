@@ -3837,6 +3837,7 @@ spurious [adj.] 假的；伪造的；蹩脚的 (While the mail server is bogged 
 spew [vt. vi.] 喷出；发泄，破口大骂；呕吐；喷涌 (I therefore don't understand all this stateless gobbledygook that everyone keeps spewing.)
 safety goggles 防护眼镜；护目镜
 steroid [n.] 激素；类固醇
+significant other = SO 另一半
 #T: 
 transaction [n.] 事务，业务
 The funniest thing about it is that ... 最有趣的是...
@@ -4895,6 +4896,7 @@ Paas Platform-as-a-Service 平台即服务
 programming/code idiom (Generally speaking, a programming idiom is a natural language expression of a simple task, algorithm, or data structure that is not a built-in feature in the programming language being used, or, conversely, the use of an unusual or notable feature that is built into a programming language. Furthermore, the term can be used more broadly, to refer to complex algorithms or programming design patterns in terms of implementation and omitting design rationale.)
 PII Personally Identifiable Information 个人可标识信息
 PRD Product Requirements Document 产品需求文档
+PPA Personal Package Archives
 #-Q
 #-R
 RISC Reduced Instruction Set Computer 精简指令集计算机
@@ -4918,6 +4920,7 @@ STL Standard Template Library
 SOP Standard Operating Procedure 标准作业程式
 SEO Search Engine Optimization 搜索引擎优化
 SSH Secure Shell
+STOMP Streaming Text Oriented Message Protocol
 #-T
 TLS Transport Layer Security 安全传输层协议
 TPS Transactions per Second 每秒事务数
