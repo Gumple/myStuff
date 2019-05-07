@@ -1196,6 +1196,8 @@ deja vu [n.] 似曾相识的感觉；记忆幻觉 (As I listened to him explain 
 demean [vt.] 贬低...的身份；使...失去尊严 (From the get-go, that is the last thing we had in mind... How can we celebrate Chinese women if we demean Chinese women? 从一开始，我们就没有想过要贬低中国女性。我们怎么能一边赞美中国女性，一边贬低中国女性呢？)
 deficiency [n.] 缺陷，缺点；缺乏，不足；不足的数额 (To live in despair is a mark of great endurance, whereas to grow dull and stupid after a great unhappiness is a mark of deficiency. 生活在绝望之中象征着巨大的忍耐力，而在经历巨大的痛苦之后变得迟钝愚蠢则是缺乏忍耐力的表现)
 drag on (时间)过得缓慢；熬日子；拖得很久 (The days dragged on and she was in despair. 日子过得缓慢，她处于绝望之中)
+duly noted 收到；受到重视；具体指出 ("Duly noted, Captain," the Admiral said. 收到了，队长; These standards apply to every Region of the globe unless duly noted by specific country or with the following abbreviations. 这些标准适用于全球的每一个地区，除非明确指出了具体的国家，或使用以下缩写)
+disclaimer [n.] 免责声明
 #E 
 Everything works out all right in the end. 最后一切都正常(大团圆结局)。
 emission [n.] 排放
@@ -2606,6 +2608,7 @@ noob [n.] 菜鸟，新手
 novice [n.] 初学者，新手
 nose out of joint 生气；鼻子都气歪了 (He is so conceited that when she refused his invitation, it really put his nose out of joint. 他很自负，她没接受他的邀请可把他的鼻子气歪了)
 need (to have) a word with 需要跟...谈一谈 (Also I think you need to have a word with our catering company about the quality of the food lately in the company cafeteria. I've been receiving a lot of complaints lately. 此外我认为你有必要和提供我们餐饮的公司就公司食堂的食品质量问题谈一谈。最近我听到好多抱怨)
+nibble [v. n.] 细咬；啃；小口地吃 
 #O:
 offal [n.] (食用的)动物内脏
 offset [vt.] 抵消
@@ -4851,6 +4854,7 @@ DI Dependency Injection 依赖注入
 DOM Document Object Model 文档对象模型
 DDoS Attack Distributed Denial of Service Attack 分布式拒绝服务攻击
 DSL Domain Specific Language 领域专用语言
+DAR Display Aspect Ratio 显示幅型比；显示长宽比
 #-E
 ERP Enterprise Resource Planning 企业资源计划
 escape character 转义字符
@@ -4879,6 +4883,7 @@ KPI Key Performance Indicator 关键绩效指标
 KDF Key Derivation Function 密钥派生函数
 #-L
 LDAP Lightweight Directory Access Protocol 轻量目录访问协议
+LTS Long-Term Support 长期支援
 #-M
 MMP Massive Parallel Processing 大规模并行处理：专用内联网连接一组处理器形成的一个计算系统
 MPI Message Passing Interface 消息传递并行接口
@@ -4897,12 +4902,14 @@ programming/code idiom (Generally speaking, a programming idiom is a natural lan
 PII Personally Identifiable Information 个人可标识信息
 PRD Product Requirements Document 产品需求文档
 PPA Personal Package Archives
+PAR Pixel Aspect Ration 像素长宽比
 #-Q
 #-R
 RISC Reduced Instruction Set Computer 精简指令集计算机
 REST Representational State Transfer 表述性状态传递
 Reduction Operation 规约操作 (A reduction operation is one which allows you to compute a result using all the elements present in a stream. Reduction operations are also called terminal operations because they are always present at the end of a chain of Stream methods.)
 RPC Remote Procedure Call 远程过程调用
+RMI Remote Method Invocation 远程方法调用 
 #-S
 SDK Software Development Kit 软件开发工具包
 singleton pattern 单例模式
@@ -4921,6 +4928,7 @@ SOP Standard Operating Procedure 标准作业程式
 SEO Search Engine Optimization 搜索引擎优化
 SSH Secure Shell
 STOMP Streaming Text Oriented Message Protocol
+SAR Storage Aspect Ratio 点阵长宽比
 #-T
 TLS Transport Layer Security 安全传输层协议
 TPS Transactions per Second 每秒事务数
