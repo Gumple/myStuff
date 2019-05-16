@@ -1,0 +1,456 @@
+aThe attribute accountService is of type AccountService (interface). The variable dependency is on the interface type AccountService, not the implementation type, which reduces the coupling between classes. This is a best practice.
+
+As seen before, both AccountServiceImpl and the generated Proxy implement the interface AccountService.
+•    If there is a proxy, Spring injects the proxy
+•    If not, Spring injects the instance of type AccountServiceImpl.
+
+note that source /etc/environment will reset PATH, which is assigned in this very file, so the added up PATH is reset. Or you can add ":$PATH" to the end when assigning in /etc/environment
+
+ll "root root" the first one is the user. the second one is the group
+
+文件属性：文件一共有9个属性：文件所属用户的读、写、执行；文件所属用户组的读、写、执行；所有用户的读、写、执行。每个属性可以用一个bit来表示。比如：
+$ ls -l display_current_user.sh
+-rw-rw-r-- 1 hchen hchen 17 Apr 23 18:22 display_current_user.sh
+可以看到文件属性是：用户可读、写文件，但不能执行（第一组rw-，分别对应读、写、执行）；用户组可读、写文件，但不能执行（第二组rw-，分别对应读、写、执行）；其他所有用户可读该文件，但不能写或者执行（最后的r--）。
+
+setting -> search "annotation" -> enable annotation
+project structure -> artifacts -> type: exploded, double click one of available elements
+
+the difference between open the downloaded project file and create a spring boot application in intelliJ. the former doesn't work properly.
+
+the difference with and without @ResponseBody
+
+install MongoDB:
+follow the documentation https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+use the recommended method to install
+    encounter "E: Could not get lock /var/lib/dpkg/lock - open (11 Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?" on step 3; solution: kill process that is occupying the lock; reference: https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process
+
+如何找到需要的外部依赖包
+一般情况下
+去 https://mvnrepository.com/ 上搜索相关包
+选择具体版本
+将 Gradle 项中的文本拷贝到 dependencies 中 (如下图所示的文本)
+
+gitlab add users to repo:
+Settings -> Members -> Add member -> Choose role permission
+Settings -> Repository -> Proteced Branches
+
+创建 SSH key (如无) 并 添加到 GitLab
+
+Spring security basically handles these tasks by implementing standard javax.servlet.Filter.
+
+fetch before git branch -r
+bug: ActivityController.java deleteActivity
+fixme: CameraController method naming
+
+Apache HttpClient entity: make sure it is parsed into a json string (UrlEncodedFormEntity uses the form of "name=admin&password=0192023a7bbd73250516f069df18b500" while valid json string is "{"password":"0192023a7bbd73250516f069df18b500","name":"admin"}") 
+Online example is misleading. Is is that most websites don't accept json as params?
+@Value("${fp.host}${fp.pathPrefix}${fp.loginPost}") // concatenation; static field cannot be injected
+Bean management in Spring VS new Object
+use Unit test to test instead of main method
+Inner class instantiation
+class with inner class can be mapped by ObjectMapper
+MongoDb if @Id is constructed manually, @CreatedDate will not work. DATAMONGO-946
+
+params All the required plus retreival_query_id
+threshold default value (0~100)
+
+
+sourceSets {
+        main {
+            java.srcDirs = ['main/java']
+            resources.srcDirs = ['main/resources']
+        }
+        test {
+            java.srcDirs = ['test/java']
+            resources.srcDirs = ['test/resources']
+        }
+    }
+// mark directory as source file and source directory
+
+KENG: every module needs its own @SpringBootApplication// not actually
+
+
+We need a bootstrap in our application with a main which delegates all the work to Spring:
+package com.octoperf;
+
+@SpringBootApplication
+public class Application {
+
+  public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
+}
+Basically, this tells Spring Boot to start the application by scanning all the classes under the com.octoperf package.
+
+com.caseplatform.product for all three different modules is a design flaw. use com.caseplatform.data, com.caseplatform.domain, com.caseplatform.interface instead
+
+remove baseName = rootProject.name + "-" + project.name
+add /src sourceSets
+
+github wiki markdown 大坑：所有head会自动创建anchor，link到这些anchor必须全小写且要忽略特殊字符（如link到"附：附录（1）"要用"#附附录1"），不可自定义anchor
+
+curl -X POST -d '{"usernd":"admin001"}' -H "Content-Type: application/json" http://localhost:8081/user/register
+
+server.path & server.context-path(this will show in the url bar when the application starts up, name property of config use - instead of camel)
+spring-configuration-metadata.json
+spring-autoconfigure-metadata.properties
+
+intelliJ undercurve is reassign param (schema -> Java -> parameters)
+
+@JsonIgnore annotated methods are limited to getter, setter and @see docs
+defination of inner class will not be serialized
+
+mongo db on linux: apt-get needs to install both clients and server
+
+@ConfigurationProperties naming
+spring.artemis.embedded.data-directory
+prefix: spring.artemis
+nested static class: embedded
+property: dataDirectory
+
+k8s会监听启动程序的pid，如果程序退出，则认为容器执行完毕并会尝试重启容器 you need to have your Dockerfile have a Command to run or have your ReplicationController specify a command.
+The pod is crashing because it starts up then immediately exits, thus Kubernetes restarts and the cycle continues.
+the container dies after running everything correctly but crashes because all the commands ended. Either you make your services run on the foreground, or you create a keep alive script. By doing so, Kubernetes will show that your application is running. We have to note that in the Docker environment, this problem is not encountered. It is only Kubernetes that wants a running app.
+
+nginx conf listen: 网卡
+
+
+    @Autowired
+    private CasePlatformWebSocketHandler casePlatformWebSocketHandler;
+    @RequestMapping(value = "/v1/developer/webSocket/{message}", method = RequestMethod.GET)
+    @ResponseBody
+    public void testWebSocket(@PathVariable("message") String message) throws Exception {
+        casePlatformWebSocketHandler.sendMessage(message);
+    }
+
+kubectl get po -o wide --all-namespaces
+
+
+"---" is the separator in K8S config file *.yml
+启动spring的时候tomcat在没有任何warn和error的情况下stop，通过查找apache的tomcat代码StandardService中的start函数和stop函数，在stop函数打断点后通过frame去找到问题原因
+
+step: build -> copy jar & deps & static resources to image package -> build image -> tar images -> copy to product package & tar it -> upload to netdisk
+
+gisService resources package(generated by gradle buildscript) not in project path(add to resources manually) -> ubuntu image does not have all the lib dependancies
+
+virtualbox bridge network not working? Maybe it's because the many ips of sub net 10.10.24.0/24 are taken
+
+apt-get install -y
+
+ssh to vm of virtualbox:
+use NAT adapter -> add port forwarding -> if encounter "ssh_exchange_identification: Connection closed by remote host", use ssh -v option to show verbose info -> make sure vm has installed openssh-server -> then it should work
+
+if you use response's OutputStream, the response will be flushed to client after the OutputStream is closed. Thus headers or contentTypes set later will not be returned to the client
+
+cp myDir/* destDir/  will not copy hidden files in myDir
+
+memory: free -h
+
+sudo chattr +i /etc/resolv.conf
+sudo chattr -i /etc/resolv.conf
+
+启动hdfs之前需要格式化hdfs文件系统hadoop namenode -format，然后配置core-site.xml
+
+cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+
+vim选中按"u"能将选中文本转换成小写
+
+sudo lsof -i -P -n | grep LISTEN 
+sudo netstat -tulpn | grep LISTEN
+sudo nmap -sTU -O IP-address-Here
+
+InitializingBean is Spring's way of having an initializing method
+
+It's expected that GET requests are idempotent: requesting the same URL multiple times always gets you an equivalent result. This e.g. allows for caching (which some browsers and proxies do very aggressively). If you move query parameters into the request body, you are violating this expectation so please avoid this. 
+
+With REST, you have to make three requests to different endpoints to fetch the required data. You’re also overfetching since the endpoints return additional information that’s not needed. (The word ENDPOINT!!!)
+
+Java 8 (and Lambdas) introduce the effectively final term: even though you didn't delcare it final with the final keyword, if it is not modified, it is as good as final.
+Quoting from Oracle Tutorial: Local Classes:
+However, starting in Java SE 8, a local class can access local variables and parameters of the enclosing block that are final or effectively final. A variable or parameter whose value is never changed after it is initialized is effectively final.
+Your message is effectively final so it is valid to refer to it from anonymous inner classes and lambdas.
+If you change the value of the message, it will not be effectively final anymore:
+
+String message = "Hello world";
+new Runnable() {
+    @Override
+    public void run() {
+        System.out.println(message);
+    }
+}.run();
+message = "modified";
+
+And therefore you get the following error (from Eclipse):
+Local variable message defined in an enclosing scope must be final or effectively final
+Or form javac:
+error: local variables referenced from an inner class must be final or effectively final
+
+开启防火墙ufw enable
+关闭防火墙ufw disable
+
+Default values of the primitive types are 0 (in the corresponding representation, i.e. 0, 0.0d etc) for numeric types, false for the boolean type, \u0000 for the char type. For the wrapper classes, the default value is null.
+
+mongoDB新增字段后，原来的数据不会增加该字段的数据，ormapping后的值取决于entity定义时的默认值
+
+./gradlew app:dependencies
+
+在ij的terminal里export环境变量不靠谱，除非ij是用bash命令启动的
+
+use [database];
+db.dropDatabase();
+
+have to synchronize on the same object
+
+iperf -h
+
+注释可以用中文，但log禁止使用中文
+
+r_frame_rate is "the lowest framerate with which all timestamps can be represented accurately (it is the least common multiple of all framerates in the stream)."
+
+FIN usually means the other side called shutdown(..) on the socket.
+
+Well, if you do not want extra jars in Tomcat's lib folder, the only option (to still have Spring / AspectJ LTW work) is to edit the tomcat's run script to add -javaagent:...instrument.jar to its JAVA_OPTS or CATALINA_OPTS, and remove the context.xml file (you won't need TomcatInstrumentableClassLoad‌​er anymore).
+
+-javaagent:/home/zcgan/.gradle/caches/modules-2/files-2.1/org.springframework/spring-instrument/5.0.4.RELEASE/557029d86c94550a8c13cc3eceb5cb3e08474d69/spring-instrument-5.0.4.RELEASE.jar
++
+META-INF/aop.xml:
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN"
+        "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+    <weaver options="-Xset:weaveJavaxPackages=true">
+        <!-- only weave classes in our application-specific packages -->
+        <include within="com.ficus.face.product.caseplatform.*"/>
+    </weaver>
+
+    <aspects>
+        <!-- weave in just this aspect -->
+        <aspect name="com.ficus.face.product.caseplatform.domain.aspect.ActivityAspect"/>
+    </aspects>
+
+</aspectj>
++
+@EnableLoadTimeWeaving
+not working
+
+对于强制类型转换过程中，除Integer外的类型必须先转成string再用相应的wrapper class的valueOf函数，因为很多时候会出现反序列化时将其他类型的数反序列化成Integer但却不会出现反过来的情况
+
+git remote update origin --prune
+
+origin/HEAD -> origin/master
+The arrow is just a symbolic ref, showing a layer of indirection between remote origin/HEAD branch and remote origin/master branch.
+
+docker save -o <path for generated tar file> <image name>
+docker load -i <path to image tar file>
+
+akka缺点：actor种类和数目不断增加后他们之间的调用关系可读性非常差（工程师角度）
+
+如果akka actor发送null消息，接收方会等待直至timeout
+
+A stream also has the advantage that you don't have to have all bytes in memory at the same time, which is convenient if the size of the data is large and can easily be handled in small chunks.
+
+漏了gateway的atom和viid配置
+
+
+And, when using Spring MVC you can definitely return a byte[] that contains your file. Just make sure that you annotate your response with @ResponseBody. Something like this:
+@ResponseBody
+@RequestMapping("/myurl/{filename:.*}")
+public byte[] serveFile(@PathVariable("file"} String file) throws IOException {
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); 
+    DbxEntry.File downloadedFile = client.getFile("/" + filename, null, outputStream);
+    return outputStream.toByteArray();
+} 
+
+Well, the problem with the Byte-streams is that you keep everything in-memory. If the file is big it also means that you keep a lot of bytes in-memory. The best approach would probably be to pass the response.getOutputStream() directly. Why did that not work out for you?
+
+javaagent: something related to using aspectJ to weave into private method
+
+// Default sourceSets already created by the java plugin: src/main and src/test
+// Default content for each sourceSet: /java and /resources
+sourceSets {
+    // Adding src/generated
+    generated
+    // Setting src/main to depend on the dependencies and output of src/generated
+    main {
+        compileClasspath += generated.compileClasspath + generated.output
+    }
+}
+
+Spring AOP not working for method call inside another method
+The aspect is applied to a proxy surrounding the bean. Note that everytime you get a reference to a bean, it's not actually the class referenced in your config, but a synthetic class implementing the relevant interfaces, delegating to the actual class and adding functionality, such as your AOP.
+In your above example you're calling directly on the class, whereas if that class instance is injected into another as a Spring bean, it's injected as its proxy, and hence method calls will be invoked on the proxy (and the aspects will be triggered)
+If you want to achieve the above, you could split method1/method2 into separate beans, or use a non-spring-orientated AOP framework.
+The Spring doc (section "Understanding AOP Proxies") details this, and a couple of workarounds (including my first suggestion above)
+
+The T doesn't really stand for anything. It is just the separator that the ISO 8601 combined date-time format requires. You can read it as an abbreviation for Time.
+The Z stands for the Zero timezone, as it is offset by 0 from the Coordinated Universal Time (UTC).
+Both characters are just static letters in the format, which is why they are not documented by the datetime.strftime() method. You could have used Q or M or Monty Python and the method would have returned them unchanged as well; the method only looks for patterns starting with % to replace those with information from the datetime object.
+
+You haven't set the timezone only added a Z to the end of the date/time, so it will look like a GMT date/time but this doesn't change the value.
+'T' and 'Z' are considered here as constants. You need to pass Z without the quotes. Moreover you need to specify the timezone in the input string.
+Example : 2013-09-29T18:46:19-0700 And the format as "yyyy-MM-dd'T'HH:mm:ssZ"
+
+The main difference between name() and toString() is that name() is a final method, so it cannot be overridden. The toString() method returns the same value that name() does by default, but toString() can be overridden by subclasses of Enum.
+
+containerPort, List of ports to expose from the container
+
+ll | grep -v ^d
+
+update configMap:
+kubectl create configmap test -n case-platform --from-file=test.list -o yaml --dry-run | kubectl replace -f -
+
+./env.sh bin/ffmpeg -i ~/Downloads/20190125084959.dav -vf fps=1 -vcodec mjpeg -f image2 -an -y -vframes 1 1.jpg
+
+env.sh /runtime/resources/ffmpeg/bin/ffmpeg -i ./data/upload/5ca5b3e0c7db38000e97119e -bsf:v h264_mp4toannexb -codec copy -start_number 0 -hls_time 120 -hls_list_size 0 -f hls data/5ca5b3f5c7db38000e9711a2-hls/IqeVDCCHzl.m3u8
+
+env.sh /runtime/resources/ffmpeg/bin/ffmpeg -i ./data/upload/5ca5bcd1c7db38000e97166a -vcodec libx264 -acodec copy -r 25 -start_number 0 -hls_time 120 -hls_list_size 0 -f hls data/5ca5bcd2c7db38000e97166b-hls/jhTBaIPUPr.m3u8
+
+hostport是pod的，非deployment的，只有pod所在的node可以访问，如果pod漂移到另一个node，就无法访问了，nodeport是service粒度，所有的node都会创建iptables规则，任意一个node都可以
+
+grep -nir --color --include=*.js viid
+find . -name caseDetail.ts
+
+添加track为线索时图片数据通过gateway获取后赋值到参数进行创建线索以及存储
+
+会不会有可能一个http请求连接时间过长导致akka崩掉？
+
+setConnectionTimeout : Client tries to connect to the server. This denotes the time elapsed before the connection established or Server responded to connection request.
+
+setSoTimeout : After establishing the connection, the client socket waits for response after sending the request. This is the elapsed time since the client has sent request to the server before server responds. Please note that this is not same as HTTP Error 408 which the server sends to the client. In other words its maximum period inactivity between two consecutive data packets arriving at client side after connection is established.
+
+:%s/pattern//ng
+
+bandwith: iperf3
+latency: ping
+
+check disk: df -h
+
+diff FILE1 FILE2
+
+在hostPath上删除文件，进入pod后显示文件存在但已经不可访问，提示No such file or directory
+subPath是一个host不存在的文件夹的话，启动pod时会自动创建
+
+disk usage:
+du -sh file_path
+
+如果有使用pv的pod正在运行，pv的删除动作会被阻塞
+
+:1,8d
+:8,16d
+:16,$d
+
+video和uploadtask都是不带case信息的，所以要把video的封面图作为案件缩略图还需要一个关联，可以用material作为媒介，顺便把material更新了，不需要前端取到创建后的video再手动更新material
+
+1) The main difference between HashMap vs IdentityHashMap is that IdentityHashMap uses equality operator "==" for comparing keys and values inside Map while HashMap uses equals method for comparing keys and values.
+2) Unlike HashMap, who uses hashcode to find bucket location, IdentityHashMap also doesn't use hashCode() instead it uses System.identityHashCode(object).
+3) Another key difference between IdentityHashMap and HashMap in Java is Speed. Since IdentityHashMap doesn't use equals() its comparatively faster than HashMap for object with expensive equals() and hashCode().
+4) One more difference between HashMap and IdentityHashMap is Immutability of the key. One of the basic requirement to safely store Objects in HashMap is keys needs to be immutable, IdentityHashMap doesn't require keys to be immutable as it is not relied on equals and hashCode.
+
+getOrder() with lower value has higher priority
+
+dpkg -L XXX
+ldconfig -p | grep XXX.so
+
+ps aux | grep -ie amarok | awk '{print $2}' | xargs kill -9 
+
+echo "my text" | sed 's/$/ more text/'
+Returns:
+my text more text
+
+docker run --name=xxx -d xxx:xxx
+If you have a bunch of arguments to your docker run command, your --entrypoint should come first.
+
+mongo --username username --password password --host rs0/10.244.0.54 --port 27017
+
+The major difference between a container and an image is the top writable layer. All writes to the container that add new or modify existing data are stored in this writable layer. When the container is deleted, the writable layer is also deleted. The underlying image remains unchanged.
+The total disk space used by all of the running containers on disk is some combination of each container’s size and the virtual size values. If multiple containers started from the same exact image, the total size on disk for these containers would be SUM (size of containers) plus one image size (virtual size- size).
+
+The copy-on-write operation follows this rough sequence:
+Search through the image layers for the file to update. The process starts at the newest layer and works down to the base layer one layer at a time. When results are found, they are added to a cache to speed future operations.
+Perform a copy_up operation on the first copy of the file that is found, to copy the file to the container’s writable layer.
+Any modifications are made to this copy of the file, and the container cannot see the read-only copy of the file that exists in the lower layer.
+
+For container-level isolation, if a Container’s writable layer and logs usage exceeds its storage limit, the Pod will be evicted. For pod-level isolation, if the sum of the local ephemeral storage usage from all containers and also the Pod’s emptyDir volumes exceeds the limit, the Pod will be evicted.
+
+由于Akka的Actor在初始化的时候必须使用System或者Context的工厂方法actorOf创建新的Actor实例，不能使用构造器来初始化，而使用Spring的Service或者Component注解，会导致使用构造器初始化Actor，所以会抛出异常，真正想用注解方式加载akka类其实用处不大，最大的是想在akka actor类中加载写的其他的service时候，无法使用注解，但是你的service又都是注解写的，这个就比较恶心
+
+vim find selected text: y -> / -> ctrl+r -> " -> enter
+
+docker tag <image> <newName>/<repoName>:<tagName>
+
+awk '{print $2}'
+
+#!/bin/bash
+
+ROOT_DIR=`readlink -f $(dirname $0)`
+APP_VERSION=`cat ${ROOT_DIR}/version`
+
+if [[ ${APP_VERSION} = "Mark.1" ]]; then
+	sudo kubectl exec mongo-db -- mongodump --db case_platform --out /data/db/
+
+	sudo chown -R $USER:$USER ${ROOT_DIR}/runtime/data/mongo/case_platform/
+
+	tar -C ${ROOT_DIR}/runtime/data/mongo -cvf ${ROOT_DIR}/backup.tar case_platform
+
+	rm -rf ${ROOT_DIR}/runtime/data/mongo/case_platform/
+	printf "### Data exported.\n" 1>&2
+else
+	printf "### Please put this file in the right directory!\n" 1>&2
+	exit 1
+fi
+
+#!/bin/bash
+
+ROOT_DIR=`readlink -f $(dirname $0)`
+CONFIG_VALUES=${ROOT_DIR}/charts/case-platform-server/values.yaml
+
+if [[ -f ${CONFIG_VALUES} ]]; then
+
+	PV_PATH=`kubectl get pv | grep Bound | grep mongodb | awk '{print $1}' | xargs kubectl describe pv | grep Path: | awk '{print $2}'`
+
+	MONGO_NAMESPACE=`cat ${CONFIG_VALUES} | grep -m 1 namespace | awk '{print $2}'`
+	MONGO_USERNAME=`cat ${CONFIG_VALUES} | grep -m 1 username | awk '{print $2}'`
+	MONGO_PASSWORD=`cat ${CONFIG_VALUES} | grep -m 1 password | awk '{print $2}'`
+	MONGO_POD=`kubectl -n ${MONGO_NAMESPACE} get pods | grep mongodb | awk '{print $1}'`
+
+	tar -xvf ${ROOT_DIR}/backup.tar
+	sudo mv ${ROOT_DIR}/case_platform ${PV_PATH}/admin
+
+	kubectl -n ${MONGO_NAMESPACE} exec ${MONGO_POD} -- mongorestore --db admin --authenticationDatabase admin --username ${MONGO_USERNAME} --password ${MONGO_PASSWORD} --drop /data/db/admin
+
+	sudo rm -rf ${PV_PATH}/admin
+
+	printf "### Data imported.\n" 1>&2
+else
+	printf "### Please put this file in the right directory!\n" 1>&2
+	exit 1
+fi
+
+spring.data.mongodb.uri=mongodb://username:password@mongo-mongodb-replicaset-client.default:27017/case_platform?authSource=admin&replicaSet=rs0
+
+akka: The Router is immutable and the RoutingLogic is thread safe; meaning that they can also be used outside of actors.
+
+git commit -m "dic" --author="Joseph <ah_gump@163.com>"
+
+Declaring a static variable in Java, means that there will be only one copy, no matter how many objects of the class are created. The variable will be accessible even with no Objects created at all. However, threads may have locally cached values of it.
+When a variable is volatile and not static, there will be one variable for each Object. So, on the surface it seems there is no difference from a normal variable but totally different from static. However, even with Object fields, a thread may cache a variable value locally.
+This means that if two threads update a variable of the same Object concurrently, and the variable is not declared volatile, there could be a case in which one of the thread has in cache an old value.
+Even if you access a static value through multiple threads, each thread can have its local cached copy! To avoid this you can declare the variable as static volatile and this will force the thread to read each time the global value.
+
+If you do not provide a pool-size attribute, the default thread pool will only have a single thread.
+
+use static import rarely. it can make your program unreadable and unmaintainable, polluting its namespace with all the static members you import. but some good use cases are: JUnit test class assertEquals method, java.lang.Math, java.awt.Color.*
+
+召回率是覆盖面的度量，度量有多个正例被分为正例
+
+multiple versions of python can co-exist on a system
+
+nautilus .
+
+卡口订阅即 添加源 → 开始抽特征的任务？No 展示某个源的报警和过人信息，添加源后有开关，打开该源的开关即将该源应用于布控逻辑上（盒子只有一个布控逻辑：指定源 on 所有大小库）
+
+
+循环依赖就是循环引用，每个类中嵌套引用，在spring中表现为两个或者多个bean相互之间持有对方，比如A引用B，B引用C，C又引用A，最终反映出来形成一个环。循环调用是无法解决的，一定要有终止条件才可以，否则就是死循环，最终的结果就是内存溢出。
+
+直接集成与服务化的区别：服务化之后能够为不同程序提供服务，直接集成后需要集成程序为其他程序提供接口才能共享该服务；直接集成比较简单，通信代价基本没有，服务化需要考虑以何种形式提供服务（提供client、http、rpc...）
