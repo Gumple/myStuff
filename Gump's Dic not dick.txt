@@ -1524,6 +1524,7 @@ fall through the cracks 未加注意、疏忽、未加检查而通过 (For examp
 fetish [n.] ...控；恋物癖
 food for thought 想法；引人思考的东西；引人深思的事 (There is much food for thought in this essay. 这篇杂文中有不少发人深思的东西)
 failover [n.] 故障转移；失效转移 (Now there is only one instance of the queue manager running, and there would not be any failover if problems arise. 现在只有一个队列管理器实例正在运行，如果出现问题，将不会再有任何故障转移)
+first leg (比赛)第一回合；第一段航程 (Verona of Italy comfortably beat Salonica 96-62 in their semifinal, first leg encounter..surely too great a deficit for the Greeks to make up in the return match next week. 意大利维罗纳队在半决赛第一回合比赛中以96:62轻松击败萨洛尼卡队，希腊人要想在下个星期的回访比赛中将比分拉平真是不容易)
 #G:
 gross [adj. adv. v. n.]总的，毛(重)的；恶心的；总共；总共赚得；一罗(十二打，144个 a ~ of 一罗...) (-ing 赚钱的; -"He ate it with mustard." -"Oh, ~!" -“他用芥末拌着吃。”-“噢，真恶心！”; ~ sb. out 令人作呕，使人恶心 His bad breath really grossed me out. 他的口臭实在使我作呕。)
 guidelines [n.] 行动纲领，指导方针
@@ -3841,6 +3842,7 @@ spew [vt. vi.] 喷出；发泄，破口大骂；呕吐；喷涌 (I therefore don
 safety goggles 防护眼镜；护目镜
 steroid [n.] 激素；类固醇
 significant other = SO 另一半
+scaffold [n.] 脚手架；绞刑台 (Use of ladders or makeshift devices on top of scaffold to increase its height or to provide access from above is prohibited. 禁止在脚手架的顶部使用梯子或临时设备来增加脚手架的高度或者供人从上部进入的通道)
 #T: 
 transaction [n.] 事务，业务
 The funniest thing about it is that ... 最有趣的是...
@@ -4903,6 +4905,7 @@ PII Personally Identifiable Information 个人可标识信息
 PRD Product Requirements Document 产品需求文档
 PPA Personal Package Archives
 PAR Pixel Aspect Ration 像素长宽比
+PoC Proof of Concept 概念性验证
 #-Q
 #-R
 RISC Reduced Instruction Set Computer 精简指令集计算机
@@ -4929,6 +4932,7 @@ SEO Search Engine Optimization 搜索引擎优化
 SSH Secure Shell
 STOMP Streaming Text Oriented Message Protocol
 SAR Storage Aspect Ratio 点阵长宽比
+SPI Service Provider Interface the API tells you what a specific class/method does for you, and the SPI tells you what you must do to conform.
 #-T
 TLS Transport Layer Security 安全传输层协议
 TPS Transactions per Second 每秒事务数
