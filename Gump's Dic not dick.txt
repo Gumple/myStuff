@@ -667,6 +667,8 @@ bloated [adj.] 发胀的；浮肿的；臃肿的 (Rather than feeling healthy ho
 bear with 忍受；宽容 (Despite of this feature developers still have to bear with synchronization and avoiding race conditions. 尽管有这一功能，开发人员仍要忍受同步问题、避免竞态条件)
 boomerang [n. vi.] 回力镖；职场“回头客”(辞职另谋职位后，又返回原公司工作的人)；反受其害，自食其果 (In this world, "if you take one action, it can boomerang and harm something else," says Hassner. 在这个世界上，“如果你采取一步行动，接下来可能反受其害，并因此伤及无辜”，哈斯内尔说道)
 buyout [n.] 买断；收购，并购 (During a conference call with analysts, Ms. Bartz declinded to comment about any buyout talks. 通过与分析师的电话会议，巴茨拒绝回答任何关于收购的问题)
+battery [u.] 殴打罪 Battery is the crime of hitting or beating someone (Lawrence punched a man in a Los Angeles nightclub and was charged with battery. 劳伦斯在洛杉矶的一家夜总会里打了人，结果被指控犯了殴打罪)
+blow over (事情)平息；被淡忘 (One difference is that if we go through the next 91 months without changing course, the climate roulette of runaway warming will not blow over. It will endure. 唯一的不同就是，如果之后的91个月里我们袖手旁观，那失控的气候变暖不会（像瘟疫一样）自动平息，而是一直恶化下去)
 #C:
 contradict [vt.] 反驳，驳斥 (~ oneself 与自己所说的自相矛盾 -ion [n.] 矛盾)
 compile [vt.] 编写，编译
@@ -1322,6 +1324,7 @@ excrement [n.] 屎，粪便；排泄物
 ensue [vi.] 接踵发生；继而产生 (If the Europeans did not reduce subsidies, a trade war would ensue. 如果欧洲人不减少补贴，便会发生贸易战)
 enforce [vt.] 实施，执行；实现 (All of the above methods enforce non-instiability (unable to make instances) using private constructor.)
 escalate [vi. vt.] 逐步增强；(使)升级；(使)恶化；发展 (Afterward, go back over the process with your team and learn from your mistakes. And remember that there will be some people you cannot de-escalate without coercion. 接下来，和你的团队一起回顾整个过程，从错误中吸取教训，要记住，总会有些病人是你不采取强制措施就无法处理的)
+exclusively [adv.] 仅仅，唯一地，专有地；作为唯一的来源 (By the design, each partition of a topic is exclusively consumed by a consumer; and a partition could not be shared between many partitions.)
 #F:
 fianceé[n.] 未婚妻 (fiancé未婚夫)
 fabric [n.] (社会、建筑)结构
@@ -2169,6 +2172,7 @@ jump out of the frying pan into the fire 逃脱小难，更遭大难；躲得过
 jersey [n.] 毛织运动衫，毛线衫；球衣 (jersey retirement ceremony 球衣退役仪式)
 jump scare 吓一跳 (A Jump Scare is a technique often used in horror films and video games which attempts to scare the viewer by surprising them with a sudden or unexpected event.) (The movie gave me a jump scare every two nanoseconds.)
 judicious [adj.] 明智的；头脑精明的 (However, with some judicious changing, you can have a project that marries the best of both plans and achieves greater results. 然而，作为明智的改变，你可以在项目中结合使用这两种方法的精华，这样就可以获得更好的结果; So we must be judicious about when we close off our work to the public, and we must review our standards frequently to make sure they are rigorous. 因此，对于在什么情况下还不能向公众公布我们的工作内容，我们必须有明智的判断。我们必须经常审查我们的标准，坚持严格的标准)
+jump ship 跳槽 to leave an organization or cause, either because you think it is about to fail or because you want to join a rival organization
 #K:
 keep up with the Joneses 与邻居比排场；赶时髦
 karaoke [n.] 卡拉OK
@@ -2316,7 +2320,7 @@ luck out 运气特好；侥幸成功；逢凶化吉
 lamb chops 迷迭香羊排
 linger [vi.] 逗留；徘徊；萦绕 (The scent of her perfume -ed on in the room. 她的香水味道在房间里久久不散)
 light sleeper 浅睡者；容易被惊醒的人
-lacklustre [adj.] 死气沉沉的；无光泽的；呆滞的
+lackluster [adj.] 死气沉沉的；无光泽的；呆滞的；乏善可陈的
 lounger [n.] 闲人；懒人椅
 laminate [vt. adj.] 过胶(的)；过塑(的)
 lighthearted [adj.] 轻松愉快的；无忧无虑的；漫不经心的
@@ -3097,6 +3101,7 @@ paraphrase [vt. n.] 改述；意译；...的意思是；释义 (This time away o
 petty [adj.] 小气的；不重要的，小的 (He was miserable all the time and rows would start over petty things. 他总是愁眉苦脸的，常因小事发怒)
 permit [vt. vi. n.] 许可，准许，批准；允许，容许 (He can let the court's decision stand and permit the execution. 他有权维持法庭判决，批准死刑生效)
 prophet [n.] 先知；预言者
+pump fake 假动作，假投篮，假射门
 #Q:
 quadratic [adj.] (数学)二次的
 quotation [n.] 引用；引证
@@ -3126,7 +3131,7 @@ run circles around sb. 比...做得出色
 reproduce [v.] 繁殖，再生
 reluctant [adj.] 不情愿的；勉强的
 rumor [v. n.] 谣言，传闻 (~ has it that ... 有传言说...)
-reign [v. n.] 卫冕，蝉联 (the -ing champion 卫冕冠军)；统治时期
+reign [v. n.] 卫冕，蝉联 (the reigning champion = the defending champion 卫冕冠军)；统治时期
 rent a car by the day 按日租用汽车 (Did they pay you by the day or by the month? 他们是按日还是按月给你工钱？; sell eggs by the dozen 论打卖蛋)
 rifly [n.] 步枪
 ratify [v.] 批准
@@ -4204,6 +4209,7 @@ tit for tat 以牙还牙；针锋相对 (The films and songs about love and reve
 tackle [vt.] 处理，对付(难题)  (If you have things to do or a brilliant idea on your mind to tackle later, make a note and, if need be, a plan.)
 telescope [vt. vi. adj.] 压缩；使套叠；伸缩式的，可折叠的
 take/get a grip 冷静一下；控制一下自己 (Take a grip on yourself and stop shouting. 冷静一下，别大喊大叫了！)
+to sit idle 划水
 #U:
 usage [n.] (词语的)用法
 use [n.] 用途
@@ -4471,6 +4477,7 @@ whiz [n. vi.] 能手，专家；飕飕声；有吸引力的东西；发出飕飕
 with a grain of salt 半信半疑地，有保留地；怀疑地 (take something with a grain of salt 对某事持保留/怀疑态度)
 well-rounded [adj.] 丰满的；面面俱到的；多才多艺的 (Graduates need leadership qualities and the ability to articulate how those experiences have created a well-rounded individual. 毕业生需要具备领导能力和表达能力，明确有力地表达自己的这些经历是如何把自己打造成了一个多才多艺全面型的个人)
 wingman [n.] 僚机
+what gives? = what's the news?; what's happening?
 #X:
 wholesome [adj.] 健全的；合乎卫生的；有益健康的
 XYZ (examine your zipper) (slang) 检查一下你的裤链 (XYZ. You're flying low(also slang). 检查一下你的裤链，你裤链没拉)
@@ -4864,6 +4871,7 @@ escape character 转义字符
 FAQ Frequently Asked Questions 常见问题
 #-G
 GMV Gross Merchandise Volume 成交总额
+GDPR General Data Protection Regulation 通用数据保护条例
 #-H
 HC Headcount 职数
 HTTP Hypertext Transfer Protocol 超文本传输协议
