@@ -1,4 +1,4 @@
-aThe attribute accountService is of type AccountService (interface). The variable dependency is on the interface type AccountService, not the implementation type, which reduces the coupling between classes. This is a best practice.
+The attribute accountService is of type AccountService (interface). The variable dependency is on the interface type AccountService, not the implementation type, which reduces the coupling between classes. This is a best practice.
 
 As seen before, both AccountServiceImpl and the generated Proxy implement the interface AccountService.
 •    If there is a proxy, Spring injects the proxy
@@ -159,6 +159,7 @@ vim选中按"u"能将选中文本转换成小写
 
 sudo lsof -i -P -n | grep LISTEN 
 sudo netstat -tulpn | grep LISTEN
+sudo netstat -natp
 sudo nmap -sTU -O IP-address-Here
 
 InitializingBean is Spring's way of having an initializing method
@@ -454,3 +455,1369 @@ nautilus .
 循环依赖就是循环引用，每个类中嵌套引用，在spring中表现为两个或者多个bean相互之间持有对方，比如A引用B，B引用C，C又引用A，最终反映出来形成一个环。循环调用是无法解决的，一定要有终止条件才可以，否则就是死循环，最终的结果就是内存溢出。
 
 直接集成与服务化的区别：服务化之后能够为不同程序提供服务，直接集成后需要集成程序为其他程序提供接口才能共享该服务；直接集成比较简单，通信代价基本没有，服务化需要考虑以何种形式提供服务（提供client、http、rpc...）
+
+git remote set-url origin ssh://newhost.com/usr/local/gitroot/myproject.git
+git push https://github.com/accountname/new-repo.git +current-branch:new-repo-branch (+current-branch1:new-repo-branch1) // push current remote/local? current-branch(& current-branch1) to new-repo's new-repo-branch(&new-repo-branch1)
+
+git clean -dn // see which files&directories will be deleted
+git clean -df // delete the files&directories for real
+
+ln -s source_file myfile
+
+存储模型是怎样的，建立集群数据怎么联动，kafka可用于数据同步，服务解耦，流量控制可以做但要确定消费者的qps是瓶颈
+
+intelliJ not reading properties correctly -> invalidate cache and restart
+
+It seems you already added this file to repo, and then you want to ignore it. In this case your file exists in Index/Staging area so git is showing it into changed file list.
+So you need to remove this file from Index/Staging area, to do so you just need to clean git cache. Execute below command
+git rm --cached gradle.properties
+
+Asynchronous Listeners. To achieve this, you must redefine the ApplicationEventMulticaster bean with id applicationEventMulticaster. The purpose of this bean is to handle all events and deliver them to the registered listeners. It exists in the Spring application context by default and we can force the asynchronous behavior by providing the thread pool executor to it. It is crucial that the bean's id equals to applicationEventMulticaster. The asynchronous configuration is achieved by setting the taskExecutor property. Every event is now handled inside this pool. !!! Or simply add @Async annotation and enable async in application
+Distributive Event Multicaster(has both sync & async eventListener). We need to provide our own implementation of the ApplicationEventMulticaster. We will surely not write all the logic again. We just create DistributiveEventMulticaster bean with two other multicasters injected. One synchronous and one asynchronous.
+
+By the design, each partition of a topic is exclusively consumed by a consumer; and a partition could not be shared between many partitions. This design ensures the consuming order of the same partition. The consumer group must respect this principle when they decide the group assignment. Therefore, when the number of consumers is greater than the partitions, some of them just idle and do nothing.
+
+每一条消息被发送到broker时，会根据paritition规则选择被存储到哪一个partition。如果partition规则设置的合理，所有消息可以均匀分布到不同的partition里，这样就实现了水平扩展。（如果一个topic对应一个文件，那这个文件所在的机器I/O将会成为这个topic的性能瓶颈，而partition解决了这个问题）。在创建topic时可以在$KAFKA_HOME/config/server.properties中指定这个partition的数量(如下所示)，当然也可以在topic创建之后去修改parition数量。
+在发送一条消息时，可以指定这条消息的key，producer根据这个key和partition机制来判断将这条消息发送到哪个parition。paritition机制可以通过指定producer的paritition. class这一参数来指定，该class必须实现kafka.producer.Partitioner接口。本例中如果key可以被解析为整数则将对应的整数与partition总数取余，该消息会被发送到该数对应的partition。（每个parition都会有个序号）
+对于同一个topic，每个group都可以拿到同样的所有数据，但是数据进入group后只能被其中的一个consumer消费
+
+First – let’s go over the rules – @Async has two limitations:
+- it must be applied to public methods only
+- self-invocation – calling the async method from within the same class – won’t work
+Isn't it the same with all annotation?
+
+When a method return type is a Future, exception handling is easy – Future.get() method will throw the exception. But, if the return type is void, exceptions will not be propagated to the calling thread.
+
+if you want to inject a bean into your service, then your service has to be managed by Spring
+
+
+    /**
+     * info里面应该会有各种判断条件
+     */
+    private void runAlarmRules(AlarmInfo info) {
+        // 是否报警
+        // 是 推到前端&推到alarm存储队列
+        //     是否命中小库
+        //     否 添加到一所请求集合concurrentMap
+        // 推到路人库存储队列
+    }
+
+    /**
+     * 定时任务会每m毫秒调用此方法
+     */
+    public void batchUpdateAlarmInfo(/* alarmId List? */) {
+        if (shouldSendRequest()) {
+            // 复制concurrentMap，清空map
+            // 用map的信息构造输入，调用一所批量请求
+            // 更新alarm信息
+            // 推到前端&推到alarm存储队列
+        }
+    }
+
+    /**
+     * 1. 必须加锁的原因是 查询和更新lastRequestTimestamp必须具有事务性
+     * 设想如果只对写加锁，两个同时发送过来的请求有可能都判断为true
+     *
+     * 2. lastRequestTimestamp的scope最好能限制在该函数（目前的设计是此类的私有成员），所以可能需要构造另外一个类提供此服务
+     * @return
+     */
+    private boolean shouldSendRequest() {
+        // synchronized (lock) {
+        //   判断concurrentMap是否 >= 大小阈值 或者 (now - lastRequestTimestamp > 时间阈值)
+        //   是 更新lastRequestTimestamp & return true
+        //   否 return false
+        // }
+        return false;
+    }
+
+
+
+@SpringBootApplication
+public class Application implements CommandLineRunner {
+
+    @Autowired
+    private ApplicationContext appContext;
+
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(Application.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+
+        String[] beans = appContext.getBeanDefinitionNames();
+        Arrays.sort(beans);
+        for (String bean : beans) {
+            System.out.println(bean);
+        }
+
+    }
+
+}
+
+/**
+ * Override the {@code group.id} property for the consumer factory with this value
+ * for this listener only.
+ * <p>SpEL {@code #{...}} and property place holders {@code ${...}} are supported.
+ * @return the group id.
+ * @since 1.3
+ */
+String groupId() default "";
+
+There is no such feature in IDEA, however you can use Alt + Arrows and Ctrl + E (Recent Files) to navigate between tabs.
+
+Why java classes do not inherit annotations from implemented interfaces?
+I'd say the reason is that otherwise a multiple-inheritance problem would occur.
+
+If buildscript itself needs something to run, use classpath.
+If your project needs something to run, use compile.
+The buildscript{} block is for the build.gradle itself.
+
+The compile configuration is created by the Java plugin. The classpath configuration is commonly seen in the buildSrc {} block where one needs to declare dependencies for the build.gradle, itself (for plugins, perhaps).
+
+    private static final String PASSER_REPO_NAME = "PASSER";
+    private String passerRepoId;
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        getAll().thenAccept(repos -> {
+            RepoRead passerRepo;
+            if (repos != null && !repos.isEmpty()
+                    && (passerRepo = repos.stream()
+                    .filter(repo -> PASSER_REPO_NAME.equalsIgnoreCase(repo.getAttributes().get("name").toString()))
+                    .findAny().orElse(null)) != null) {
+                passerRepoId = passerRepo.getId();
+            } else {
+                passerRepo = new RepoRead();
+                Attributes attributes = new Attributes();
+                attributes.put("name", PASSER_REPO_NAME);
+                passerRepo.setAttributes(attributes);
+                // TODO 插入并将返回的repoId赋值给passerRepoId
+            }
+        });
+    }
+
+When specified on a class level @Async annotation, indicates that the given executor should be used for all methods within the class. Method level use of Async#value always overrides any value set at the class level.
+
+inner static class cannot access outer class
+
+sudo -i
+swapoff -a
+exit
+strace -eopenat kubectl version
+
+journalctl -xeu kubelet
+
+MongoDB requires that you have an '_id' field for all documents. If you don't provide one the driver will assign a ObjectId with a generated value. The "_id" field can be of any type the, other than arrays, so long as it is unique.
+
+In the configuration class:
+@Configuration
+// @Lazy - For all Beans to load lazily
+public class AppConf {
+
+    @Bean
+    @Lazy
+    public Demo demo() {
+        return new Demo();
+    }
+}
+
+For component scanning and auto-wiring:
+@Component
+@Lazy
+public class Demo {
+    ....
+    ....
+}
+@Component
+public class B {
+
+    @Autowired
+    @Lazy // If this is not here, Demo will still get eagerly instantiated to satisfy this request.
+    private Demo demo;
+
+    .......
+ }
+
+ "/api" url prefix: 把前端路由和后端路由区分开，没前缀的是前端路由，有前缀的是后端路由
+
+error handling & async, maybe & cache?
+
+mount server:/directory/with/data /mnt
+
+Locus4Knot*Author
+
+allOf 的list里面可以有 CompletableFuture<null>
+list里面有null元素会在allOf这行报npe
+allOf 的元素里面抛npe会在allOf的future.get报npe
+
+When you do helm delete $RELEASE_NAME it deletes all resources but keeps the record with $RELEASE_NAME in case you want to rollback. You can see removed releases via helm ls -a. Whereas helm delete --purge $RELEASE_NAME removes records and make that name free to be reused for another installation.
+
+git config --list
+~/.gitconfig
+
+sudo lshw -C display
+
+As the other correct answers stated, a java.util.Date has no time zone†. It represents UTC/GMT (no time zone offset). Very confusing because its toString method applies the JVM's default time zone when generating a String representation.
+
+We do not allow this because it's not repeatable. A symlink on your machine is the not the same as my machine and the same Dockerfile would produce two different results. Also having symlinks to /etc/paasswd would cause issues because it would link the host files and not your local files.
+
+redirect logs: some_cmd > some_file 2>&1 &
+
+UriComponentsBuilder uriBuilder = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}");
+        return DeferredResultAdapter.from(
+                analysisTaskService.create(Arrays.asList(analysisTaskCreate))
+                        .thenApplyAsync(taskIdList -> ResponseEntity
+                                .created(uriBuilder.buildAndExpand(taskIdList.get(0)).toUri())
+                                .build()));
+
+
+https://it-artifactory.yitu-inc.com/docker-local/gitlab-ci-artifacts/caseplatform/caseplatform-website
+
+CompletableFuture<String> future =
+        CompletableFuture.supplyAsync(() -> {
+            sleepSeconds(2);
+            return "ABC";
+        }, pool);
+future.thenApply(s -> {
+    log.info("First transformation");
+    return s.length();
+});
+future.get();
+pool.shutdownNow();
+pool.awaitTermination(1, TimeUnit.MINUTES);
+future.thenApply(s -> {
+    log.info("Second transformation");
+    return s.length();
+});
+Second transformation, when registered, realizes that the CompletableFuture already finished, so it executes the transformation immediately. There is no other thread around so thenApply() is invoked in the context of current main thread.
+
+Uz0Ejro8acw=
+
+no endpoints -> maybe pod is not ready
+
+flatMap = thenCompose
+
+:%s/pattern//gn
+
+
+
+resourceRepository.listResourceAction -> shadowService.toShadowRequestForAuth -> getShadowResourceIdForAuth -> resourceRepository.createShadowGroup
+
+
+1188843551, 1190464485
+
+=RANDBETWEEN(1131977177, 1133652592) / 10000000
+120.0791889 30.2716577
+120.4885434 30.0863617
+
+121.2533459 31.2296642
+121.4772715 31.0196967
+
+121.3934219 31.3473233
+121.5623837 31.2310785
+
+NANJING
+118.5121566 32.2275151
+119.0039314 31.8688087
+
+WUXI
+120.1658959 31.6945256
+120.4735986 31.4533764
+
+HEFEI
+117.0640558 31.9232297
+117.3992320 31.7317707
+
+HANGZHOU
+120.0325062 30.4080775
+120.3910348 30.2693312
+
+SH neihuan
+121.4047542 31.2708257
+121.5239203 31.2188434
+
+GUANGZHOU CENTER
+113.1977177 23.1656137
+113.3652592 23.0645704
+
+GUANGZHOU
+112.8543949 23.4405690
+113.6344242 22.7204570
+
+SHENZHEN
+113.8295174 22.6495021
+114.2784548 22.5544157
+
+SHENZHEN CENTER
+113.9093506 22.5785105
+114.1431534 22.5077995
+
+ZHUHAI
+113.4469056 22.2890964
+113.5808015 22.2179202
+
+CHONGQING
+106.3573122 29.8025179
+106.6127443 29.4156755
+
+CHONGQING CENTER
+106.4856935 29.6146549
+106.5838838 29.5418009
+
+SUZHOU
+120.5241823 31.3911575
+120.6917238 31.2268945
+
+CHANGSANJIAO
+118.2566098 32.5437582
+121.8171696 29.4634493
+
+XINAN
+97.3802101 34.1170679
+110.8312136 25.2702976
+
+ZHONGYUAN
+109.0073124 38.5454993
+118.8977562 33.4073892
+
+XIBEI
+81.5503813 43.9374078
+100.4521182 29.4213921
+
+{"#and":[{"#and":[{"#gt":{"meta_GEOGRAPHY_Y":"18.837034"}},{"#lt":{"meta_GEOGRAPHY_Y":"36.16212"}},{"#gt":{"meta_GEOGRAPHY_X":"103.33191"}},{"#lt":{"meta_GEOGRAPHY_X":"137.2467"}}]},{"#and":[{"#eq":{"in_trash":"0"}},{"#in":{"type":["0","10000","10001","10002","10003","10004","10005","10006","20000","20001","30001","40000"]}}]}]}
+
+
+2019-08-27 11:37:28.468  INFO 12591 --- [r-http-epoll-15] com.ficus.witcher.camera.CameraService   : ######### Request starts: 11:37:28.468
+2019-08-27 11:37:28.473  INFO 12591 --- [r-http-epoll-15] c.f.w.c.repository.ResourceRepository    : ## Before resource query: 11:37:28.473, clusterId: fuzhou_1564046533
+2019-08-27 11:37:28.479  INFO 12591 --- [r-http-epoll-15] c.f.w.c.repository.ResourceRepository    : ## Before resource query: 11:37:28.479, clusterId: fujian_1130
+2019-08-27 11:37:28.611  INFO 12591 --- [r-http-epoll-15] com.ficus.witcher.camera.CameraService   : ### Resource size: 0, clusterId: fujian_1130
+2019-08-27 11:37:28.611  INFO 12591 --- [r-http-epoll-15] com.ficus.witcher.camera.CameraService   : ### After resource query: 11:37:28.611, clusterId: fujian_1130
+2019-08-27 11:37:29.725  INFO 12591 --- [r-http-epoll-15] com.ficus.witcher.camera.CameraService   : ### Resource size: 6013, clusterId: fuzhou_1564046533
+2019-08-27 11:37:29.725  INFO 12591 --- [r-http-epoll-15] com.ficus.witcher.camera.CameraService   : ### After resource query: 11:37:29.725, clusterId: fuzhou_1564046533
+2019-08-27 11:37:29.731  INFO 12591 --- [r-http-epoll-15] com.ficus.witcher.camera.CameraService   : ######### Before cluster: 11:37:29.731
+2019-08-27 11:37:29.734  INFO 12591 --- [r-http-epoll-15] com.ficus.witcher.camera.CameraService   : ########## After cluster: 11:37:29.734
+2019-08-27 11:37:29.735  INFO 12591 --- [r-http-epoll-15] com.ficus.witcher.camera.CameraService   : ### Gis Border: [120.5189895629883, 122.63866424560548, 30.716849134384194, 31.761278346473443]
+
+
+
+FilterResourceRequest(userId=2, resourceGid=null, filterType=2, resourceSet=null, filter={"#and":[{"#and":[{"#gt":{"meta_GEOGRAPHY_Y":"11.4770565"}},{"#lt":{"meta_GEOGRAPHY_Y":"45.708576"}},{"#gt":{"meta_GEOGRAPHY_X":"89.11011"}},{"#lt":{"meta_GEOGRAPHY_X":"156.9397"}}]},{"#and":[{"#eq":{"in_trash":"0"}},{"#in":{"type":["0","10000","10001","10002","10003","10004","10005","10006","20000","20001","30001","40000"]}}]}]}, start=0, limit=2147483647, action=102, type=camera, depth=null, desc=null, prePath=null, roleList=null)
+
+
+5629 - 5539
+4406 - 4383
+5751 - 5729
+
+7798 - 7680
+4539 - 4076
+4661 - 4197
+5345 - 5009
+
+11391 - 8962 = 2429
+4869 - 3100 = 1769
+
+经过session filter后，header从session_id变成了session_id(int), user_cluster_id(string), user_id(int)
+
+cache的永远是server端最后处理的请求，但不能保证是客户端最后接收的请求（网络问题），所以接下来获取cache的请求会有可能返回与之不对应的结果；现在cache的session数是1000，按道理不会超，但如果超了，请求被删除的cache时是否要走一遍完整获取信息的流程
+
+
+COLUMN MODE: SHIFT + right click
+
+
+curl -X POST -w "@curl-format.txt" -o /dev/null \
+  http://10.10.25.27:7500/v2.0/filter_resource \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: aea9d587-5eb7-0602-8af9-211f7d9b08dd' \
+  -d '{
+   "resourceSet": null,
+   "projections": {
+    "group": {},
+    "resource": {
+        "primaries": ["id"],
+        "meta": [],
+        "attrs": ["meta_GEOGRAPHY_X", "meta_GEOGRAPHY_Y"]
+    }
+   },
+   "filter": {
+      "#and": [
+         {
+            "#and": [
+               {
+                  "#gt": {
+                     "meta_GEOGRAPHY_Y": "24.279215"
+                  }
+               },
+               {
+                  "#lt": {
+                     "meta_GEOGRAPHY_Y": "40.74901"
+                  }
+               },
+               {
+                  "#gt": {
+                     "meta_GEOGRAPHY_X": "106.70471"
+                  }
+               },
+               {
+                  "#lt": {
+                     "meta_GEOGRAPHY_X": "140.6195"
+                  }
+               }
+            ]
+         },
+         {
+            "#and": [
+               {
+                  "#eq": {
+                     "in_trash": "0"
+                  }
+               },
+               {
+                  "#in": {
+                     "type": [
+                        "0",
+                        "10000",
+                        "10001",
+                        "10002",
+                        "10003",
+                        "10004",
+                        "10005",
+                        "10006",
+                        "20000",
+                        "20001",
+                        "30001",
+                        "40000"
+                     ]
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   "start": 0,
+   "limit": 2147483647,
+   "action": "102",
+   "type": "camera",
+   "depth": null,
+   "desc": null,
+   "user_id": 6,
+   "resource_gid": null,
+   "filter_type": 2,
+   "pre_path": null,
+   "role_list": null
+}'
+
+
+resource fetch 200 ~ 300ms
+sorting 100ms
+projection 100 ~ 150ms
+
+tar cvf - case-platform/ | split -b 8192m - case-platform.Mark.3.tar
+
+ab -p param.json -T application/json -H 'cache-control: no-cache' -c 5 -n 5 http://10.10.25.27:7500/v2.0/filter_resource
+
+Ctrl-V Ctrl-J to type \n in terminal 
+
+server -> common client -> common, client 打成jar包供 Farlax 依赖，server 自成一个项目，启动服务，Farlax 的 client 连 gearman 的 server，upd server 和 sip server ?
+
+
+curl -X POST \
+  http://10.40.80.63:7700/face/v1/framework/face_image/retrieval/statistic/user \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 258e845e-2f61-48ae-b0ef-2a38110f19f0' \
+  -H 'cache-control: no-cache' \
+  -H 'session_id: 211938200@hebei_province_1560328557' \
+  -d '{
+    "user_id": 0,
+    "topic": "cluster_retrieval",
+    "start": 0,
+    "limit": 100,
+    "timestamp_begin": 0,
+    "timestamp_end": 1567653568
+}'
+
+$ java -X
+-Xmixed           mixed mode execution (default)
+-Xint             interpreted mode execution only
+-Xbootclasspath:  set search path for bootstrap classes and resources -Xbootclasspath/a:                   append to end of bootstrap class path -Xbootclasspath/p:                   prepend in front of bootstrap class path -Xnoclassgc       disable class garbage collection -Xloggc:    log GC status to a file with time stamps
+-Xbatch           disable background compilation
+-Xms              set initial Java heap size
+-Xmx              set maximum Java heap size
+-Xss              set java thread stack size
+-Xprof            output cpu profiling data
+-Xfuture          enable strictest checks, anticipating future default
+-Xrs              reduce use of OS signals by Java/VM (see documentation)
+-Xdock:name=      override default application name displayed in dock -Xdock:icon=                   override default icon displayed in dock -Xcheck:jni       perform additional checks for JNI functions -Xshare:off        do not attempt to use shared class data -Xshare:auto      use shared class data if possible (default) -Xshare:on        require using shared class data, otherwise fail.  The -X options are non-standard and subject to change without notice. 
+
+
+watch -n 0.4 curl http://serverfault.com/
+
+Overhead
+It's the resources required to set up an operation. It might seem unrelated, but necessary.
+It's like when you need to go somewhere, you might need a car. But, it would be a lot of overhead to get a car to drive down the street, so you might want to walk. However, the overhead would be worth it if you were going across the country.
+In computer science, sometimes we use cars to go down the street because we don't have a better way, or it's not worth our time to "learn how to walk".
+
+mount file: /etc/fstab
+
+TEST123275
+TEST188810
+TEST220277
+
+
+curl -X POST \
+  http://10.10.25.27:7700/camera/query_gis \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 77912b39-bd94-70bb-a682-50356e39b804' \
+  -H 'session_id: 2067173546@fuzhou_1564046533' \
+  -d '{
+   "action": "102",
+   "type": "rect",
+   "min_x": 106.70471,
+   "min_y": 24.279215,
+   "max_x": 140.6195,
+   "max_y": 40.74901,
+   "filter": {
+      "#and": [
+         {
+            "#eq": {
+               "in_trash": "0"
+            }
+         },
+         {
+            "#in": {
+               "type": [
+                  "0",
+                  "10000",
+                  "10001",
+                  "10002",
+                  "10003",
+                  "10004",
+                  "10005",
+                  "10006",
+                  "20000",
+                  "20001",
+                  "30001",
+                  "40000"
+               ]
+            }
+         }
+      ]
+   }
+}'
+
+
+
+10W
+{
+   "action": "102",
+   "type": "rect",
+   "min_x": 106.70471,
+   "min_y": 24.279215,
+   "max_x": 140.6195,
+   "max_y": 40.74901,
+   "filter": {
+      "#and": [
+         {
+            "#eq": {
+               "in_trash": "0"
+            }
+         },
+         {
+            "#in": {
+               "type": [
+                  "0",
+                  "10000",
+                  "10001",
+                  "10002",
+                  "10003",
+                  "10004",
+                  "10005",
+                  "10006",
+                  "20000",
+                  "20001",
+                  "30001",
+                  "40000"
+               ]
+            }
+         }
+      ]
+   }
+}
+
+
+/**
+     * TODO NEED TO REMOVE BEFORE COMMIT!!!
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
+        Cache<String, String> cache = CacheBuilder.newBuilder()
+            .expireAfterAccess(5000, TimeUnit.MILLISECONDS)
+            .build();
+        cache.put("2", "AAA");
+        Assert.isNull(cache.getIfPresent("2"), "bbbb");
+
+        Flux.fromIterable(Arrays.asList("a", "b", "c")).flatMap(s -> {
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+            }
+            log.info("### test value: {}", s);
+            return Flux.fromIterable(new ArrayList<>());
+        }).subscribe();
+
+        Flux.fromIterable(Arrays.asList("e", "f", "g")).parallel()
+            .runOn(Schedulers.parallel())
+            .doOnNext(s -> {
+                try {
+                    if ("e".equalsIgnoreCase(s)) {
+                        Thread.sleep(3000);
+                    } else {
+                        Thread.sleep(1000);
+                    }
+                } catch (Exception e) {
+                }
+                log.info("### test value: {}", s);
+            }).sequential().collectList().block();
+    }
+
+
+50812
+{
+  "action": "102",
+  "type": "rect",
+  "min_x": 116.13922119140626,
+  "min_y": 27.254196455348804,
+  "max_x": 133.09661865234375,
+  "max_y": 35.59190687868937,
+  "filter": {
+    "#and": [
+      {
+        "#eq": {
+          "in_trash": "0"
+        }
+      },
+      {
+        "#in": {
+          "type": [
+            "0",
+            "10000",
+            "10001",
+            "10002",
+            "10003",
+            "10004",
+            "10005",
+            "10006",
+            "20000",
+            "20001",
+            "30001",
+            "40000"
+          ]
+        }
+      }
+    ]
+  }
+}
+
+150512
+{
+  "action": "102",
+  "type": "rect",
+  "min_x": 103.66149902343749,
+  "min_y": 21.1610079936856,
+  "max_x": 137.57629394531253,
+  "max_y": 38.135489797756364,
+  "filter": {
+    "#and": [
+      {
+        "#eq": {
+          "in_trash": "0"
+        }
+      },
+      {
+        "#in": {
+          "type": [
+            "0",
+            "10000",
+            "10001",
+            "10002",
+            "10003",
+            "10004",
+            "10005",
+            "10006",
+            "20000",
+            "20001",
+            "30001",
+            "40000"
+          ]
+        }
+      }
+    ]
+  }
+}
+
+
+curl -X POST \
+http://10.40.56.23:7700/camera/query_filter \
+-H 'Content-Type: application/json' \
+-H 'Postman-Token: c74ce5c6-11fa-4d80-a487-ecc59a9e41f9' \
+-H 'cache-control: no-cache' \
+-H 'session_id: 191991982@szyazwp_1314520_1567768890' \
+-d '{
+   "action": "502",
+   "start": 0,
+   "limit": 20,
+   "type": 2,
+   "selected": {
+      "positive": [],
+      "negative": []
+   },
+   "path": "",
+   "filter": {
+    "#and": [
+      {
+        "#eq": {
+          "in_trash": "0"
+        }
+      },
+      {
+        "#in": {
+          "type": [
+            "0",
+            "10000",
+            "10001",
+            "10002",
+            "10003",
+            "10004",
+            "10005",
+            "10006",
+            "20000",
+            "20001",
+            "30001",
+            "40000"
+          ]
+        }
+      }
+    ]
+  }
+}'
+
+guava cache: expireAfterAccess(1, TimeUnit.MINUTES) 这个 Access 包括 write，也就是说当写入 cache 之后，计时就已经开始了
+
+
+# Add following config to /etc/mongod.conf to setup, start mongod, enter mongo and use rs.initiate() to create a replica set
+replication:
+  replSetName: rs0
+
+
+mongoTemplate 的 insert 操作每次都会尝试添加 @Indexed 的字段为索引，但 MongoDB 事务不支持在事务中对索引进行任何操作
+
+Operations that affect the database catalog, such as creating or dropping a collection or an index, are not allowed in transactions. For example, a transaction cannot include an insert operation that would result in the creation of a new collection.
+
+在 Abstract 类中，要使用 spring 的依赖注入，必须在其实现类（bean）初始化时完成，自定义 constructor 和 spring 的依赖注入本身就是冲突的，即无法在 constructor 里获取 @Autowired 的 bean
+
+In addition, if test methods(annotated with @Transactional) delete the contents of selected tables while running within a transaction, the transaction will roll back by default, and the database will return to its state prior to execution of the test. 'Add @Rollback(false) to test method can prevent rollback.'
+
+This flexibility means that documents can be created without having defined structure first.
+
+副表的增删操作会导致主表频繁的修改
+
+事务必须用在副本集情景下否则会报错：Multi-document transactions are available for replica sets only.
+In MongoDB 4.0, only replica sets using the WiredTiger storage engine supported transactions.
+
+The transaction is only committed after the @Transactional method finishes. So depending on how fast the @Async method executes the transaction might (or not) have been committed.
+
+用两个 <obj, cnt> 的 map 来记录两个 collection，先比较 map 的大小，如相等再比较 obj 的 cnt 是否相等
+
+产品的部署是完全与 agent 和运维平台中心端解耦的，agent 和 运维平台中心有配置项的依赖，由运维人员进行部署配置
+
+
+tags({"k1", "v1", "k2", "v2"}) => tags({<k1, v1>, <k2, v2>})
+
+
+rtsp://admin:admin12345@10.10.200.31:554/c1/b1572804072/e1572844099/replay
+
+rtsp://vms:vms123@10.40.59.184:554/vod/84A34BC3-278E-41B0-A5F3-F92B2CA5484E
+
+{"services": [
+  {
+    "url": "10.10.200.31",
+    "username": "admin",
+    "password": "admin12345"
+  }
+]}
+
+当两个时间段中间有空隙时，如果指定的起始播放时间在空隙区间时，如果起始播放时间更靠近上一段的结束时间，则会播放上一段结束部分1s左右再播下一段起始部分，如果起始播放时间更靠近下一段的开始时间，则直接开始播放下一段
+
+获取 recordings 的开始时间和结束时间落入任何一个 recording 时间段（开区间）内该 recording 都会被搜索中，比如搜索 5 ~ 100，[3, 5]、[98, 100] 这两段 recording 都会被返回，[3, 10]、[98, 102] 这样的也会返回
+
+
+IncludedSources - optional, unbounded; [SourceReference]
+A list of sources that are included in the scope. If this list is included, only data from one of these sources shall be searched.
+
+ffplay -ss 21273 -t 10 "rtsp://vms:vms123@10.40.59.184:554/vod/7eeb8820-6429-4b06-9e21-387f8e2cae1a"
+
+optional flatmap
+
+List<List<Object>> list = ...
+List<Object> flat = 
+    list.stream()
+        .flatMap(List::stream)
+        .collect(Collectors.toList());
+
+
+@JsonProperty 可以作用于 ObjectMapper 的 convert 函数
+
+actuator prometheus 用的是 prometheus client 的 CollectorRegistry bean （不用自己注册，且不要用 default 的方法创建指标），用 actuator 的方法 PrometheusMeterRegistry 也可正常注册，至于两者底层实现未知，最好用 prometheus client 的 collector，因为其数据结构就是 prometheus 官方定义的数据结构，actuator meter 还提供 Timer 等等，这都不是 prometheus 官方的数据结构，它会被底层的框架分成一个 Gauge 和 Summary，且其 Gauge 用法不友好，需要绑定 reference，靠 reference 获取指标
+
+实在觉得 execution 表有 update time 这个字段存在语义的不合理，记录表应该不支持修改，特别是 job 有 retry limit 但没有 retry times 的时候，只能通过 execution 记录来判断重试的次数
+
+
+0,4,5,9,10,12,13,14,17,19,20
+
+Note: RateLimiter does not provide fairness guarantees.
+
+同步一下，关于文件上传接口排队机制的实现，我打算在 gateway 设计一个能针对接口的限流器，为了做得可拓展一些，可以支持阻塞和非阻塞（直接抛 429），限制的具体数值支持静态配置和动态获取（配到 license 的信息里面）；把这个限流器放在 gateway 的原因有：
+ gateway 做限流更具拓展性；“上传两次”这个现状以后一定会优化掉，且大概率只上传到 vpp，限流器放在
+ gateway 只需要修改配置就可以了；二是目前所有跟 license server 的交互都只存在于 gateway
+
+ 进行文件操作时要注意线程安全！！！（多个线程同时对一个文件或者目录进行修改）
+ You can't use FileLock on a directory so you will have to handle locking in Java.
+
+ you can try with multiple resources after Java 7
+
+Stalled/Blocking
+Time the request spent waiting before it could be sent. This time is inclusive of any time spent in proxy negotiation. Additionally, this time will include when the browser is waiting for an already established connection to become available for re-use, obeying Chrome's maximum six TCP connection per origin rule.
+
+结合当前 completeUpload 阻塞等待分段创建 vpp 上传任务的状况，之后不可避免地要把上传接口做成异步，创建上传任务时需要输入文件块数，这样就可以自行拼接然后分段在 vpp 上传，维护一个 uploadTask 的状态，状态获取可主动推可轮询，这样 uploadPart 接口也能真正异步排队，而且在创建上传任务时传入 md5 有助于判断是否重复上传，可以复用文件
+
+降低码率_2620个快照_801FACE_1min33_5min26_5min40
+码率不变_4118个快照_1116FACE_3min28s_5min45_7min57
+
+一分半 concat，7分半全部vpp上传转码结束
+
+素材进度在删除后紊乱； flow & job 管理；异步队列；上传优化，进度管理
+
+{
+    "timeType": "VIDEO_START_TIME",
+    "startTimestamp": 1575881110000,
+    "endTimestamp": 1575882215000
+}
+
+open files:
+gnome-open .
+nautilus .
+
+check jvm heap size: java -XX:+PrintFlagsFinal -version
+
+
+    /***
+     * 判断是否需要分割切片进行转码
+     *
+     * @return true: 需要切片转码
+     */
+    private boolean checkNeedSplitForTranscode(FFmpegProbeResult probeResult, AudioConfig srcAudioConfig, VideoConfig srcVideoConfig, MediaInfo.AVFlag avFlag) {
+        /**
+         * 通过 split 编码参数是否与原始文件的音视频格式一致来决定是否分片.
+         * 如果分片,就要对大文件切片后再对每个分片进行转码,然后对转码后的小文件再封装合并,
+         * 否则如果不分片,就直接原始文件不做任何处理或者转封装
+         */
+        String audioCodec = "", videoCodec = "";
+
+        for (int i = 0; i < probeResult.getStreams().size(); i++) {
+            FFmpegStream stream = probeResult.getStreams().get(i);
+
+            if (FFmpegStream.CodecType.AUDIO == stream.codec_type) {
+                if (stream.codec_name.isEmpty() || stream.sample_rate <= 0 || stream.channels <= 0 || stream.sample_fmt.isEmpty()) {
+                    log.warn("Found invalid audio stream info: codec={}, samplerate={}, channels={}, samplefmt={}",
+                            stream.codec_name, stream.sample_rate, stream.channels, stream.sample_fmt);
+                    continue;
+                }
+
+                avFlag.setAudioAvailable(true);
+
+                AudioConfig ac = srcAudioConfig;
+
+                // 传入音频参数为空，自动判断是否分片
+                if (null == ac) {
+                    if (!stream.codec_name.equals("aac")) {
+                        return true;
+                    }
+                } else {
+                    audioCodec = ac.getCodec();
+
+                    if (null != audioCodec && !audioCodec.equals("aac") && !audioCodec.equals("mp3")) {
+                        log.warn("Audio codec {} not supported", audioCodec);
+                    }
+
+                    if ((null != audioCodec && !stream.codec_name.equals(audioCodec)) || (!stream.codec_name.equals("aac") && !stream.codec_name.equals("mp3")) ||
+                            (null != ac.getSamplerate() && !ac.getSamplerate().equals("auto") && Integer.parseInt(ac.getSamplerate()) != stream.sample_rate) ||
+                            (null != ac.getChannels() && !ac.getChannels().equals("auto") && Integer.parseInt(ac.getChannels()) != stream.channels) ||
+                            (null != ac.getBitrate() && !ac.getBitrate().equals("auto") && Integer.parseInt(ac.getBitrate()) != stream.bit_rate)
+                    ) {
+                        return true;
+                    }
+                }
+            } else if (FFmpegStream.CodecType.VIDEO == stream.codec_type) {
+                if (stream.codec_name.isEmpty() || stream.width <= 0 || stream.height <= 0) {
+                    log.warn("Found invalid video stream info: codec={}, width={}, height={}",
+                            stream.codec_name, stream.width, stream.height);
+                    continue;
+                }
+
+                avFlag.setVideoAvailable(true);
+
+                if (null == stream.r_frame_rate || null == stream.avg_frame_rate) {
+                    return true;
+                } else {
+                    double rFrameRate = stream.r_frame_rate.getDenominator() <= 0 ? 0.0 : stream.r_frame_rate.doubleValue();
+                    double avgFrameRate = stream.avg_frame_rate.getDenominator() <= 0 ? 0.0 : stream.avg_frame_rate.doubleValue();
+
+                    log.info("rate: " + rFrameRate + ", avg rate: " + avgFrameRate);
+
+                    if ((0 != Double.compare(rFrameRate, 0.0) && 0 != Double.compare(avgFrameRate, 0.0)) && 0 != Double.compare(rFrameRate, avgFrameRate)) {
+                        return true;
+                    } else {
+                        VideoConfig vc = srcVideoConfig;
+
+                        // 传入视频参数为空，自动判断是否分片
+                        if (null == vc) {
+                            if (!stream.codec_name.equals("h264")) {
+                                return true;
+                            }
+                        } else {
+                            videoCodec = vc.getCodec();
+
+                            if (null != videoCodec && !videoCodec.equals("h264")) {
+                                log.warn("Video codec {} not supported", videoCodec);
+                            }
+
+                            if ((null != videoCodec && !stream.codec_name.equals(videoCodec)) || !stream.codec_name.equals("h264") ||
+                                    (null != vc.getProfile() && !vc.getProfile().equals("auto") && !vc.getProfile().equals(stream.profile)) ||
+                                    (null != vc.getWidth() && !vc.getWidth().equals("auto") && Integer.parseInt(vc.getWidth()) != stream.width) ||
+                                    (null != vc.getHeight() && !vc.getHeight().equals("auto") && Integer.parseInt(vc.getHeight()) != stream.height) ||
+                                    (null != vc.getBitrate() && !vc.getBitrate().equals("auto") && Long.parseLong(vc.getBitrate()) != stream.bit_rate) ||
+                                    (null != vc.getFps() && !vc.getFps().equals("auto") && 0 != Double.compare(Double.parseDouble(vc.getFps()), avgFrameRate))) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+ffprobe -show_streams -select_streams V -print_format json -i 
+
+
+count frames:
+ffmpeg -i  -map 0:v:0 -vcodec copy -an -f null -
+
+
+ffmpeg -i ./test/data/upload/5e037236dcff227471e56ce5 -vcodec copy -an -f segment -segment_frames 
+
+ME.find({ pictures: { $exists: true, $ne: [] } })
+
+db.upload_task.update({_id: ObjectId("5e0b02fadae88f727961af17")}, { $set: { file_path: "/home/zcgan/Downloads/testUpload/upload/5e0b02fadae88f727961af17" }})
+
+failed to provision volume with StorageClass "hdd1": doesn't support storageclass
+
+直接改 setting.gradle 不断刷新无法在子模块生成 build.gradle 文件，通过右键添加子模块就有了
+
+
+git init
+git remote add origin git@gitlab.yitu-inc.com:athena/athena-training.git
+git check -b master
+git add something
+git commit -m "some message"
+git branch --set-upstream-to=origin/master master
+git pull --allow-unrelated-histories
+
+
+builder is not inherited from super class
+
+    @Autowired
+    private Environment env;
+
+    public String getConfigValue(String configKey){
+        return env.getProperty(configKey);
+    }
+
+By default, htop lists each thread of a process separately, while ps doesn't. To turn off the display of threads, press H
+
+network IO: ethtool eth1 | grep Speed
+
+stepverifier
+
+kubectl get deploy deploymentname -o yaml --export
+
+
+ratelimiter reject when hit half of the limit
+
+It’s easy to make the mistake and use Optional.orElse when you should have used orElseGet. The result is that what you thought would have been executed lazily or not at all will be called immediately. So make sure you aren’t for example accessing the database in your orElse methods.
+
+Publish or expose port (-p, –expose)
+$ docker run -p 127.0.0.1:80:8080 ubuntu bash
+This binds port 8080 of the container to port 80 on 127.0.0.1 of the host machine. The Docker User Guide explains in detail how to manipulate ports in Docker.
+$ docker run --expose 80 ubuntu bash
+This exposes port 80 of the container without publishing the port to the host system’s interfaces.
+
+docker inspect containerId
+
+Copy files from a list to a folder:
+rsync -a /source/directory --files-from=/full/path/to/listfile /destination/directory
+rsync -a car_ims/ --files-from=/home/zcgan/Downloads/Stanford_Car/data/Stanford_Car/00_raw/Lincoln.txt /home/zcgan/Downloads/car_classification/images/
+
+
+    public static void main(String[] args) throws Exception {
+        long then = Instant.now().toEpochMilli();
+        String annotationDir = "/home/zcgan/Downloads/Stanford_Car/data/Stanford_Car/01_json/data/car_ims/";
+        JSONArray array = JSON.parseArray(Files.readString(Paths.get("/home/zcgan/Downloads/car_classification/annotations.json")));
+        array.forEach(jsonObject -> {
+            try {
+                JSONObject json = (JSONObject) jsonObject;
+                String imagePath = json.get("image_path").toString();
+                JSONObject originalAnno = (JSONObject) ((JSONArray) json.get("annotations")).get(0);
+                String annotationPath = annotationDir +
+                    imagePath.substring(imagePath.lastIndexOf("/") + 1, imagePath.lastIndexOf(".")) + ".json";
+                JSONObject annotation = JSON.parseObject(Files.readString(Paths.get(annotationPath)));
+                JSONObject anno = (JSONObject) ((JSONArray) annotation.get("anno_result")).get(0);
+                int x = Integer.valueOf(anno.get("x_min").toString()), y = Integer.valueOf(anno.get("y_min").toString()),
+                    w = Integer.valueOf(anno.get("x_max").toString()) - x, h = Integer.valueOf(anno.get("y_max").toString()) - y;
+                originalAnno.put("x", x);
+                originalAnno.put("y", y);
+                originalAnno.put("w", w);
+                originalAnno.put("h", h);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        Files.write(Paths.get("/home/zcgan/Downloads/car_classification/new_annotations.json"),
+            JSON.toJSONString(array, true).getBytes());
+        System.out.println(String.format("Cost: %dms", Instant.now().toEpochMilli() -then));
+    }
+
+
+Limitation
+1. ContentCachingRequestWrapper class only supports the following:
+Content-Type:application/x-www-form-urlencoded
+Method-Type:POST
+2. We must invoke the following method to ensure that request data is cached in ContentCachingRequestWrapper before using it:
+requestCacheWrapperObject.getParameterMap();
+
+Note: A Service can map any incoming port to a targetPort. By default and for convenience, the targetPort is set to the same value as the port field.
+
+Currently, based on only these two attributes, a PVC is bound to a single PV. Once a PV is bound to a PVC, that PV is essentially tied to the PVC's project and cannot be bound to by another PVC. There is a one-to-one mapping of PVs and PVCs. However, multiple pods in the same project can use the same PVC.
+
+host_path deleter only supports /tmp/.+ 
+
+vim: In normal mode, typing Ctrl-A will increment the next number, and typing Ctrl-X will decrement the next number. The number can be at the cursor, or to the right of the cursor (on the same line).
+
+saperate exception occurred in parallel stream is thrown in that specific thread to the parent thread and continues to consume other item (if there is any), other threads is not affected by it.
+
+docker pull it-artifactory.yitu-inc.com/docker-local/gitlab-ci-artifacts/caseplatform/caseplatform-server:develop-c48b4d9a
+
+The & makes the command run in the background.
+From man bash:
+If a command is terminated by the control operator &, the shell executes the command in the background in a subshell. The shell does not wait for the command to finish, and the return status is 0.
+
+DDD: managementService using multiple repositories? get it into one domain and use package-private for repositories; managementService has query api but be cautious with modifying api
+
+If you set the type field to NodePort, the Kubernetes control plane allocates a port from a range specified by --service-node-port-range flag (default: 30000-32767). Each node proxies that port (the same port number on every Node) into your Service. Your Service reports the allocated port in its .spec.ports[*].nodePort field.
+Using a NodePort gives you the freedom to set up your own load balancing solution, to configure environments that are not fully supported by Kubernetes, or even to just expose one or more nodes’ IPs directly.
+
+
+ll -d -- */
+
+1. 先存图，再用 uri 更新 种类 id，不太行：a) 没有一个叫修改 meta 信息的接口，写入单个图片接口不一定 work；b) 即使 a) work，再用某种看似解耦的方式再更新一遍，imageStorageClient 的抽象就有点徒劳
+2. imageStorageClient 存图接口加字段，存图时把额外信息加进来，各个 client 实现根据需要使用，缺点：a) 应用层不管知不知道（不知道更好，至少看起来不像为了抽象而抽象）底层的 client 实现，都必须把所有只针对某一个 client 实现的额外信息加进来
+
+目前是用工厂类获取的 ISClient，那么通常 ISClient->SaveImage 调用的地方都是无法感知 client 的实现类，所以对于增加字段改造过后的接口，所有调用的地方都需要把 camera id 传进去，但实际上并不是所有调用的地方都能方便地提供 camera id
+
+关于 1) 开 只用于特定场景的 接口 2) 在原有接口加 additional 的字段
+如果上述的情况确实是“通常”发生的，那么 1) 是不适用的，如果 只用于特定场景 的需求增多了，且不属于同一个实现下的场景，而在调用方出现 多种场景均可能出现但按目前的实现方式解决 的情况，也是只有 2) 适用
+但是总感觉调用方应该感知当前的应用场景，是能够判断需不需要传额外字段的，不过当这样的 只用于特定场景的 接口多了，原来的抽象也不那么抽象了，既然一开始选择了抽象那么就抽象到底吧
+
+
+curl localhost:10249/proxyMode
+
+1）init 时把所有 bucket 都创建了
+2）save 时判断，成员变量记录是否创建了 bucket，要注意线程安全
+建议用1）
+都是用到两个接口 创建 bucket 接口以及 获取 bucket 信息接口
+
+
+As of Spring Framework 4.3, an @Autowired annotation on such a constructor is no longer necessary if the target bean only defines one constructor to begin with. However, if several constructors are available, at least one must be annotated to teach the container which one to use.
+
+If you structure your code as suggested above (locating your application class in a root package), you can add @ComponentScan without any arguments. All of your application components (@Component, @Service, @Repository, @Controller etc.) are automatically registered as Spring Beans.
+If a bean has one constructor, you can omit the @Autowired, as shown in the following example:
+@Service
+public class DatabaseAccountService implements AccountService {
+
+    private final RiskAssessor riskAssessor;
+
+    public DatabaseAccountService(RiskAssessor riskAssessor) {
+        this.riskAssessor = riskAssessor;
+    }
+
+    // ...
+
+}
+Notice how using constructor injection lets the riskAssessor field be marked as final, indicating that it cannot be subsequently changed.
+
+
+witcher:
+application.yml 的 routers 定义了用哪个 ClusterIdHandler 的函数，ClusterIdRouterConfig.java 负责实现这个逻辑，其生成的 routersMap 用来记录请求信息，转发请求，RouterConfig.java 里面显示定义的路由规则（应该是在 application.yml 里面找不到对应路由的，看了几个，没有全量确认）是不需要经过 clusterIdHandler 函数处理的，直接走本机的相应服务，不需要考虑跨集群场景（这些请求要么不能用于跨集群场景，要么在相应服务侧有跨集群资源的缓存）；ClusterIdHandler 是获取目标 clusterId，跟 userClusterId 对比后决定转发 p2p 还是走本地服务
+
+创建、修改等接口不返回全量 Entity 而只返回 id 或者啥都不返回的意义是：当你的 query 接口需要对某些字段进行转义、隐藏或者 mask 的时候，可以不用考虑创建/修改接口（虽然简单的接口可能会在一个地方统一做结果转换，但是如果涉及到不同接口有不同的权限限制，而权限信息不一定在“一个地方”里有，当然也可以让它有，但是总的来说还是会增加系统设计的复杂度）
+
+c++ map::count (const key_type& k) const returns 1 if the container contains an element whose key is equivalent to k, or zero otherwise.
+
+
+权限类型 Type ---> Value 的映射表
+Type是从0开始整数的字符串,目前有语义的Type有 "0"(读权限), "1"(写权限)
+Value包括 2(有权限且能授予他人),1(有权限),0(无权限,可缺省)
+
+
+git log --oneline --graph --all --color
+
+If you want Git to forget about what's on the remote branch, you can just force push, since it seems like you're the only developer in your project (git push --force). Otherwise, if you want to keep the commit on MyParser/dev, use git pull --rebase to update the local branch. If you didn't even want to track dev branch on the remote, you should delete that branch on there (git push origin --delete dev).
+
+cpu 编译命令，你可以看下build_face_platform_backend.sh
+scons -uj24 release=0 fpversion=2.1.2 license=0 --with-blas=mkl --with-mkldnn --with-no-reuse-blob .
+编译过了。
+在external 下面git clean -xdff下
+
+
+remove a remote branch: git push <remote_name> --delete <branch_name>
+
+
+rtsp://admin:admin@10.10.32.134
+
+1. 使用build face platform backend脚本编译，得到binary，需要看下你改动的内容对应是什么binary，比如camera request handler对应是platform console fig app worker -> face platform partition ficus着一个binary
+2. rsync到face_platform_deploy/product/env/container/下面对应的目录中做替换（有需要可以先备份下原来的binary）
+3. 停fp
+4. 在fp deploy目录运行./console/cluster_update_all.sh
+5. 启动fp
+6. 测试
+
+
+mongo --host 127.1 --port 27017 -u admin -p admin --authenticationDatabase admin face_platform
+
+A user can have privileges across different databases; that is, a user’s privileges are not limited to their authentication database. By assigning to the user roles in other databases, a user created in one database can have permissions to act on other databases. For more information on roles, see Role-Based Access Control.
+The user’s name and authentication database serve as a unique identifier for that user. That is, if two users have the same name but are created in different databases, they are two separate users. If you intend to have a single user with permissions on multiple databases, create a single user with roles in the applicable databases instead of creating the user multiple times in different databases.
+
+echo all variables: printenv
+
+docker ps --no-trunc
+
+In my "Ubuntu 16.04", I use next steps to completely remove and clean Kubernetes (installed with "apt-get"):
+kubeadm reset
+sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube*   
+sudo apt-get autoremove  
+sudo rm -rf ~/.kube
+
+don't describe get -o yaml or json
+
+kubectl -n middlewares get secret elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode
+
+Encrypting communications between nodes in a cluster:
+xpack.security.transport.ssl.enabled: true
+Encrypting HTTP client communications:
+xpack.security.http.ssl.enabled: true
+
+Enabling anonymous accesse:
+If no roles are specified, anonymous access is disabled—​anonymous requests will be rejected and return an authentication error.
+
+git submodule foreach --recursive git clean -xdff && git clean -xdff
+
+If you want stderr as well use this:
+SomeCommand &> SomeFile.txt  
+
+pkill -f my_pattern
+
+TODO void_storage 回 master 后更新 txwl fp 的依赖
+
+kubectl get pods | grep Evicted | awk '{print $1}' | xargs kubectl delete pod
+
+sudo chmod 666 /var/run/docker.sock
+
+sudo megaclisas-status
+lsblk
+
+ab -p param.json -T application/json -H 'cache-control: no-cache' -c 250 -n 25000 10.40.88.48:21100/face/v1/face_image_flow
+
+
+find -type f -name "witcher.jar"
+
+docker rmi repository/image-name:tag
+docker rmi a8e6fa672e89
+
+stat -c "%a %n"
+
+kubectl logs deployment/postgres-operator -c apiserver
+
+
+nslookup elasticsearch-es-http.middlewares.svc.cluster.local 10.96.0.10
+nslookup mongo-0.mongo-gvr.middlewares.svc.cluster.local 10.96.0.10
+
+find / -type f -iname "filename*"
+
+
+重复使用：
+helm upgrade --set controller.hostNetwork=true,tcp.30092=middlewares/kafka:9092 ingress stable/nginx-ingress
+kubectl -n ingress get pod | awk '{print $1}' | grep ingress | xargs kubectl -n ingress delete pod
+不会对后来增加的转发规则有影响
+
+
+kubectl delete pod <PODNAME> --grace-period=0 --force --namespace <NAMESPACE>
+
+kubectl -n ingress get cm ingress-nginx-ingress-tcp -o yaml
+kubectl -n ingress edit cm ingress-nginx-ingress-tcp
+
+
+The key thing is that when you run a client, the broker you pass to it is just where it’s going to go and get the metadata about brokers in the cluster from. The actual host & IP that it will connect to for reading/writing data is based on the data that the broker passes back in that initial connection—even if it’s just a single node and the broker returned is the same as the one connected to.
+
+
+kubectl exec -n middlewares kafka-0 -- /opt/bitnami/kafka/bin/kafka-topics.sh --list --zookeeper zookeeper-0.zookeeper-headless.middlewares.svc.cluster.local:2181,zookeeper-1.zookeeper-headless.middlewares.svc.cluster.local:2181,zookeeper-2.zookeeper-headless.middlewares.svc.cluster.local:2181
+
+
+（producer 和 consumer 看起来在 at least push once 的情况下是无法解耦的？因为 producer 的 offset 更新必须在 consumer 完成推送后才执行）
+数据推送的 track 部分更合理的做法是直接将数据推到数据总线（kafka）中
+
+
+'PLAINTEXT://$(MY_POD_NAME).{{ template "kafka.fullname" . }}-headless.{{.Release.Namespace}}.svc.{{ .Values.clusterDomain }}:$(KAFKA_PORT_NUMBER)'
+
+
+cat /proc/sys/kernel/threads-max
+
+show routing table: netstat -rn
+
+
+cat /proc/sys/kernel/threads-max
+
+
+
+mongo ttl fp already implemented, pick directly, cell common has mongo helper dependency
+
+
+cd opt/bitnami/kafka/bin
+kafka-run-class.sh  kafka.tools.GetOffsetShell --broker-list 127.1:9092 --time -1 --topic track_meta
+kafka-console-consumer.sh --bootstrap-server 127.1:9092 --topic track_meta --partition 0 --offset 4019
+kubectl -nmiddlewares exec po/kafka-0 -- kafka-topics.sh --list --zookeeper zookeeper.middlewares:2181
+
+
+file -i 
+
+./mongodump -u admin -p admin --authenticationDatabase=admin -d face_platform -c track_meta -o face_platform --query "{\"timestamp\": {\"$gt\": 1593592302}}"
+
+./mongorestore -d face_platform -c checkpoint_roles -h cell-mongo-0.cell-mongo-gvr.middlewares.svc.cluster.local --port=27017 -u admin -p admin --authenticationDatabase=admin face_platform
+
+mongo 备份后续还要加上统计模块的表
+
+
+
+You are conflating two different concepts:
+Constructing an object.
+Instantiating an object.
+An abstract class gets constructed just like any other class. It can have its own custom constructor. Or it can have a default constructor, unless there are certain conditions that disallow default constructors.
+
+    A a1;
+    A *ap=&a1;
+a1 is a plain old variable, so when you declare it, the constructor is called. ap is a pointer variable, so declaring it or assigning to it does not call any constructor. ap is just a pointer to a1
+
+
+declare a pointer will not call constructor of a class
+
+
+find gateway: ip route | grep default
+
+思考：如果为每一个带有业务语义的监控指标创建一个监控指标的实例，这样监控指标的实例数可能会爆炸（监控指标的生命周期跟程序是一样的，会一直存在于内存），如果设计一个 common 的指标，只为有限的 common 指标创建实例，用指标内的 label 区分业务语义，监控指标的实例会不会有性能问题（线程安全的，并发效率会不会比较低）
+
+prometheus-cpp: histogram 查重不会把 bucket 加进来 hash
+
+sudo umount -fl /mnt/eng-nfs
+sudo mount 10.40.30.115:/mnt/eng-nfs /mnt/eng-nfs
+
+timedatectl
+
+
+docker run --network host                    \
+    -v `pwd`/records.txt:/opt/records.txt:ro \
+    -e MAX_TEST_SECONDS=60                   \
+    -e DNS_SERVER_ADDR=10.96.0.10            \
+    -e MAX_QPS=6000                          \
+    -it --rm guessi/dnsperf:alpine
+
+
+wget --http-user= --http-password=
+tar cf - ${PACKAGE_NAME} | pxz -cvz > ${PACKAGE_NAME}.tar.xz
+
+kubectl -n kube-system patch deploy coredns -p '{"spec":{"template":{"spec":{"containers":[{"name":"coredns","resources":{"requests":{"cpu":"20m","memory":"20Mi"},"limits":{"cpu":"2000m","memory":"500Mi"}}}]}}}}'
+
+netstat -an | awk '/^tcp/ {++s[$NF]} END {for(a in s) print a, s[a]}
+'
+
+The rate and irate functions need at least two scrapes to return a result.
+
+
+(?i) makes it match case insensitive
+
+IFS=$'\n' read -r -d '' -a my_array < <( my_command && printf '\0' )
+
+
+markdown: a "Tab" hit will make list item to a sublist item
+
+
+git submodule update --init --recursive
+git submodule update --recursive --remote
+
+
+curl --silent -X POST 127.1:30991/api/realtime-analyse/tasks -H 'accept: application/json' -H 'content-type: application/json' -d '{"group": "event_stagnant"}' | jq
+
+tar xzf nighthawk-2.0.1-light.tar.gz -C test/nighthawk --strip-components=1
+
+
+
+mongodump --username=admin --password=admin --authenticationDatabase=admin --db=face_platform --collection=surveillance_task --gzip --archive=/tmp/surveillance_task
+mongorestore --username=admin --password=admin --authenticationDatabase=admin --gzip --archive=/tmp/surveillance_task
+db.surveillance_task.updateMany({}, {$set: {enabled: true}})
+
+sudo vi /etc/sudoers 添加以下两行
+yituadmin ALL=(ALL:ALL) ALL
+yituadmin ALL=(ALL) NOPASSWD: ALL
+
+
+rsync -avP ./ zcgan@10.10.24.116:~/data_aggregation_tool -e 'ssh -p 22' --copy-unsafe-links
+
+
+sudo tcpdump -i ens192 src 10.40.52.96 and host 10.40.52.81 and port 29945 -w 96.cap
+
+kubectl -nmiddlewares exec po/mongo-0 -- mongo mongodb://admin:admin@127.1:27017/resource-manager?authSource=admin --eval "db.camera.find({'meta.meta.extra_meta.platform_device_id':''})"
+
+
+git branch --sort=-committerdate
+
+kubectl top pod | sort -k2 -n
+
+docker run --rm -it -v /mnt/C_0_SSDRAID_1_PART1/zcgan/data:/mnt antonipx/fio  --filename=/mnt/fio.dat --ioengine=libaio --rw=randread --size=2G --name=test --direct=1 --iodepth=20
+docker run --rm -it -v /mnt/C_0_SSDRAID_1_PART1/zcgan/data:/mnt antonipx/fio  --filename=/mnt/fio.dat --ioengine=libaio --rw=write --size=2G --name=test --direct=1 --iodepth=128
+
+docker runt -it -v mount/local/path/if/needed:/mnt it-artifactory.yitu-inc.com/docker/test/fpsaber_skli:1.2 bash
+
+
+kubectl -nmiddlewares exec po/mongo-0 -- mongo mongodb://admin:admin@127.1:27017/resource-manager?authSource=admin --quiet --eval "db.camera.find({}, {'_id': 1, 'meta.checkpoint_type': 1}).toArray()"
+
+kubectl -nmiddlewares exec po/mongo-0 -- mongo mongodb://admin:admin@127.1:27017/resource-manager?authSource=admin --quiet --eval "db.camera.find({}, {'_id': 1, 'meta.name': 1}).toArray()" | jq '.[] | "\(._id) \(.meta.name)"'
+
+kubectl -n ingress patch ds ingress-nginx-ingress-controller --type=json -p='[{"op": "remove", "path": "/spec/template/spec/containers/0/resources/limits"}]'
+
+
+lscpu
+sudo ethtool eth0
+
+check docker login info: cat ~/.docker/config.json
+
+
